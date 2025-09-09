@@ -7,9 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'lxk-blue': '#1e40af',
-        'lxk-yellow': '#fbbf24',
-        'lxk-dark': '#1f2937',
+        'lxk-sage': '#8FA68E',
+        'lxk-mint': '#B8D4B8',
+        'lxk-peach': '#E6A866',
+        'lxk-coral': '#D4947A',
+        'lxk-cream': '#F5F3F0',
+        'lxk-warm-gray': '#5D5A56',
+        'lxk-soft-teal': '#7BA098',
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
