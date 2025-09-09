@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LXK42 - Premium Web Agency in Singapore | Digital Solutions</title>
+    <meta name="description" content="LXK42 is a leading web agency in Singapore specializing in premium website design, development, and digital solutions for businesses.">
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <nav class="container-custom">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-lxk-dark">
+                        LXK<span class="text-lxk-blue">42</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-gray-700 hover:text-lxk-blue transition-colors">About</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-lxk-blue transition-colors flex items-center">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div class="py-2">
+                                    <a href="#web-design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-lxk-blue">Web Design & Development</a>
+                                    <a href="#mobile-apps" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-lxk-blue">Mobile App Development</a>
+                                    <a href="#digital-marketing" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-lxk-blue">Digital Marketing</a>
+                                    <a href="#branding" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-lxk-blue">Branding Solutions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#portfolio" class="text-gray-700 hover:text-lxk-blue transition-colors">Portfolio</a>
+                        <a href="#contact" class="text-gray-700 hover:text-lxk-blue transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info & CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Get In Touch</p>
+                        <a href="tel:+6512345678" class="text-lxk-blue font-semibold">+65 1234 5678</a>
+                    </div>
+                    <a href="#contact" class="btn-primary">Get Quote</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-lxk-blue">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                    <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">About</a>
+                    <a href="#web-design" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">Web Design</a>
+                    <a href="#mobile-apps" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">Mobile Apps</a>
+                    <a href="#digital-marketing" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">Digital Marketing</a>
+                    <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">Portfolio</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-lxk-blue">Contact</a>
+                    <div class="pt-2 border-t">
+                        <a href="tel:+6512345678" class="block px-3 py-2 text-lxk-blue font-semibold">+65 1234 5678</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16 md:pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-gradient-to-br from-lxk-blue to-blue-800 text-white section-padding">
+            <div class="container-custom">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll">
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                            Transform Your Business with 
+                            <span class="text-lxk-yellow">Premium Digital Solutions</span>
+                        </h1>
+                        <p class="text-xl mb-8 text-blue-100">
+                            Leading web agency in Singapore providing end-to-end digital solutions for modern businesses.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="btn-secondary">Start Your Project</a>
+                            <a href="#portfolio" class="border border-white text-white hover:bg-white hover:text-lxk-blue font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                                View Our Work
+                            </a>
+                        </div>
+                        <div class="mt-12 flex items-center space-x-8">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-lxk-yellow">100+</div>
+                                <div class="text-sm text-blue-200">Projects Delivered</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-lxk-yellow">5 Years</div>
+                                <div class="text-sm text-blue-200">Industry Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-lxk-yellow">24/7</div>
+                                <div class="text-sm text-blue-200">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Digital Solutions" 
+                                 class="rounded-lg shadow-2xl">
+                            <div class="absolute -bottom-6 -left-6 bg-lxk-yellow text-lxk-dark p-4 rounded-lg shadow-lg">
+                                <div class="text-lg font-semibold">Based in Singapore</div>
+                                <div class="text-sm">Serving globally</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Our Team" 
+                             class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="animate-on-scroll">
+                        <h2 class="text-3xl md:text-4xl font-bold text-lxk-dark mb-6">
+                            Singapore's Premier <span class="text-lxk-blue">Digital Agency</span>
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            LXK42 specializes in creating premium digital experiences for businesses across Singapore and beyond. Our expert team combines creativity with cutting-edge technology to deliver solutions that drive real results.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-lxk-blue rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <p class="text-gray-700">Award-winning design and development team</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-lxk-blue rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <p class="text-gray-700">End-to-end digital transformation solutions</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 bg-lxk-blue rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <p class="text-gray-700">Proven track record with 100+ successful projects</p>
+                            </div>
+                        </div>
+                        <a href="#services" class="btn-primary">Explore Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding">
+            <div class="container-custom">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-lxk-dark mb-4">Our Services</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Comprehensive digital solutions tailored to elevate your business to the next level.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web Design Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Web Design & Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            Custom websites that combine stunning design with powerful functionality to create exceptional user experiences.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Responsive design</li>
+                            <li>• E-commerce solutions</li>
+                            <li>• CMS development</li>
+                            <li>• Performance optimization</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+
+                    <!-- Mobile App Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-mobile-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Mobile App Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            Native and cross-platform mobile applications that engage users and drive business growth.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• iOS & Android apps</li>
+                            <li>• Cross-platform solutions</li>
+                            <li>• UI/UX design</li>
+                            <li>• App store optimization</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+
+                    <!-- Digital Marketing Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Digital Marketing</h3>
+                        <p class="text-gray-600 mb-6">
+                            Data-driven marketing strategies that increase your online visibility and drive qualified leads.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• SEO optimization</li>
+                            <li>• Social media marketing</li>
+                            <li>• PPC advertising</li>
+                            <li>• Content marketing</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+
+                    <!-- Branding Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-palette text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Branding Solutions</h3>
+                        <p class="text-gray-600 mb-6">
+                            Complete brand identity development that helps your business stand out in the competitive market.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Logo design</li>
+                            <li>• Brand guidelines</li>
+                            <li>• Marketing materials</li>
+                            <li>• Brand strategy</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+
+                    <!-- Consulting Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Digital Consulting</h3>
+                        <p class="text-gray-600 mb-6">
+                            Strategic guidance to help you navigate the digital landscape and make informed technology decisions.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Technology audit</li>
+                            <li>• Digital strategy</li>
+                            <li>• Process optimization</li>
+                            <li>• Growth planning</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+
+                    <!-- Support Service -->
+                    <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-lxk-blue text-white rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-lxk-dark mb-4">Ongoing Support</h3>
+                        <p class="text-gray-600 mb-6">
+                            Reliable maintenance and support services to keep your digital assets running smoothly.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li>• Website maintenance</li>
+                            <li>• Security updates</li>
+                            <li>• Performance monitoring</li>
+                            <li>• Technical support</li>
+                        </ul>
+                        <a href="#contact" class="text-lxk-blue font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section - Placeholder -->
+        <section id="portfolio" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold text-lxk-dark mb-4">Our Portfolio</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Showcasing our latest work and successful client projects.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio items will be added here -->
+                    <div class="animate-on-scroll bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-video bg-gradient-to-br from-lxk-blue to-blue-800 flex items-center justify-center">
+                            <i class="fas fa-image text-4xl text-white opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-lxk-dark mb-2">Project Placeholder</h3>
+                            <p class="text-gray-600 text-sm">Portfolio projects will be showcased here</p>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-video bg-gradient-to-br from-lxk-blue to-blue-800 flex items-center justify-center">
+                            <i class="fas fa-image text-4xl text-white opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-lxk-dark mb-2">Project Placeholder</h3>
+                            <p class="text-gray-600 text-sm">Portfolio projects will be showcased here</p>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <div class="aspect-video bg-gradient-to-br from-lxk-blue to-blue-800 flex items-center justify-center">
+                            <i class="fas fa-image text-4xl text-white opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-lxk-dark mb-2">Project Placeholder</h3>
+                            <p class="text-gray-600 text-sm">Portfolio projects will be showcased here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container-custom">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="animate-on-scroll">
+                        <h2 class="text-3xl md:text-4xl font-bold text-lxk-dark mb-6">Get In Touch</h2>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Ready to transform your digital presence? Let's discuss your project and bring your vision to life.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-lxk-blue text-white rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lxk-dark">Phone</p>
+                                    <a href="tel:+6512345678" class="text-lxk-blue hover:text-blue-800">+65 1234 5678</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-lxk-blue text-white rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lxk-dark">Email</p>
+                                    <a href="mailto:hello@lxk42.sg" class="text-lxk-blue hover:text-blue-800">hello@lxk42.sg</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-lxk-blue text-white rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lxk-dark">Location</p>
+                                    <p class="text-gray-600">Singapore</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <form class="bg-white p-8 rounded-lg shadow-lg">
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lxk-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lxk-blue focus:border-transparent">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lxk-blue focus:border-transparent">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lxk-blue focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-lxk-dark text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-2xl font-bold mb-4 block">
+                        LXK<span class="text-lxk-yellow">42</span>
+                    </a>
+                    <p class="text-gray-300 mb-4">
+                        Premium web agency in Singapore delivering exceptional digital solutions for modern businesses.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-lxk-yellow transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-lxk-yellow transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-lxk-yellow transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-lxk-yellow transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#web-design" class="hover:text-lxk-yellow transition-colors">Web Design</a></li>
+                        <li><a href="#mobile-apps" class="hover:text-lxk-yellow transition-colors">Mobile Apps</a></li>
+                        <li><a href="#digital-marketing" class="hover:text-lxk-yellow transition-colors">Digital Marketing</a></li>
+                        <li><a href="#branding" class="hover:text-lxk-yellow transition-colors">Branding</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#about" class="hover:text-lxk-yellow transition-colors">About</a></li>
+                        <li><a href="#portfolio" class="hover:text-lxk-yellow transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-lxk-yellow transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-lxk-yellow transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-lxk-yellow"></i>
+                            <a href="tel:+6512345678" class="hover:text-lxk-yellow transition-colors">+65 1234 5678</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-lxk-yellow"></i>
+                            <a href="mailto:hello@lxk42.sg" class="hover:text-lxk-yellow transition-colors">hello@lxk42.sg</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-lxk-yellow"></i>
+                            <span>Singapore</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 LXK42. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6512345678" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition-colors z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
