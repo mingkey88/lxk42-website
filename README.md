@@ -1,126 +1,127 @@
-# LXK42 - Premium Web Agency Website
+# Light & Kaki Studio 🎨✨
 
-A modern, responsive website for LXK42 web agency, inspired by leading Singapore web agencies and built with modern web technologies.
+*Where Creativity meets Friendship*
 
-## Features
+A beautiful, Japanese-inspired digital studio website featuring 3D animations, painterly aesthetics, and warm collaborative messaging. Built with modern web technologies and deployed on Firebase.
 
-- **Responsive Design**: Fully responsive across all devices
-- **Modern Stack**: Built with Vite, Tailwind CSS, and vanilla JavaScript
-- **Professional Layout**: Clean, modern design inspired by industry leaders
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Performance Focused**: Fast loading times and optimized assets
-- **Interactive Elements**: Smooth scrolling, animations, and hover effects
+## 🌟 Live Website
 
-## Sections
+- **Production**: [https://lxk42-studio.web.app](https://lxk42-studio.web.app)
+- **Custom Domain**: [www.lxk42.sg](http://www.lxk42.sg) *(coming soon)*
 
-1. **Hero Section**: Compelling intro with key value propositions
-2. **About Section**: Company introduction and key benefits
-3. **Services Section**: Comprehensive service offerings including:
-   - Web Design & Development
-   - Mobile App Development
-   - Digital Marketing
-   - Branding Solutions
-   - Digital Consulting
-   - Ongoing Support
-4. **Portfolio Section**: Showcase of client work (placeholder for now)
-5. **Contact Section**: Contact form and company information
-6. **Footer**: Links and company details
+## ✨ Features
 
-## Tech Stack
+### 🎭 **Visual Design**
+- **Japanese-inspired painterly aesthetic** with soft, organic shapes
+- **3D floating animations** in hero section with realistic depth and shadows
+- **Scroll-in animations** for smooth page entrance experience
+- **Warm color palette**: Sage greens, warm peaches, soft corals
+- **Custom CSS animations** with organic movement patterns
 
-- **Build Tool**: Vite
-- **CSS Framework**: Tailwind CSS
-- **JavaScript**: Vanilla ES6+
-- **Icons**: Font Awesome
-- **Fonts**: Inter (Google Fonts)
+### 🎨 **Brand Identity**
+- **"Light & Kaki" concept** - where "kaki" means friend in Singlish
+- **Collaborative messaging** emphasizing friendship and warmth
+- **Cultural authenticity** reflecting Singapore's local context
+- **Friendly emoji accents** (🎨, 🤝, 🌱) replacing corporate elements
 
-## Getting Started
+## 🚀 Tech Stack
 
-### Prerequisites
+- **Build Tool**: [Vite](https://vitejs.dev/) - Fast development and optimized builds
+- **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
+- **JavaScript**: Vanilla ES6+ - No framework dependencies
+- **Hosting**: [Firebase Hosting](https://firebase.google.com/products/hosting)
+- **Deployment**: GitHub Actions for automated CI/CD
+
+## 🎯 Quick Start
+
+### **Prerequisites**
 - Node.js (v14 or higher)
-- npm or yarn
+- npm or yarn package manager
 
-### Installation
+### **Development Setup**
 
-1. Clone the repository
 ```bash
-git clone <repository-url>
+# Clone the repository
+git clone https://github.com/mingkey88/lxk42-website.git
 cd lxk42-website
-```
 
-2. Install dependencies
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start development server
-```bash
+# Start development server
 npm run dev
-```
+# Website will be available at http://localhost:5173/
 
-4. Build for production
-```bash
+# Build for production
 npm run build
-```
 
-5. Preview production build
-```bash
+# Preview production build
 npm run preview
 ```
 
-## Project Structure
+## 🎨 Color Palette
+
+```css
+--lxk-sage: #8FA68E      /* Primary brand color */
+--lxk-mint: #B8D4B8      /* Light accent */
+--lxk-peach: #E6A866     /* Warm accent */
+--lxk-coral: #D4947A     /* Text accent */
+--lxk-cream: #F5F3F0     /* Background */
+--lxk-warm-gray: #5D5A56 /* Text color */
+```
+
+## 🎭 Custom Animations
+
+### **3D Floating Circles**
+- 4 unique animation patterns with different timing cycles
+- 3D transformations with realistic depth and shadows
+- Organic movement patterns that feel natural and alive
+
+### **Hero Section Animations**
+- Staggered entrance with carefully timed delays
+- Smooth fade-in effects and scale animations
+- Total duration: ~1.2 seconds for complete reveal
+
+## 📱 Responsive Design
+
+- **Mobile**: < 768px (optimized touch interfaces)
+- **Tablet**: 768px - 1024px (balanced layout)
+- **Desktop**: > 1024px (full experience)
+
+## 🌐 Deployment
+
+The project uses Firebase Hosting with automatic deployment:
+
+- **Automatic deployment** on push to `master` branch
+- **Preview deployments** for pull requests
+- **Custom domain support** for www.lxk42.sg
+
+## 📋 Project Structure
 
 ```
 lxk42-website/
 ├── src/
-│   ├── style.css          # Main CSS with Tailwind imports
+│   ├── style.css          # Main CSS with custom animations
 │   └── main.js            # JavaScript functionality
-├── index.html             # Main HTML file
-├── tailwind.config.js     # Tailwind configuration
-├── postcss.config.js      # PostCSS configuration
+├── dist/                  # Production build output
+├── .github/workflows/     # GitHub Actions
+├── index.html             # Single-page application
+├── tailwind.config.js     # Custom color palette
+├── firebase.json          # Firebase configuration
 ├── package.json           # Dependencies and scripts
-└── README.md              # This file
+└── README.md             # This documentation
 ```
 
-## Customization
+## 🤝 Contributing
 
-### Colors
-The website uses a custom color scheme defined in `tailwind.config.js`:
-- Primary Blue: `lxk-blue` (#1e40af)
-- Accent Yellow: `lxk-yellow` (#fbbf24)
-- Dark: `lxk-dark` (#1f2937)
+This is a private project for Light & Kaki Studio. For suggestions or improvements, please create an issue or contact the team.
 
-### Content
-All content placeholders should be replaced with actual LXK42 content:
-- Company description and value propositions
-- Service details and pricing
-- Portfolio projects and case studies
-- Contact information
-- Team photos and bios
+## 📄 License
 
-### Branding
-- Replace placeholder logo with actual LXK42 logo
-- Update favicon and meta tags
-- Add actual company images and brand assets
+Private project for Light & Kaki Studio. All rights reserved.
 
-## Deployment
+---
 
-The website is built as a static site and can be deployed to:
-- Netlify
-- Vercel
-- GitHub Pages
-- Any static hosting provider
+**Built with ❤️ and friendship at Light & Kaki Studio**
 
-## Future Enhancements
-
-- [ ] Add actual portfolio projects
-- [ ] Implement contact form backend
-- [ ] Add blog/news section
-- [ ] Integrate CMS for content management
-- [ ] Add client testimonials
-- [ ] Implement analytics tracking
-- [ ] Add multi-language support
-
-## License
-
-Private project for LXK42. All rights reserved.
+*Where every pixel is crafted with care, and every line of code tells a story of collaboration.*

@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-LXK42 is a premium web agency website built as a modern, responsive single-page application targeting businesses in Singapore. The site showcases digital services including web design, mobile app development, digital marketing, branding, and consulting services.
+Light & Kaki Studio is a Japanese-inspired digital studio website built as a modern, responsive single-page application. The project emphasizes friendship, collaboration, and warmth through its "Light & Kaki" concept, where "kaki" means friend in Singlish. The site features beautiful 3D animations, painterly aesthetics, and is deployed on Firebase Hosting.
 
 ## Development Commands
 
@@ -26,13 +26,27 @@ npm run preview
 ### Development Server
 The development server runs on Vite with hot module replacement. The site will typically be available at `http://localhost:5173` (or next available port).
 
+### Deployment Commands
+```bash
+# Build and deploy to Firebase
+firebase deploy
+
+# Deploy to specific Firebase project
+firebase deploy --project lxk42-studio
+
+# Open live site
+firebase hosting:channel:open live
+```
+
 ## Architecture & Structure
 
 ### Technology Stack
 - **Build Tool**: Vite (modern, fast build tool with HMR)
-- **CSS Framework**: Tailwind CSS with custom configuration
+- **CSS Framework**: Tailwind CSS with custom Japanese-inspired color palette
 - **JavaScript**: Vanilla ES6+ (no framework dependencies)
+- **Hosting**: Firebase Hosting with automatic GitHub Actions deployment
 - **External Dependencies**: Font Awesome icons, Google Fonts (Inter)
+- **Live URLs**: https://lxk42-studio.web.app | www.lxk42.sg (pending DNS)
 
 ### File Structure Overview
 ```
@@ -50,10 +64,13 @@ lxk42-website/
 
 **Single-Page Application**: All content is in `index.html` with JavaScript handling navigation and interactions. This approach was chosen for simplicity and performance.
 
-**Custom Tailwind Configuration**: The project uses a custom color scheme:
-- `lxk-blue` (#1e40af): Primary brand color
-- `lxk-yellow` (#fbbf24): Accent color 
-- `lxk-dark` (#1f2937): Dark text/backgrounds
+**Japanese-Inspired Color Palette**: The project uses a warm, painterly color scheme:
+- `lxk-sage` (#8FA68E): Primary brand color - soft sage green
+- `lxk-mint` (#B8D4B8): Light accent - fresh mint
+- `lxk-peach` (#E6A866): Warm accent - friendly peach
+- `lxk-coral` (#D4947A): Text accent - soft coral
+- `lxk-cream` (#F5F3F0): Background - warm cream
+- `lxk-warm-gray` (#5D5A56): Text color - warm gray
 
 **Component-Based CSS Classes**: Custom Tailwind components are defined in `src/style.css`:
 - `.btn-primary` and `.btn-secondary`: Consistent button styling
@@ -65,6 +82,12 @@ lxk42-website/
 - Intersection Observer API for scroll animations
 - Smooth scrolling navigation
 - Dynamic style injection for keyframe animations
+
+**Advanced Animation System**: The site features sophisticated CSS animations:
+- **3D Floating Circles**: 4 unique animation patterns with organic movement
+- **Hero Scroll-in Effects**: Staggered entrance animations with timing delays
+- **Painterly Aesthetics**: Organic shapes, soft shadows, and gradient backgrounds
+- **Performance Optimized**: GPU-accelerated transforms and efficient keyframes
 
 ### Content Structure
 
@@ -94,13 +117,13 @@ Custom animation system using Intersection Observer:
 
 ## Development Guidelines
 
-### Content Updates
-All content is currently placeholder and should be replaced with actual LXK42 information:
-- Company descriptions and value propositions
-- Service details and pricing
-- Portfolio projects and case studies
-- Contact information (currently using placeholder phone/email)
-- Team photos and company branding
+### Content Guidelines
+The website reflects the "Light & Kaki" brand philosophy:
+- **Cultural Authenticity**: "Kaki" means friend in Singlish, not Japanese
+- **Collaborative Language**: Emphasize friendship, warmth, and partnership
+- **Singapore Context**: Respect local culture while maintaining international appeal
+- **Emoji Usage**: Strategic use of friendly emojis (🎨, 🤝, 🌱, ✨) for warmth
+- **Avoid Corporate Speak**: Use personal, relationship-focused language
 
 ### Color Customization
 Modify brand colors in `tailwind.config.js` under the `extend.colors` section. The custom colors are used throughout the site for consistency.
@@ -141,7 +164,25 @@ The site follows basic accessibility patterns:
 
 ### SEO Optimization
 Current SEO implementation includes:
-- Proper meta tags in `<head>`
-- Semantic HTML structure
-- Descriptive title and meta description
-- Clean URL structure (single-page, but with hash navigation)
+- Proper meta tags optimized for "Light & Kaki Studio"
+- Semantic HTML structure with accessibility features
+- Descriptive title and meta description reflecting brand identity
+- Clean URL structure with custom domain setup
+
+## Deployment & Hosting
+
+### Firebase Configuration
+- **Project ID**: lxk42-studio
+- **Hosting URL**: https://lxk42-studio.web.app
+- **Custom Domain**: www.lxk42.sg (configured with Vodien DNS)
+- **Build Directory**: `dist/` (Vite output)
+
+### Automatic Deployment
+- **GitHub Actions**: Configured for automatic deployment on push to master
+- **Preview Deployments**: Automatic preview URLs for pull requests
+- **Build Process**: `npm run build` → `firebase deploy`
+
+### DNS Configuration
+- **Domain Registrar**: Vodien
+- **A Records**: Point to Firebase Hosting IPs
+- **CNAME Record**: www subdomain points to lxk42-studio.web.app
