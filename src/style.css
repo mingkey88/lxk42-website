@@ -35,6 +35,10 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
   .painterly-card {
     @apply bg-white rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl;
     background: linear-gradient(145deg, #ffffff 0%, #F5F3F0 100%);
@@ -147,7 +151,246 @@
   }
 }
 
+/* Anime-Style Motion Graphics */
+
+/* Watercolor Paint Splash Animations */
+.paint-splash-1 {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(143, 166, 142, 0.3), rgba(184, 212, 184, 0.2));
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 30%;
+  animation: paintSplash1 12s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+.paint-splash-2 {
+  position: absolute;
+  width: 180px;
+  height: 120px;
+  background: linear-gradient(45deg, rgba(230, 168, 102, 0.25), rgba(212, 148, 122, 0.2));
+  border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  animation: paintSplash2 15s ease-in-out infinite;
+  filter: blur(0.5px);
+}
+
+.paint-splash-3 {
+  position: absolute;
+  width: 160px;
+  height: 100px;
+  background: linear-gradient(225deg, rgba(245, 243, 240, 0.8), rgba(123, 160, 152, 0.3));
+  border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%;
+  animation: paintSplash3 18s ease-in-out infinite;
+  filter: blur(1.5px);
+}
+
+/* Floating Butterflies/Leaves */
+.floating-butterfly {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  animation: butterflyFloat 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.floating-butterfly:before {
+  content: "🦋";
+  font-size: 18px;
+  filter: sepia(100%) saturate(150%) hue-rotate(80deg);
+}
+
+.floating-leaf {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  animation: leafFloat 10s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.floating-leaf:before {
+  content: "🍃";
+  font-size: 14px;
+  filter: sepia(100%) saturate(120%) hue-rotate(60deg);
+}
+
+/* Geometric Circle Frames */
+.circle-frame {
+  position: absolute;
+  border: 2px solid rgba(143, 166, 142, 0.4);
+  border-radius: 50%;
+  animation: circleFrame 20s linear infinite;
+}
+
+.circle-frame-1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  right: 10%;
+  border-style: dashed;
+  animation-delay: 0s;
+}
+
+.circle-frame-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 30%;
+  left: 20%;
+  border-style: dotted;
+  animation-delay: -7s;
+}
+
+/* Additional hover effects for anime feel */
+.hover\\:translateX-2:hover {
+  transform: translateX(0.5rem);
+}
+
+.transform {
+  transform: translateX(0) translateY(0) rotate(0) scale(1);
+}
+
+/* Hand-painted texture overlay */
+.texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(245, 243, 240, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(143, 166, 142, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(230, 168, 102, 0.03) 0%, transparent 30%);
+  pointer-events: none;
+  animation: textureShift 25s ease-in-out infinite;
+}
+
 /* Keyframe Animations */
+
+@keyframes paintSplash1 {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 30%;
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(15deg) scale(1.2);
+    border-radius: 40% 60% 50% 30% / 70% 40% 60% 50%;
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px) rotate(-10deg) scale(0.9);
+    border-radius: 70% 30% 60% 40% / 30% 70% 50% 40%;
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateY(-40px) translateX(10px) rotate(20deg) scale(1.1);
+    border-radius: 50% 50% 40% 60% / 60% 30% 70% 40%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes paintSplash2 {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translateY(-25px) translateX(-20px) rotate(-12deg) scale(1.3);
+    border-radius: 60% 40% 30% 70% / 40% 70% 30% 60%;
+    opacity: 0.4;
+  }
+  60% {
+    transform: translateY(-5px) translateX(25px) rotate(18deg) scale(0.8);
+    border-radius: 30% 70% 50% 50% / 70% 50% 40% 30%;
+    opacity: 0.15;
+  }
+  85% {
+    transform: translateY(-35px) translateX(-10px) rotate(-25deg) scale(1.2);
+    border-radius: 70% 30% 40% 60% / 50% 60% 70% 30%;
+    opacity: 0.35;
+  }
+}
+
+@keyframes paintSplash3 {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%;
+    opacity: 0.8;
+  }
+  20% {
+    transform: translateY(-20px) translateX(30px) rotate(25deg) scale(1.4);
+    border-radius: 30% 70% 60% 40% / 70% 40% 60% 30%;
+    opacity: 0.6;
+  }
+  45% {
+    transform: translateY(-50px) translateX(-20px) rotate(-15deg) scale(0.7);
+    border-radius: 60% 40% 30% 70% / 30% 60% 40% 70%;
+    opacity: 0.9;
+  }
+  70% {
+    transform: translateY(-15px) translateX(20px) rotate(30deg) scale(1.1);
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+    opacity: 0.5;
+  }
+}
+
+@keyframes butterflyFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-40px) translateX(30px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-20px) translateX(-20px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-60px) translateX(10px) rotate(15deg);
+  }
+}
+
+@keyframes leafFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-30px) translateX(-25px) rotate(-20deg);
+  }
+  60% {
+    transform: translateY(-10px) translateX(35px) rotate(10deg);
+  }
+  80% {
+    transform: translateY(-45px) translateX(-15px) rotate(-15deg);
+  }
+}
+
+@keyframes circleFrame {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes textureShift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(20px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-15px) translateY(15px);
+  }
+  75% {
+    transform: translateX(10px) translateY(-20px);
+  }
+}
+
+/* Original Keyframe Animations */
 @keyframes float3d1 {
   0%, 100% { 
     transform: translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1);

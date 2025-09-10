@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
-  
   let mobileMenuOpen = false;
 
   function toggleMobileMenu() {
@@ -19,20 +17,6 @@
     // Close mobile menu if open
     mobileMenuOpen = false;
   }
-
-  onMount(() => {
-    // Add smooth scrolling to all navigation links
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(link => {
-      link.addEventListener('click', smoothScroll);
-    });
-
-    return () => {
-      navLinks.forEach(link => {
-        link.removeEventListener('click', smoothScroll);
-      });
-    };
-  });
 </script>
 
 <!-- Header/Navigation -->
@@ -57,7 +41,7 @@
                         <div class="absolute left-0 mt-2 w-64 bg-lxk-cream rounded-2xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 soft-shadow">
                             <div class="py-3">
                                 <a href="#web-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors">Web Design & Development</a>
-                                <a href="#mobile-apps" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors">Mobile App Development</a>
+                                <a href="#web-apps" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors">Web App Development</a>
                                 <a href="#digital-marketing" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors">Digital Marketing</a>
                                 <a href="#branding" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors">Branding Solutions</a>
                             </div>
@@ -72,7 +56,7 @@
             <div class="hidden md:flex items-center space-x-4">
                 <div class="text-right">
                     <p class="text-sm text-gray-600">Get In Touch</p>
-                    <a href="tel:+6512345678" class="text-lxk-sage font-medium">+65 1234 5678</a>
+                    <a href="tel:+6598278695" class="text-lxk-sage font-medium">+65 9827 8695</a>
                 </div>
                 <a href="#contact" class="bg-lxk-sage text-white px-6 py-3 rounded-full hover:bg-lxk-soft-teal transition-colors font-medium">
                     Start Journey 🌱
@@ -92,15 +76,15 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="md:hidden {mobileMenuOpen ? '' : 'hidden'}" id="mobile-menu">
+        <div class="md:hidden {mobileMenuOpen ? '' : 'hidden'}">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-                <a href="#about" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About</a>
-                <a href="#web-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
-                <a href="#mobile-apps" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Mobile Apps</a>
-                <a href="#digital-marketing" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
-                <a href="#branding" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Branding</a>
-                <a href="#portfolio" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
-                <a href="#contact" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
+                <a href="#about" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About</a>
+                <a href="#web-design" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
+                <a href="#mobile-apps" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Mobile Apps</a>
+                <a href="#digital-marketing" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
+                <a href="#branding" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Branding</a>
+                <a href="#portfolio" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                <a href="#contact" on:click={smoothScroll} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
                 <div class="px-3 py-2">
                     <a href="#contact" class="bg-lxk-sage text-white px-6 py-3 rounded-full hover:bg-lxk-soft-teal transition-colors font-medium inline-block">
                         Start Journey 🌱
