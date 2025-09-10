@@ -32,7 +32,7 @@
 </script>
 
 <Header />
-<main>
+<main id="main-content">
   <Hero />
   <About />
   <WhyWorkWithUs />
