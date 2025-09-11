@@ -301,3 +301,88 @@ interface ComponentSpec {
 - Write unit tests for complex logic
 
 This project represents a unique blend of Japanese aesthetic sensibilities with Singapore cultural context, built on modern Svelte architecture while maintaining excellent performance and accessibility standards.
+
+## Codex Handoff — Recent Changes (Flattening + Services Pages)
+
+This section summarizes Codex implementation work to keep you in sync when you take over next.
+
+### Summary of Changes
+- Repository structure
+  - Promoted the Svelte 5 app to the repository root (flattened layout).
+  - Archived the legacy vanilla Vite scaffold under `legacy/root-vanilla/`.
+  - Unified docs: updated root `README.md` to reflect Svelte stack; added `LEGACY.md`.
+
+- Tooling and configs
+  - Added/standardized Svelte 5 + Vite + Tailwind setup at root.
+  - ESLint (flat config) + Prettier and TS (`eslint.config.js`, `.prettierrc`, `tsconfig.json`).
+  - Tailwind ESM config with brand palette and plugins; PostCSS ESM config.
+  - Vite config includes `vite-plugin-imagemin` with sensible defaults.
+  - CI (GitHub Actions) updated to setup Node 20, use `npm ci`, then run `lint`, `typecheck`, and `build` before Firebase deploy.
+
+- Routing and navigation
+  - Introduced a lightweight hash-based router (`src/Router.svelte`).
+  - Routes: `/` (Home), `/web-design`, `/web-app`, `/digital-marketing`, `/branding`, `/graphic-design`, `/motion-graphics`, `/portfolio`.
+  - Aliases: `/animation` → `/motion-graphics` for backward compatibility.
+  - Special handling: `#/about`, `#/contact`, `#/services` route to Home then smooth-scroll to the section.
+  - Updated header and mobile navigation to use the new routes; logo links to `#/`.
+
+- New pages and content
+  - Extracted Home sections into `src/pages/Home.svelte`.
+  - Added services pages:
+    - `WebDesign.svelte` (Web Design & Development)
+    - `WebApp.svelte` (Web App Development)
+    - `DigitalMarketing.svelte` (Digital Marketing)
+    - `Branding.svelte` (Branding Solutions)
+    - `GraphicDesign.svelte` (Graphic Design)
+    - `MotionGraphics.svelte` (Motion Graphics & Animation)
+  - Expanded copy on each page to match brand tone and structure.
+  - Updated Services grid to link to each services page and added accessible focus states.
+
+- Portfolio
+  - Added `src/data/portfolio.js` with sample entries.
+  - `src/pages/Portfolio.svelte` renders a dynamic grid with simple tag filtering.
+
+- Accessibility and perf touches (incremental)
+  - Kept the skip-to-content link in the header.
+  - Added `loading="lazy"` to the large About image; moved the asset to `src/assets/`.
+  - Minor focus ring/focusable card improvements.
+
+### Repo State After Changes
+- Active app lives at repo root and runs with `npm run dev` / `build` / `preview`.
+- Firebase Hosting workflows build from root and deploy `dist/`.
+- Docs point to Svelte architecture and brand guidelines; legacy scaffold documented in `LEGACY.md`.
+- Note: `lxk42-website/` currently remains in the repo history as an embedded git repository (submodule marker). If undesired, remove from index via `git rm --cached lxk42-website` and delete the `.gitmodules` entry if present, then commit. We left this as-is to avoid destructive changes without explicit instruction.
+
+### Suggestions / Next Iterations
+- Navigation & UX
+  - Add keyboard and ARIA behavior for the Services dropdown (toggle `aria-expanded`, focus trapping on open, ESC to close).
+  - Consider route-aware highlighting in the nav for context (active link state).
+  - Add a common CTA banner slice to the end of all services pages to unify flow to Contact.
+
+- Performance
+  - Convert raster assets to WebP/AVIF; generate multiple sizes and use `srcset` for responsive loading.
+  - Self-host icons instead of Font Awesome CDN or switch to an inline SVG set to reduce unused CSS/JS.
+  - Route-level code-splitting if pages grow heavier; current Svelte setup already supports this via dynamic imports.
+
+- Accessibility
+  - Ensure color contrast ratios across all sections meet WCAG AA.
+  - Audit tab order and focus states across dropdowns and in-page sections.
+  - Add descriptive alt text for future portfolio images; keep semantic headings hierarchy (H1 → H2 → H3).
+
+- SEO & Metadata
+  - Add route-based `document.title` and meta description updates on navigation in `Router.svelte`.
+  - Add structured data (JSON-LD) for organization and potential portfolio items.
+
+- Content & Structure
+  - Expand services pages with samples (mini case studies), packages, FAQs, and timelines.
+  - Populate `src/data/portfolio.js` with real projects; add filters by industry or capability and a case-study detail page pattern.
+  - Consider a Testimonials slice and a light Blog/Insights section for thought leadership.
+
+- Codebase
+  - Factor common page patterns (hero + 3-up cards + 2-up lists + CTA) into small Svelte components to reduce duplication.
+  - Add a basic Playwright smoke test for routing and critical content (CI can run it after build).
+
+### Coordination Notes
+- All changes maintain alignment with the brand philosophy (“kaki”/friendship tone, warm palette, painterly/organic shapes).
+- Animations remain CSS-based and lightweight; future work could add Svelte transitions for some elements.
+- If we decide to remove the `lxk42-website` submodule marker, we should coordinate a short cleanup PR to avoid confusing future clones.
