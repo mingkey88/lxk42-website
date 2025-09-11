@@ -33,7 +33,7 @@
         <div class="flex items-center justify-between h-16 md:h-20">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="#home" class="text-2xl font-bold text-lxk-sage">
+                <a href="#/" class="text-2xl font-bold text-lxk-sage">
                     LXK<span class="text-lxk-peach">42</span>
                 </a>
             </div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <a href="#/portfolio" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
-                    <a href="#contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
+                    <a href="#/contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
                 </div>
             </div>
 
