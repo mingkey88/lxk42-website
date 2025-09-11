@@ -1,127 +1,83 @@
 # Light & Kaki Studio 🎨✨
 
-*Where Creativity meets Friendship*
+Where creativity meets friendship.
 
-A beautiful, Japanese-inspired digital studio website featuring 3D animations, painterly aesthetics, and warm collaborative messaging. Built with modern web technologies and deployed on Firebase.
+Japanese‑inspired studio website featuring painterly aesthetics, warm brand language, and refined 3D motion. Built with Svelte 5, Tailwind CSS, and Vite. Deployed on Firebase Hosting.
 
 ## 🌟 Live Website
-
-- **Production**: [https://lxk42-studio.web.app](https://lxk42-studio.web.app)
-- **Custom Domain**: [www.lxk42.sg](http://www.lxk42.sg) *(coming soon)*
-
-## ✨ Features
-
-### 🎭 **Visual Design**
-- **Japanese-inspired painterly aesthetic** with soft, organic shapes
-- **3D floating animations** in hero section with realistic depth and shadows
-- **Scroll-in animations** for smooth page entrance experience
-- **Warm color palette**: Sage greens, warm peaches, soft corals
-- **Custom CSS animations** with organic movement patterns
-
-### 🎨 **Brand Identity**
-- **"Light & Kaki" concept** - where "kaki" means friend in Singlish
-- **Collaborative messaging** emphasizing friendship and warmth
-- **Cultural authenticity** reflecting Singapore's local context
-- **Friendly emoji accents** (🎨, 🤝, 🌱) replacing corporate elements
+- Production: https://lxk42-studio.web.app
+- Custom Domain: www.lxk42.sg (pending DNS)
 
 ## 🚀 Tech Stack
+- Framework: Svelte 5 (+ gradual TypeScript)
+- Build: Vite 7
+- Styling: Tailwind CSS (custom palette + components)
+- Quality: ESLint + Prettier + TypeScript
+- Hosting: Firebase Hosting (CI/CD via GitHub Actions)
 
-- **Build Tool**: [Vite](https://vitejs.dev/) - Fast development and optimized builds
-- **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
-- **JavaScript**: Vanilla ES6+ - No framework dependencies
-- **Hosting**: [Firebase Hosting](https://firebase.google.com/products/hosting)
-- **Deployment**: GitHub Actions for automated CI/CD
+## 📦 Repository Layout
+- Active app: repository root (Svelte project)
+- Legacy scaffold: older vanilla Vite files archived under `legacy/root-vanilla`. See `LEGACY.md`.
 
 ## 🎯 Quick Start
-
-### **Prerequisites**
-- Node.js (v14 or higher)
-- npm or yarn package manager
-
-### **Development Setup**
+Prerequisites: Node.js 18+, npm
 
 ```bash
-# Clone the repository
 git clone https://github.com/mingkey88/lxk42-website.git
 cd lxk42-website
 
-# Install dependencies
+# Install deps
 npm install
 
-# Start development server
-npm run dev
-# Website will be available at http://localhost:5173/
+# Dev server (HMR)
+npm run dev    # http://localhost:5173
 
-# Build for production
-npm run build
-
-# Preview production build
+# Production
+npm run build  # outputs to dist/
 npm run preview
+
+# Quality
+npm run lint
+npm run lint:fix
+npm run format
+npm run format:check
+npm run typecheck
 ```
 
-## 🎨 Color Palette
+## ✨ Features
+- Japanese‑inspired painterly design with soft, organic elements
+- 3D floating motion with realistic depth and shadows
+- Staggered hero entrance and scroll‑in animations
+- Mobile‑first responsive layout and accessible semantics
 
+## 🎨 Brand Colors
 ```css
---lxk-sage: #8FA68E      /* Primary brand color */
---lxk-mint: #B8D4B8      /* Light accent */
---lxk-peach: #E6A866     /* Warm accent */
---lxk-coral: #D4947A     /* Text accent */
---lxk-cream: #F5F3F0     /* Background */
---lxk-warm-gray: #5D5A56 /* Text color */
+--lxk-sage: #8FA68E;      /* Primary */
+--lxk-mint: #B8D4B8;      /* Light accent */
+--lxk-peach: #E6A866;     /* Warm accent */
+--lxk-coral: #D4947A;     /* Text accent */
+--lxk-cream: #F5F3F0;     /* Background */
+--lxk-warm-gray: #5D5A56; /* Text */
+--lxk-soft-teal: #7BA098; /* Secondary */
 ```
-
-## 🎭 Custom Animations
-
-### **3D Floating Circles**
-- 4 unique animation patterns with different timing cycles
-- 3D transformations with realistic depth and shadows
-- Organic movement patterns that feel natural and alive
-
-### **Hero Section Animations**
-- Staggered entrance with carefully timed delays
-- Smooth fade-in effects and scale animations
-- Total duration: ~1.2 seconds for complete reveal
-
-## 📱 Responsive Design
-
-- **Mobile**: < 768px (optimized touch interfaces)
-- **Tablet**: 768px - 1024px (balanced layout)
-- **Desktop**: > 1024px (full experience)
 
 ## 🌐 Deployment
+- Firebase project: `lxk42-studio`
+- Build: `npm run build` inside `lxk42-website/`
+- Deploy: via GitHub Actions or `firebase deploy` (ensure correct project)
 
-The project uses Firebase Hosting with automatic deployment:
+Notes
+- Public directory is `dist/` (Vite output).
+- `.firebaserc` and `firebase.json` are at repo root.
 
-- **Automatic deployment** on push to `master` branch
-- **Preview deployments** for pull requests
-- **Custom domain support** for www.lxk42.sg
-
-## 📋 Project Structure
-
-```
-lxk42-website/
-├── src/
-│   ├── style.css          # Main CSS with custom animations
-│   └── main.js            # JavaScript functionality
-├── dist/                  # Production build output
-├── .github/workflows/     # GitHub Actions
-├── index.html             # Single-page application
-├── tailwind.config.js     # Custom color palette
-├── firebase.json          # Firebase configuration
-├── package.json           # Dependencies and scripts
-└── README.md             # This documentation
-```
+## 📚 Additional Docs
+- CLAUDE.md — Strategic architecture, UX/content, and development guidelines
+- WARP.md — Dev workflow and environment notes
+- REFERENCE_STRUCTURE.md — External site structure used for reference
+- LEGACY.md — Notes on legacy root scaffold
 
 ## 🤝 Contributing
-
-This is a private project for Light & Kaki Studio. For suggestions or improvements, please create an issue or contact the team.
+Private project for Light & Kaki Studio. For suggestions, open an issue or contact the team.
 
 ## 📄 License
-
-Private project for Light & Kaki Studio. All rights reserved.
-
----
-
-**Built with ❤️ and friendship at Light & Kaki Studio**
-
-*Where every pixel is crafted with care, and every line of code tells a story of collaboration.*
+All rights reserved. © Light & Kaki Studio

@@ -2,6 +2,28 @@
 
 This file provides guidance to Claude AI when working with the Light & Kaki Studio website project.
 
+## AI Collaboration Framework
+
+### Claude's Strengths & Responsibilities
+- **Architecture & Planning**: High-level design decisions, component structure, technical strategy
+- **Content & UX**: Brand messaging, user experience optimization, accessibility considerations
+- **Code Quality**: Clean architecture, maintainable patterns, performance optimization
+- **Documentation**: Technical documentation, API specs, architectural decisions
+- **Problem Solving**: Complex debugging, integration issues, architectural refactoring
+
+### Codex's Strengths & Responsibilities  
+- **Implementation**: Fast, accurate code generation and completion
+- **Syntax & Patterns**: Language-specific idioms, framework conventions, boilerplate code
+- **Refactoring**: Mechanical code transformations, variable renaming, structure changes
+- **Testing**: Unit test generation, test case scenarios, mock implementations
+- **Configuration**: Config file setup, build tool configuration, dependency management
+
+### Collaboration Guidelines
+- **Claude**: Focus on "what" and "why" - architectural decisions and strategic direction
+- **Codex**: Focus on "how" - specific implementation details and code generation
+- **Handoffs**: Claude provides detailed specifications; Codex implements with minimal guidance
+- **Reviews**: Claude reviews Codex's implementations for architecture compliance
+
 ## Project Context
 
 ### Brand Identity
@@ -20,29 +42,52 @@ This file provides guidance to Claude AI when working with the Light & Kaki Stud
 ## Technical Architecture
 
 ### Core Technologies
+- **Framework**: Svelte 5 with TypeScript support
 - **Build System**: Vite for fast development and optimized production builds
 - **Styling**: Tailwind CSS with custom color palette and component classes
-- **JavaScript**: Vanilla ES6+ for lightweight, framework-free implementation
+- **Code Quality**: ESLint + Prettier with TypeScript integration
 - **Hosting**: Firebase Hosting with automatic GitHub Actions deployment
 - **Version Control**: GitHub repository at mingkey88/lxk42-website
 
-### Key Files Structure
+### Current Project Structure
 ```
-├── src/style.css          # Custom animations, painterly effects, component classes
-├── src/main.js            # Mobile menu, scroll animations, intersection observer
-├── index.html             # Single-page application with all content
-├── tailwind.config.js     # Custom color palette and plugin configuration
-├── firebase.json          # Hosting configuration pointing to dist/
-└── package.json           # Vite scripts and Tailwind dependencies
+lxk42-website/
+├── src/
+│   ├── components/          # Svelte components (Header, Hero, About, etc.)
+│   ├── assets/             # Static assets (images, icons)
+│   ├── App.svelte          # Root component with scroll animations
+│   ├── main.js             # Application entry point
+│   └── style.css           # Custom CSS, animations, Tailwind components
+├── index.html              # HTML entry point with Svelte mounting
+├── vite.config.js          # Vite configuration with Svelte plugin
+├── svelte.config.js        # Svelte-specific configuration
+├── tailwind.config.js      # Custom color palette and configuration
+├── tsconfig.json           # TypeScript configuration
+├── eslint.config.js        # ESLint rules and TypeScript integration
+├── .prettierrc             # Code formatting rules
+├── firebase.json           # Hosting configuration
+└── package.json            # Dependencies and scripts
 ```
 
 ## Development Guidelines
 
 ### Code Style Preferences
-- **CSS**: Use Tailwind utility classes with custom components defined in @layer components
-- **JavaScript**: Vanilla ES6+ with modern browser APIs, no external dependencies
-- **HTML**: Semantic structure with accessibility in mind, single-page application
-- **Animations**: Pure CSS with custom keyframes, avoid JavaScript-heavy animation libraries
+- **Svelte**: Use composition API, reactive statements ($:), and component-based architecture
+- **TypeScript**: Gradually typed - use TypeScript where it adds value, plain JS for simple cases
+- **CSS**: Tailwind utility classes with custom components in @layer components
+- **Styling**: Scoped styles in .svelte files, global styles in src/style.css
+- **Animations**: CSS transforms with Svelte's built-in transitions where appropriate
+
+### Development Commands
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint checks
+npm run lint:fix     # Auto-fix ESLint issues
+npm run format       # Format code with Prettier
+npm run typecheck    # TypeScript type checking
+```
 
 ### Color System
 ```css
@@ -179,20 +224,80 @@ lxk-soft-teal: #7BA098 /* Secondary brand color */
 - Verify .firebaserc contains correct project ID
 - Check that build succeeds before deployment
 
+## Svelte Component Architecture
+
+### Component Organization
+- **Atomic Components**: Small, reusable UI elements (buttons, inputs, cards)
+- **Layout Components**: Header, Footer, navigation - structural elements
+- **Page Sections**: Hero, About, Services, Contact - main content blocks
+- **Utility Components**: Modals, tooltips, animations - functional elements
+
+### Svelte Best Practices
+- Use `bind:` for two-way data binding sparingly
+- Leverage reactive statements `$:` for computed values
+- Keep component props interface clean and well-typed
+- Use context API for deeply nested prop passing
+- Prefer composition over inheritance for component design
+
+### State Management
+- Component state for local UI state
+- Context API for shared state across components
+- Reactive variables for computed values
+- Event dispatching for parent-child communication
+
+## AI Workflow Optimization
+
+### For Claude (Strategic Tasks)
+1. **Architecture Planning**: Design component hierarchy, data flow, API structure
+2. **Content Strategy**: Brand messaging, UX flow, user journey mapping
+3. **Performance Analysis**: Bundle analysis, Core Web Vitals, optimization strategies
+4. **Code Review**: Architecture patterns, maintainability, scalability concerns
+
+### For Codex (Implementation Tasks)
+1. **Component Creation**: Generate Svelte components from specifications
+2. **Style Implementation**: Convert designs to Tailwind CSS classes
+3. **Logic Implementation**: Write component logic, event handlers, reactive statements
+4. **Testing**: Generate unit tests, integration tests, type definitions
+
+### Handoff Format (Claude → Codex)
+```typescript
+// Component Specification Template
+interface ComponentSpec {
+  name: string;
+  props: Record<string, Type>;
+  events: string[];
+  functionality: string[];
+  styling: string[];
+  accessibility: string[];
+}
+```
+
 ## When Making Changes
 
 ### Always Consider
 1. **Brand Consistency**: Does this align with the Light & Kaki philosophy?
 2. **Cultural Authenticity**: Is the Singapore context respected?
-3. **Performance Impact**: Will this affect loading speed or animation smoothness?
-4. **Mobile Experience**: How does this work on smaller screens?
-5. **Accessibility**: Can all users access this feature?
+3. **Component Reusability**: Can this be broken into reusable components?
+4. **Performance Impact**: Will this affect loading speed or animation smoothness?
+5. **Mobile Experience**: How does this work on smaller screens?
+6. **Accessibility**: Can all users access this feature?
+7. **Type Safety**: Are TypeScript types properly defined where needed?
 
 ### Testing Checklist
-- Test on multiple screen sizes and devices
-- Verify animations work smoothly across browsers
-- Check color contrast ratios
-- Validate HTML and CSS
-- Test mobile navigation and touch interactions
+- Run `npm run typecheck` for TypeScript validation
+- Run `npm run lint` for code quality checks
+- Test component in isolation and in context
+- Verify responsive design across breakpoints
+- Check color contrast ratios for accessibility
+- Test keyboard navigation and screen reader compatibility
+- Validate animations work smoothly across browsers
 
-This project represents a unique blend of Japanese aesthetic sensibilities with Singapore cultural context, built on modern web technologies while maintaining excellent performance and accessibility standards.
+### Code Quality Standards
+- Follow ESLint configuration for consistency
+- Use Prettier for automatic formatting
+- Write self-documenting code with clear variable names
+- Add TypeScript types for complex props and state
+- Keep components under 200 lines when possible
+- Write unit tests for complex logic
+
+This project represents a unique blend of Japanese aesthetic sensibilities with Singapore cultural context, built on modern Svelte architecture while maintaining excellent performance and accessibility standards.
