@@ -11,89 +11,118 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="animate-on-scroll">
-                <div class="bg-white rounded-3xl p-8 shadow-xl soft-shadow">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+            <!-- Picture Placeholder -->
+            <div class="animate-on-scroll lg:order-1 md:order-1">
+                <div class="relative">
+                    <div class="absolute -inset-3 bg-gradient-to-r from-lxk-sage/30 to-lxk-peach/30 rounded-3xl blur-lg"></div>
+                    <div class="relative bg-lxk-sage/10 rounded-3xl p-6 border border-lxk-sage/20">
+                        <div class="w-full h-80 bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-2xl flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl text-lxk-sage mb-4">🤝</div>
+                                <p class="text-lxk-sage font-semibold text-lg">Let's Connect</p>
+                                <p class="text-gray-600 text-sm mt-2">Your creative kakis at work</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-center text-sm text-lxk-coral font-medium italic">
+                        Future: Studio or meeting photo
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="animate-on-scroll lg:order-2 md:order-3">
+                <div class="bg-white rounded-3xl p-6 shadow-xl soft-shadow h-full">
                     <h3 class="text-2xl font-bold text-lxk-warm-gray mb-6">Get In Touch</h3>
-                    <div class="space-y-6">
+                    <div class="space-y-5">
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-lxk-sage rounded-full flex items-center justify-center">
-                                <span class="text-white text-xl">📧</span>
+                            <div class="w-10 h-10 bg-lxk-sage rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg">📧</span>
                             </div>
                             <div>
-                                <p class="font-medium text-lxk-warm-gray">Email</p>
-                                <a href="mailto:mingjie@lxk42.sg" class="text-lxk-sage hover:text-lxk-soft-teal transition-colors">
+                                <p class="font-medium text-lxk-warm-gray text-sm">Email</p>
+                                <a href="mailto:mingjie@lxk42.sg" class="text-lxk-sage hover:text-lxk-soft-teal transition-colors text-sm">
                                     mingjie@lxk42.sg
                                 </a>
                             </div>
                         </div>
                         
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-lxk-peach rounded-full flex items-center justify-center">
-                                <span class="text-white text-xl">📞</span>
+                            <div class="w-10 h-10 bg-lxk-peach rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg">📞</span>
                             </div>
                             <div>
-                                <p class="font-medium text-lxk-warm-gray">Phone</p>
-                                <a href="tel:+6598278695" class="text-lxk-sage hover:text-lxk-soft-teal transition-colors">
+                                <p class="font-medium text-lxk-warm-gray text-sm">Phone</p>
+                                <a href="tel:+6598278695" class="text-lxk-sage hover:text-lxk-soft-teal transition-colors text-sm">
                                     +65 9827 8695
                                 </a>
                             </div>
                         </div>
                         
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-lxk-coral rounded-full flex items-center justify-center">
-                                <span class="text-white text-xl">🇸🇬</span>
+                            <div class="w-10 h-10 bg-lxk-coral rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-lg">🇸🇬</span>
                             </div>
                             <div>
-                                <p class="font-medium text-lxk-warm-gray">Location</p>
-                                <p class="text-gray-600">Singapore</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="animate-on-scroll">
-                <div class="bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-3xl p-8 text-white">
-                    <h3 class="text-2xl font-bold mb-6">Why Choose Light & Kaki?</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <span class="text-2xl">🎯</span>
-                            <div>
-                                <h4 class="font-semibold mb-1">Tailored Solutions</h4>
-                                <p class="text-white/80 text-sm">Every project is unique. We craft solutions specifically for your needs and goals.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <span class="text-2xl">⚡</span>
-                            <div>
-                                <h4 class="font-semibold mb-1">Fast & Efficient</h4>
-                                <p class="text-white/80 text-sm">We deliver quality work on time, every time. No compromises on deadlines.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <span class="text-2xl">💡</span>
-                            <div>
-                                <h4 class="font-semibold mb-1">Creative Excellence</h4>
-                                <p class="text-white/80 text-sm">Award-winning design and development that makes your brand stand out.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <span class="text-2xl">🤝</span>
-                            <div>
-                                <h4 class="font-semibold mb-1">True Partnership</h4>
-                                <p class="text-white/80 text-sm">We're not just vendors - we're your creative kakis, invested in your success.</p>
+                                <p class="font-medium text-lxk-warm-gray text-sm">Location</p>
+                                <p class="text-gray-600 text-sm">Singapore</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-8 pt-8 border-t border-white/20">
-                        <a href="mailto:mingjie@lxk42.sg" class="bg-white text-lxk-sage px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors inline-block">
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <a href="mailto:mingjie@lxk42.sg" class="bg-lxk-sage text-white px-6 py-3 rounded-full font-medium hover:bg-lxk-soft-teal transition-colors inline-block text-sm">
                             Start Our Journey 🚀
                         </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why Choose Us -->
+            <div class="animate-on-scroll lg:order-3 md:order-2 md:col-span-2 lg:col-span-1">
+                <div class="bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-3xl p-6 text-white h-full">
+                    <h3 class="text-xl font-bold mb-5">Why Choose Light & Kaki?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl flex-shrink-0">🎯</span>
+                            <div>
+                                <h4 class="font-semibold mb-1 text-sm">Tailored Solutions</h4>
+                                <p class="text-white/80 text-xs">Unique solutions crafted for your specific needs and goals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl flex-shrink-0">⚡</span>
+                            <div>
+                                <h4 class="font-semibold mb-1 text-sm">Fast & Efficient</h4>
+                                <p class="text-white/80 text-xs">Quality work delivered on time, every time.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl flex-shrink-0">💡</span>
+                            <div>
+                                <h4 class="font-semibold mb-1 text-sm">Creative Excellence</h4>
+                                <p class="text-white/80 text-xs">Design that makes your brand stand out.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl flex-shrink-0">🤝</span>
+                            <div>
+                                <h4 class="font-semibold mb-1 text-sm">True Partnership</h4>
+                                <p class="text-white/80 text-xs">Your creative kakis, invested in your success.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl flex-shrink-0">🇸🇬</span>
+                            <div>
+                                <h4 class="font-semibold mb-1 text-sm">Local Understanding</h4>
+                                <p class="text-white/80 text-xs">Deep roots in Singapore's business culture.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

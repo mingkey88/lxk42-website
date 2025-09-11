@@ -28,7 +28,7 @@
 </a>
 
 <!-- Header/Navigation -->
-<header class="fixed top-0 w-full bg-white shadow-sm z-50">
+<header class="fixed top-0 w-full bg-lxk-cream/80 backdrop-blur-md shadow-sm z-50">
     <nav class="container-custom">
         <div class="flex items-center justify-between h-16 md:h-20">
             <!-- Logo -->
@@ -71,15 +71,12 @@
                 </div>
             </div>
 
-            <!-- Contact Info & CTA -->
-            <div class="hidden md:flex items-center space-x-4">
+            <!-- Contact Info -->
+            <div class="hidden md:flex items-center">
                 <div class="text-right">
                     <p class="text-sm text-gray-600">Get In Touch</p>
-                    <a href="tel:+6598278695" class="text-lxk-sage font-medium">+65 9827 8695</a>
+                    <a href="tel:+6598278695" class="text-lxk-sage font-medium hover:text-lxk-soft-teal transition-colors">+65 9827 8695</a>
                 </div>
-                <a href="#/contact" class="bg-lxk-sage text-white px-6 py-3 rounded-full hover:bg-lxk-soft-teal transition-colors font-medium">
-                    Start Journey 🌱
-                </a>
             </div>
 
             <!-- Mobile menu button -->
@@ -96,7 +93,7 @@
 
         <!-- Mobile Navigation -->
         <div class="md:hidden {mobileMenuOpen ? '' : 'hidden'}" role="navigation" aria-label="Mobile menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-lxk-cream/95 backdrop-blur-md border-t border-lxk-sage/10">
                 <a href="#/about" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About</a>
                 <a href="#/web-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
                 <a href="#/web-app" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web App Dev</a>
@@ -106,11 +103,6 @@
                 <a href="#/motion-graphics" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Motion Graphics & Animation</a>
                 <a href="#/portfolio" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
                 <a href="#/contact" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
-                <div class="px-3 py-2">
-                    <a href="#/contact" class="bg-lxk-sage text-white px-6 py-3 rounded-full hover:bg-lxk-soft-teal transition-colors font-medium inline-block">
-                        Start Journey 🌱
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
