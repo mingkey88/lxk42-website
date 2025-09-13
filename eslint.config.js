@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import svelte from 'eslint-plugin-svelte';
 import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
+import globals from 'globals';
 
 export default [
   // Ignore build output, deps, legacy duplicates, and config files
@@ -79,11 +80,8 @@ export default [
     files: ['src/**/*.{js,ts,svelte}'],
     languageOptions: {
       globals: {
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        location: 'readonly',
-        IntersectionObserver: 'readonly'
+        ...globals.browser,
+        gtag: 'readonly'
       }
     }
   }

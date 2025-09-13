@@ -5,18 +5,24 @@
     mobileMenuOpen = !mobileMenuOpen;
   }
 
-  function smoothScroll(event) {
-    event.preventDefault();
-    const targetId = event.target.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-    // Close mobile menu if open
-    mobileMenuOpen = false;
+  // Removed unused smoothScroll function
+
+  // Prefetch page components on hover to speed up navigation
+  const prefetchMap = {
+    '/web-design': () => import('../pages/WebDesign.svelte'),
+    '/web-app': () => import('../pages/WebApp.svelte'),
+    '/digital-marketing': () => import('../pages/DigitalMarketing.svelte'),
+    '/branding': () => import('../pages/Branding.svelte'),
+    '/graphic-design': () => import('../pages/GraphicDesign.svelte'),
+    '/motion-graphics': () => import('../pages/MotionGraphics.svelte'),
+    '/portfolio': () => import('../pages/Portfolio.svelte')
+  };
+  function prefetch(path) {
+    const fn = prefetchMap[path];
+    if (fn) fn();
   }
+  import ChevronDown from './icons/ChevronDown.svelte';
+  import MenuIcon from './icons/Menu.svelte';
 </script>
 
 <!-- Skip to main content link for accessibility -->
@@ -49,7 +55,7 @@
                             aria-haspopup="true"
                             aria-label="Services menu"
                         >
-                            Services <i class="fas fa-chevron-down ml-1 text-xs" aria-hidden="true"></i>
+                            Services <ChevronDown className="ml-1 w-3 h-3" />
                         </button>
                         <div 
                             class="absolute left-0 mt-2 w-64 bg-lxk-cream rounded-2xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 soft-shadow"
@@ -57,16 +63,16 @@
                             aria-label="Services submenu"
                         >
                             <div class="py-3">
-                                <a href="#/web-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web Design & Development</a>
-                                <a href="#/web-app" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web App Development</a>
-                                <a href="#/digital-marketing" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Digital Marketing</a>
-                                <a href="#/branding" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Branding Solutions</a>
-                                <a href="#/graphic-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Graphic Design</a>
-                                <a href="#/motion-graphics" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Motion Graphics & Animation</a>
+                                <a href="#/web-design" on:mouseenter={() => prefetch('/web-design')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web Design & Development</a>
+                                <a href="#/web-app" on:mouseenter={() => prefetch('/web-app')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web App Development</a>
+                                <a href="#/digital-marketing" on:mouseenter={() => prefetch('/digital-marketing')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Digital Marketing</a>
+                                <a href="#/branding" on:mouseenter={() => prefetch('/branding')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Branding Solutions</a>
+                                <a href="#/graphic-design" on:mouseenter={() => prefetch('/graphic-design')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Graphic Design</a>
+                                <a href="#/motion-graphics" on:mouseenter={() => prefetch('/motion-graphics')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Motion Graphics & Animation</a>
                             </div>
                         </div>
                     </div>
-                    <a href="#/portfolio" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                    <a href="#/portfolio" on:mouseenter={() => prefetch('/portfolio')} class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
                     <a href="#/contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
                 </div>
             </div>
@@ -86,7 +92,7 @@
                     class="text-lxk-warm-gray hover:text-lxk-sage transition-colors"
                     aria-label="Toggle mobile menu"
                 >
-                    <i class="fas fa-bars text-xl"></i>
+                    <MenuIcon className="w-6 h-6" />
                 </button>
             </div>
         </div>

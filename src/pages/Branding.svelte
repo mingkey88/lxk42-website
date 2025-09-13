@@ -1,4 +1,6 @@
 <script>
+  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+  import BrandPersonalityQuiz from '../components/tools/BrandPersonalityQuiz.svelte';
 </script>
 
 <section class="section-padding painterly-bg">
@@ -21,6 +23,11 @@
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Guidelines & Assets</h3>
         <p class="text-gray-600">Clear brand guidelines, templates, and components for consistency at scale.</p>
       </div>
+    </div>
+
+    <!-- Brand Personality Quiz -->
+    <div class="mt-16 animate-on-scroll">
+      <BrandPersonalityQuiz />
     </div>
 
     <!-- Process Visualization -->
@@ -564,9 +571,23 @@
       </div>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="#/contact" class="btn-primary">Shape Your Brand with Us</a>
-    </div>
   </div>
 </section>
+
+<!-- Enhanced CTA Section -->
+<EnhancedCTA
+  service="branding"
+  primaryTitle="Ready to Transform Your Brand?"
+  primaryDescription="Book a free brand strategy session to discover your unique positioning and identity direction"
+  primaryCTA="Book Free Brand Strategy Session →"
+  secondaryTitle="Discover Your Brand DNA First?"
+  secondaryDescription="Take our brand personality assessment and get personalized recommendations"
+  leadMagnetTitle="Brand Personality Assessment for Singapore Businesses"
+  leadMagnetBenefits={[
+    'Interactive brand personality quiz with instant results',
+    'Singapore market positioning strategies and examples',
+    'Brand voice and messaging templates for local audiences',
+    'Complete brand identity checklist and design briefs'
+  ]}
+/>
 

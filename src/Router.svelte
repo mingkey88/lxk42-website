@@ -1,15 +1,7 @@
 <script>
   import { onMount, tick } from 'svelte';
-  import Home from './pages/Home.svelte';
-  import WebDesign from './pages/WebDesign.svelte';
-  import WebApp from './pages/WebApp.svelte';
-  import Portfolio from './pages/Portfolio.svelte';
-  import DigitalMarketing from './pages/DigitalMarketing.svelte';
-  import Branding from './pages/Branding.svelte';
-  import GraphicDesign from './pages/GraphicDesign.svelte';
-  import MotionGraphics from './pages/MotionGraphics.svelte';
-
-  let route = '/';
+  import { findRoute } from './routes.js';
+  let Component = null;
   let scrollTarget = '';
 
   function parseRoute() {
@@ -19,12 +11,14 @@
   }
 
   async function navigate() {
-    route = parseRoute();
+    let path = parseRoute();
+
     // Support sub-routes that map to Home with scroll
     const homeAnchors = new Set(['/about', '/contact', '/services']);
-    if (homeAnchors.has(route)) {
-      scrollTarget = route.slice(1);
-      route = '/';
+    if (homeAnchors.has(path)) {
+      scrollTarget = path.slice(1);
+      path = '/';
+      await loadRoute(path);
       await tick();
       const el = document.getElementById(scrollTarget);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -32,12 +26,31 @@
     }
 
     // Route aliasing (backward compatibility)
-    if (route === '/animation') {
-      route = '/motion-graphics'
+    if (path === '/animation') {
+      path = '/motion-graphics';
     }
+
+    await loadRoute(path);
 
     // Default: scroll to top on route change
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  async function loadRoute(path) {
+    const route = findRoute(path);
+    try {
+      const mod = await route.load();
+      Component = mod.default;
+      if (route.title && typeof document !== 'undefined') {
+        document.title = route.title;
+      }
+    } catch {
+      // Fallback to home on load error
+      const home = findRoute('/');
+      const mod = await home.load();
+      Component = mod.default;
+      document.title = home.title || document.title;
+    }
   }
 
   onMount(() => {
@@ -47,22 +60,8 @@
   });
 </script>
 
-{#if route === '/' || route === ''}
-  <Home />
-{:else if route === '/web-design'}
-  <WebDesign />
-{:else if route === '/web-app'}
-  <WebApp />
-{:else if route === '/portfolio'}
-  <Portfolio />
-{:else if route === '/digital-marketing'}
-  <DigitalMarketing />
-{:else if route === '/branding'}
-  <Branding />
-{:else if route === '/graphic-design'}
-  <GraphicDesign />
-{:else if route === '/motion-graphics'}
-  <MotionGraphics />
+{#if Component}
+  <svelte:component this={Component} />
 {:else}
-  <Home />
+  <!-- Optionally, add a loading skeleton here -->
 {/if}

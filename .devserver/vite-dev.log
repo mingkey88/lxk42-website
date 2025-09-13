@@ -1,0 +1,20 @@
+
+> lxk42-website@1.0.0 dev
+> vite --host 0.0.0.0
+
+[2m10:16:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
+
+  [32m[1mVITE[22m v7.1.5[39m  [2mready in [0m[1m731[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.6:[1m5173[22m/[39m
+10:16:21 pm [vite-plugin-svelte] src/pages/WebApp.svelte:260:12 A form label must be associated with a control
+https://svelte.dev/e/a11y_label_has_associated_control
+[2m10:36:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
+[2m10:40:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
+[2m10:41:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
+[2m10:44:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
+[2m10:44:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
+[2m10:44:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
+[2m10:47:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Contact.svelte, /src/style.css[22m
+^C

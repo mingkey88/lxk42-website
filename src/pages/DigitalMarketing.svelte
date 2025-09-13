@@ -1,4 +1,6 @@
 <script>
+  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+  import MarketingROICalculator from '../components/tools/MarketingROICalculator.svelte';
 </script>
 
 <section class="section-padding painterly-bg">
@@ -67,6 +69,11 @@
       <p class="text-center text-gray-500 text-sm mt-6 italic">
         *Results vary by industry and campaign goals. We'll set realistic expectations together.
       </p>
+    </div>
+
+    <!-- ROI Calculator -->
+    <div class="mt-16 animate-on-scroll">
+      <MarketingROICalculator />
     </div>
 
     <!-- Pricing Structure -->
@@ -446,9 +453,23 @@
       </div>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="#/contact" class="btn-primary">Plan Your Campaign Together</a>
-    </div>
   </div>
 </section>
+
+<!-- Enhanced CTA Section -->
+<EnhancedCTA
+  service="digital-marketing"
+  primaryTitle="Ready to Grow Your Business?"
+  primaryDescription="Book a free marketing audit to discover untapped opportunities and create your growth plan"
+  primaryCTA="Book Free Marketing Audit →"
+  secondaryTitle="Want ROI Projections?"
+  secondaryDescription="Download our ROI calculator and see potential returns from digital marketing"
+  leadMagnetTitle="Singapore Digital Marketing ROI Calculator"
+  leadMagnetBenefits={[
+    'Interactive ROI calculator with Singapore benchmarks',
+    'Channel-specific performance predictions and budgets',
+    'Local market insights and competitor analysis templates',
+    '90-day marketing launch plan for Singapore businesses'
+  ]}
+/>
 

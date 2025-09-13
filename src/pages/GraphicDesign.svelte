@@ -1,4 +1,5 @@
 <script>
+  import DesignPackageBuilder from '../components/tools/DesignPackageBuilder.svelte';
 </script>
 
 <section class="section-padding painterly-bg">
@@ -21,6 +22,11 @@
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Print & Collateral</h3>
         <p class="text-gray-600">Brochures, posters, and event materials with clean layouts and friendly typography.</p>
       </div>
+    </div>
+
+    <!-- Design Package Builder -->
+    <div class="mt-16 animate-on-scroll">
+      <DesignPackageBuilder />
     </div>
 
     <div class="mt-16 grid md:grid-cols-2 gap-8">

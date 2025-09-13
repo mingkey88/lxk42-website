@@ -1,17 +1,26 @@
 <script>
+  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+
   let selectedComplexity = 'mvp';
-  let includesDesign = true;
+  // Design is included in base packages
   let includesIntegrations = false;
   let includesMobile = false;
+
+  // Derived values (declare before reactive assignments for linting)
+  let basePrice;
+  // designCost removed (already included)
+  let integrationCost;
+  let mobileCost;
+  let totalEstimate;
+  let timelineWeeks;
   
   $: basePrice = selectedComplexity === 'mvp' ? 8000 : 
                 selectedComplexity === 'full' ? 20000 : 50000;
   
-  $: designCost = includesDesign ? 0 : 0; // Already included
   $: integrationCost = includesIntegrations ? 3000 : 0;
   $: mobileCost = includesMobile ? 8000 : 0;
   
-  $: totalEstimate = basePrice + designCost + integrationCost + mobileCost;
+  $: totalEstimate = basePrice + integrationCost + mobileCost;
   $: timelineWeeks = selectedComplexity === 'mvp' ? '4-8' :
                     selectedComplexity === 'full' ? '8-16' : '16-24';
 </script>
@@ -257,8 +266,8 @@
       <div class="grid md:grid-cols-2 gap-6">
         <div class="space-y-4">
           <div>
-            <label class="block text-lxk-warm-gray font-medium mb-2">Project Type</label>
-            <select bind:value={selectedComplexity} class="w-full p-3 rounded-lg border border-lxk-sage/30 focus:ring-2 focus:ring-lxk-sage focus:border-transparent">
+            <label for="project-type" class="block text-lxk-warm-gray font-medium mb-2">Project Type</label>
+            <select id="project-type" bind:value={selectedComplexity} class="w-full p-3 rounded-lg border border-lxk-sage/30 focus:ring-2 focus:ring-lxk-sage focus:border-transparent">
               <option value="mvp">MVP Launch</option>
               <option value="full">Full Platform</option>
               <option value="enterprise">Enterprise Solution</option>
@@ -501,8 +510,22 @@
       </div>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="#/contact" class="btn-primary">Discuss Your Web App</a>
-    </div>
   </div>
 </section>
+
+<!-- Enhanced CTA Section -->
+<EnhancedCTA
+  service="web-app"
+  primaryTitle="Ready to Build Your Web App?"
+  primaryDescription="Book a free technical consultation to discuss your features, timeline, and custom requirements"
+  primaryCTA="Book Free Tech Consultation →"
+  secondaryTitle="Want to Estimate First?"
+  secondaryDescription="Download our comprehensive planning guide with cost breakdowns and technical insights"
+  leadMagnetTitle="Web App Development Planning Guide"
+  leadMagnetBenefits={[
+    'Feature specification templates and user story formats',
+    'Technical stack recommendations for Singapore market',
+    'Cost breakdown calculators and timeline estimators',
+    'MVP vs Full Platform decision framework'
+  ]}
+/>

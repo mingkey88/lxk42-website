@@ -1,8 +1,10 @@
 <script>
   import { projects } from '../data/portfolio.js';
-  
+  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+  import WebDesignCalculator from '../components/tools/WebDesignCalculator.svelte';
+
   // Filter projects relevant to web design
-  const relevantProjects = projects.filter(project => 
+  const relevantProjects = projects.filter(project =>
     project.tags.includes('web design') || project.tags.includes('ecommerce')
   );
 </script>
@@ -48,6 +50,11 @@
           <li>Room to grow with your business</li>
         </ul>
       </div>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="mt-16 animate-on-scroll">
+      <WebDesignCalculator />
     </div>
 
     <!-- Pricing Structure -->
@@ -286,12 +293,12 @@
     <div class="mt-16 animate-on-scroll">
       <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">More Recent Projects</h3>
       <div class="grid md:grid-cols-2 gap-6">
-        {#each relevantProjects.slice(0, 2) as project}
+        {#each relevantProjects.slice(0, 2) as project (project.id)}
           <div class="painterly-card p-6 hover:shadow-xl transition-shadow duration-300">
             <h4 class="text-xl font-semibold text-lxk-warm-gray mb-3">{project.title}</h4>
             <p class="text-gray-600 mb-4">{project.summary}</p>
             <div class="flex flex-wrap gap-2">
-              {#each project.tags as tag}
+              {#each project.tags as tag (tag)}
                 <span class="px-3 py-1 bg-lxk-mint/20 text-lxk-sage text-sm rounded-full">{tag}</span>
               {/each}
             </div>
@@ -345,8 +352,22 @@
       </div>
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="#/contact" class="btn-primary">Start Your Website Journey</a>
-    </div>
   </div>
 </section>
+
+<!-- Enhanced CTA Section -->
+<EnhancedCTA
+  service="web-design"
+  primaryTitle="Ready to Build Your Dream Website?"
+  primaryDescription="Book a free consultation to discuss your vision, goals, and how we can bring them to life"
+  primaryCTA="Book Free Website Consultation →"
+  secondaryTitle="Want to Plan First?"
+  secondaryDescription="Download our comprehensive planning guide used by 200+ Singapore businesses"
+  leadMagnetTitle="Website Planning Toolkit for Singapore Businesses"
+  leadMagnetBenefits={[
+    'Complete project scope template with budget estimates',
+    '15-point website checklist from Singapore experts',
+    'Real examples from local successful businesses',
+    'Content planning worksheets and wireframe templates'
+  ]}
+/>

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
-  import Hero from '../components/Hero.svelte';
+  import InteractiveHero from '../components/InteractiveHero.svelte';
+  import SocialProof from '../components/SocialProof.svelte';
   import About from '../components/About.svelte';
   import WhyWorkWithUs from '../components/WhyWorkWithUs.svelte';
   import WorkProcess from '../components/WorkProcess.svelte';
@@ -27,12 +28,13 @@
 </script>
 
 <main id="main-content">
-  <Hero />
+  <InteractiveHero />
+  <SocialProof />
   <About />
   <WhyWorkWithUs />
   <WorkProcess />
   <Services />
   <Contact />
-  
+
 </main>
 

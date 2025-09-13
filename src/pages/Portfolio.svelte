@@ -14,13 +14,13 @@
 
     <div class="flex flex-wrap gap-3 justify-center mb-10">
       <button class="px-4 py-2 rounded-full border border-lxk-sage text-lxk-sage hover:bg-lxk-sage hover:text-white transition" on:click={() => activeTag = 'all'}>All</button>
-      {#each tags as t}
+      {#each tags as t (t)}
         <button class="px-4 py-2 rounded-full border border-lxk-sage text-lxk-sage hover:bg-lxk-sage hover:text-white transition" on:click={() => activeTag = t}>{t}</button>
       {/each}
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      {#each filtered as p}
+      {#each filtered as p (p.id)}
         <div class="painterly-card p-6 animate-on-scroll">
           <div class="h-44 bg-lxk-cream rounded-2xl mb-4 soft-shadow flex items-center justify-center text-lxk-warm-gray">
             {#if p.image}
@@ -32,7 +32,7 @@
           <h3 class="text-xl font-semibold text-lxk-warm-gray mb-1">{p.title}</h3>
           <p class="text-gray-600 text-sm mb-3">{p.summary}</p>
           <div class="flex flex-wrap gap-2 text-xs">
-            {#each p.tags as tag}
+            {#each p.tags as tag (tag)}
               <span class="px-2 py-1 rounded-full bg-lxk-mint/30 text-lxk-warm-gray">{tag}</span>
             {/each}
           </div>

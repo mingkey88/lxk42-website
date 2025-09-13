@@ -1,11 +1,15 @@
 <script>
   import Header from './components/Header.svelte';
   import Router from './Router.svelte';
+  import ExitIntentModal from './components/ui/ExitIntentModal.svelte';
   import './style.css';
 </script>
 
 <Header />
-<Router />
+<main id="main-content" tabindex="-1">
+  <Router />
+  <!-- main landmark for skip link accessibility -->
+  </main>
 
 <!-- WhatsApp Floating Button -->
 <div class="fixed bottom-6 right-6 z-50">
@@ -26,6 +30,9 @@
     </div>
   </a>
 </div>
+
+<!-- Exit Intent Modal -->
+<ExitIntentModal />
 
 <style>
   :global(body) {
