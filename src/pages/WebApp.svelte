@@ -1,531 +1,292 @@
 <script>
+  import { projects } from '../data/portfolio.js';
   import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+  import TestimonialCarousel from '../components/ui/TestimonialCarousel.svelte';
+  import CompactFAQ from '../components/ui/CompactFAQ.svelte';
+  import { getTestimonialsByService } from '../data/testimonials.js';
+  import { serviceSchemas, injectStructuredData, updatePageMeta } from '../lib/structuredData.js';
+  import { onMount } from 'svelte';
+  import StatCard from '../components/ui/StatCard.svelte';
+  import BrowserFrame from '../components/ui/BrowserFrame.svelte';
+  import HorizontalProjectRail from '../components/ui/HorizontalProjectRail.svelte';
 
-  let selectedComplexity = 'mvp';
-  // Design is included in base packages
-  let includesIntegrations = false;
-  let includesMobile = false;
+  // Filter projects relevant to web app development
+  const relevantProjects = projects.filter(project =>
+    project.tags.includes('web app') || project.tags.includes('development') || project.tags.includes('full-stack')
+  );
 
-  // Derived values (declare before reactive assignments for linting)
-  let basePrice;
-  // designCost removed (already included)
-  let integrationCost;
-  let mobileCost;
-  let totalEstimate;
-  let timelineWeeks;
-  
-  $: basePrice = selectedComplexity === 'mvp' ? 8000 : 
-                selectedComplexity === 'full' ? 20000 : 50000;
-  
-  $: integrationCost = includesIntegrations ? 3000 : 0;
-  $: mobileCost = includesMobile ? 8000 : 0;
-  
-  $: totalEstimate = basePrice + integrationCost + mobileCost;
-  $: timelineWeeks = selectedComplexity === 'mvp' ? '4-8' :
-                    selectedComplexity === 'full' ? '8-16' : '16-24';
+  // FAQ data for web apps
+  const webAppFAQs = [
+    {
+      question: "What's the difference between MVP and Full Platform?",
+      answer: "MVP focuses on core features to test your concept quickly. Full Platform includes advanced features, integrations, and scalability for established businesses."
+    },
+    {
+      question: "Do you handle both frontend and backend?",
+      answer: "Yes! We're full-stack developers who handle everything from user interface to server setup, databases, and API integrations."
+    },
+    {
+      question: "Can you integrate with existing systems?",
+      answer: "Absolutely. We specialize in connecting web apps with CRMs, payment systems, APIs, and other business tools you already use."
+    },
+    {
+      question: "What tech stack do you use?",
+      answer: "We choose the best technology for your specific needs - React, Svelte, Node.js, Python, or others. We'll explain our recommendations in simple terms."
+    },
+    {
+      question: "Do you provide ongoing maintenance?",
+      answer: "Yes! Web apps need regular updates and monitoring. We offer maintenance packages and are always here when you need support or new features."
+    }
+  ];
+
+  onMount(() => {
+    // SEO optimization
+    updatePageMeta(
+      'Web App Development Singapore | Light & Kaki Studio',
+      'Custom web application development in Singapore. Full-stack solutions with modern frameworks, scalable architecture, and authentic kaki collaboration.'
+    );
+    injectStructuredData(serviceSchemas['web-app'], 'service-web-app');
+  });
 </script>
 
-<section class="section-padding painterly-bg">
+<section class="section-padding painterly-bg relative overflow-hidden">
   <div class="container-custom">
-    <div class="text-center mb-12 animate-on-scroll">
+    <div class="text-center mb-6 md:mb-8 animate-on-scroll relative">
       <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">Web App Development</h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">From idea to interactive product — we build friendly, scalable web apps that people love to use.</p>
+      <!-- painterly hero accents -->
+      <div class="texture-overlay"></div>
+      <div class="paint-splash-1 hidden md:block" style="top:-20px; right:5%;"></div>
+      <div class="paint-splash-2 hidden md:block" style="bottom:-10px; left:0;"></div>
+      <div class="paint-splash-3 hidden md:block" style="top:40%; right:20%;"></div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <!-- anchor mini-nav -->
+    <nav class="mb-12 md:mb-16">
+      <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
+        <li><a href="#webapp-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
+        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
+        <li><a href="#tech-stack" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Tech Stack</a></li>
+        <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Performance</a></li>
+        <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
+        <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div id="webapp-overview" class="grid md:grid-cols-3 gap-8">
       <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow">💻</div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Modern Stack</h3>
-        <p class="text-gray-600">Svelte + TypeScript with performance‑first patterns and accessible UX.</p>
+        <p class="text-gray-700">Svelte + TypeScript with performance‑first patterns and accessible UX.</p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow">🔗</div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">API & Data</h3>
-        <p class="text-gray-600">Clean data flows and well‑structured APIs, with room to grow as your product evolves.</p>
+        <p class="text-gray-700">Clean data flows and well‑structured APIs, with room to grow as your product evolves.</p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow">🛠️</div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Quality & Handover</h3>
-        <p class="text-gray-600">Linting, typechecks, and docs for maintainable apps your team can confidently extend.</p>
+        <p class="text-gray-700">Linting, typechecks, and docs for maintainable apps your team can confidently extend.</p>
       </div>
     </div>
 
     <div class="mt-16 grid md:grid-cols-2 gap-8">
       <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Product Philosophy</h3>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Our Approach</h3>
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
-          <li>Small, lovable releases over big, risky launches</li>
-          <li>Accessibility and performance from day one</li>
-          <li>Telemetry and feedback loops to learn quickly</li>
-          <li>Friendly docs so teams can maintain with confidence</li>
+          <li>Product discovery sessions over kopi to understand user needs ☕</li>
+          <li>MVP development for rapid validation and feedback</li>
+          <li>Iterative development with weekly demos and reviews</li>
+          <li>Full-stack expertise with your development kakis</li>
         </ul>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Capabilities</h3>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">What You Get</h3>
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
-          <li>Auth, dashboards, and role‑based experiences</li>
-          <li>Forms, validation, and state management</li>
-          <li>Integrations with modern APIs and services</li>
-          <li>Automated checks in CI for quality</li>
+          <li>Scalable web application with modern architecture</li>
+          <li>Complete documentation and developer handover</li>
+          <li>Ongoing support and feature development</li>
+          <li>Performance monitoring and optimization</li>
         </ul>
       </div>
     </div>
 
-    <!-- Web App Pricing Packages -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Web App Investment & Packages</h3>
-      
-      <!-- Main Packages -->
-      <div class="grid md:grid-cols-3 gap-8 mb-8">
-        
-        <!-- MVP Launch -->
-        <div class="painterly-card p-8 text-center relative">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-mint px-4 py-1 rounded-full text-lxk-warm-gray text-sm font-medium">
-              Perfect for Startups
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">MVP Launch</h4>
-          <div class="text-4xl font-bold text-lxk-sage mb-6">$8,000</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Core features only (3-5 key functions)</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">User authentication & basic profiles</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Simple admin dashboard</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Mobile-responsive design</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Basic API & database setup</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">30 days post-launch support</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: 4-8 weeks</div>
-        </div>
-
-        <!-- Full Platform -->
-        <div class="painterly-card p-8 text-center relative border-2 border-lxk-peach shadow-xl">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-peach px-4 py-1 rounded-full text-white text-sm font-medium">
-              Most Popular
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">Full Platform</h4>
-          <div class="text-4xl font-bold text-lxk-peach mb-6">$20,000</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Complete feature set (8-12 functions)</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Advanced user roles & permissions</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Comprehensive admin panel</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Payment processing integration</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Email notifications & workflows</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Analytics & reporting dashboard</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">90 days post-launch support</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: 8-16 weeks</div>
-        </div>
-
-        <!-- Enterprise Solution -->
-        <div class="painterly-card p-8 text-center relative">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-coral px-4 py-1 rounded-full text-white text-sm font-medium">
-              Custom Built
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">Enterprise Solution</h4>
-          <div class="text-4xl font-bold text-lxk-coral mb-6">$50,000+</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Unlimited features & complexity</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Multi-tenant architecture</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Advanced security & compliance</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Custom integrations & APIs</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Scalable infrastructure setup</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">6 months ongoing support</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: Custom (16+ weeks)</div>
-        </div>
-      </div>
-
-      <!-- Add-On Services -->
-      <div class="painterly-card p-8 mb-8">
-        <h4 class="text-xl font-semibold text-lxk-sage mb-6 text-center">Popular Add-Ons</h4>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-4">
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Mobile App (iOS + Android)</span>
-              <span class="font-semibold text-lxk-coral">+$8,000</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Advanced API integrations (per service)</span>
-              <span class="font-semibold text-lxk-coral">+$1,500-3,000</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Real-time features (chat, notifications)</span>
-              <span class="font-semibold text-lxk-coral">+$3,500</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Advanced analytics & reporting</span>
-              <span class="font-semibold text-lxk-coral">+$2,500</span>
-            </div>
-          </div>
-          <div class="space-y-4">
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Multi-language support</span>
-              <span class="font-semibold text-lxk-coral">+$2,000</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Advanced security features</span>
-              <span class="font-semibold text-lxk-coral">+$3,000</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Custom workflow automation</span>
-              <span class="font-semibold text-lxk-coral">+$4,000</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Priority support & maintenance</span>
-              <span class="font-semibold text-lxk-coral">$500-1,500/mo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment & Terms -->
-      <div class="bg-lxk-cream/50 rounded-2xl p-6 text-center">
-        <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Investment & Payment Terms</h4>
-        <div class="grid md:grid-cols-3 gap-6 mb-4">
+    <!-- Case Study Preview -->
+    <div id="case-study" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
+      <div class="painterly-card p-8">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <!-- Visual mock -->
           <div>
-            <div class="text-2xl font-bold text-lxk-sage mb-1">30%</div>
-            <div class="text-sm text-gray-600">Project Start</div>
+            <BrowserFrame title="taskmanger-pro.sg">
+              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
+                <!-- simple web app mock layout -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="h-3 w-24 bg-lxk-sage/40 rounded"></div>
+                  <div class="flex gap-2">
+                    <div class="w-6 h-6 bg-lxk-peach/40 rounded"></div>
+                    <div class="w-6 h-6 bg-lxk-coral/40 rounded"></div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mb-4">
+                  <div class="h-20 rounded bg-lxk-sage/20 p-2">
+                    <div class="h-2 w-full bg-lxk-sage/40 rounded mb-2"></div>
+                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
+                  </div>
+                  <div class="h-20 rounded bg-lxk-peach/20 p-2">
+                    <div class="h-2 w-full bg-lxk-peach/40 rounded mb-2"></div>
+                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
+                  </div>
+                  <div class="h-20 rounded bg-lxk-coral/20 p-2">
+                    <div class="h-2 w-full bg-lxk-coral/40 rounded mb-2"></div>
+                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+                <div class="h-2 w-2/3 bg-gray-200 rounded"></div>
+              </div>
+            </BrowserFrame>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-lxk-peach mb-1">40%</div>
-            <div class="text-sm text-gray-600">Milestone Delivery</div>
-          </div>
-          <div>
-            <div class="text-2xl font-bold text-lxk-coral mb-1">30%</div>
-            <div class="text-sm text-gray-600">Launch Complete</div>
-          </div>
-        </div>
-        <p class="text-gray-600 text-sm italic">
-          All prices in SGD. Custom quotes for unique requirements. Flexible payment plans available for qualifying projects! ☕
-        </p>
-      </div>
-    </div>
 
-    <!-- Interactive Calculator (Simplified) -->
-    <div class="mt-12 painterly-card p-6 animate-on-scroll">
-      <h4 class="text-lg font-semibold text-lxk-sage mb-4 text-center">Quick Estimate Calculator</h4>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="space-y-4">
+          <!-- Text + stats -->
           <div>
-            <label for="project-type" class="block text-lxk-warm-gray font-medium mb-2">Project Type</label>
-            <select id="project-type" bind:value={selectedComplexity} class="w-full p-3 rounded-lg border border-lxk-sage/30 focus:ring-2 focus:ring-lxk-sage focus:border-transparent">
-              <option value="mvp">MVP Launch</option>
-              <option value="full">Full Platform</option>
-              <option value="enterprise">Enterprise Solution</option>
-            </select>
-          </div>
-          <div class="space-y-2">
-            <label class="flex items-center space-x-3">
-              <input type="checkbox" bind:checked={includesIntegrations} class="text-lxk-sage focus:ring-lxk-sage rounded">
-              <span class="text-gray-700 text-sm">API Integrations (+$3K)</span>
-            </label>
-            <label class="flex items-center space-x-3">
-              <input type="checkbox" bind:checked={includesMobile} class="text-lxk-sage focus:ring-lxk-sage rounded">
-              <span class="text-gray-700 text-sm">Mobile App (+$8K)</span>
-            </label>
-          </div>
-        </div>
-        <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 rounded-2xl p-6 text-center">
-          <div class="text-3xl font-bold text-lxk-coral mb-2">
-            ${totalEstimate.toLocaleString()}
-          </div>
-          <div class="text-lxk-warm-gray font-medium mb-3">Estimated Investment</div>
-          <div class="text-lg font-semibold text-lxk-sage mb-1">{timelineWeeks} weeks</div>
-          <div class="text-gray-600 text-sm">Expected Timeline</div>
-        </div>
-      </div>
-      <div class="mt-4 text-center">
-        <p class="text-gray-600 text-sm">This is a rough estimate. Let's have a proper kopi session for accurate pricing! ☕</p>
-      </div>
-    </div>
-
-    <!-- Development Process -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Our Development Process</h3>
-      <div class="space-y-8">
-        
-        <!-- Phase 1: Discovery & Planning -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="order-2 md:order-1">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-sage rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">1</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Discovery & Planning</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Week 1-2</div>
+            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
+              Full-Stack Web Application
             </div>
-            <p class="text-gray-600 mb-4">
-              Deep dive kopi sessions to understand your business, users, and goals. We map out user journeys, 
-              define core features, and create a development roadmap that balances your vision with technical reality.
+            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
+              From Manual Processes to 90% Automation
+            </h4>
+            <p class="text-gray-700 mb-6">
+              TaskManager Pro needed a complete digital transformation. Their team was drowning in spreadsheets and manual workflows.
             </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">Stakeholder interviews & requirements gathering</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">User persona development & journey mapping</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">Technical architecture planning & tool selection</span>
-              </div>
-            </div>
-          </div>
-          <div class="order-1 md:order-2">
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Key Deliverables</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>📋 Project specification document</div>
-                <div>🎨 User flow diagrams & wireframes</div>
-                <div>🔧 Technical stack recommendations</div>
-                <div>📅 Detailed project timeline</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Phase 2: Design & Prototyping -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Design Assets</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>🎨 UI/UX mockups & interactive prototypes</div>
-                <div>📱 Mobile-responsive design system</div>
-                <div>🌈 Custom color palette & branding</div>
-                <div>✨ User interaction specifications</div>
-              </div>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <StatCard value={90} suffix="%" label="Process Automation" color="peach" />
+              <StatCard value={5} suffix="hrs" label="Daily Time Saved" color="coral" />
             </div>
-          </div>
-          <div>
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-peach rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">2</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Design & Prototyping</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Week 2-4</div>
-            </div>
-            <p class="text-gray-600 mb-4">
-              We create beautiful, intuitive interfaces that reflect your brand personality. Every screen, 
-              interaction, and user flow is carefully crafted to provide an exceptional experience.
+
+            <p class="text-lxk-coral italic font-medium">
+              "Our web app kakis built exactly what we needed. The team finally has time to focus on strategy instead of admin work."
             </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">High-fidelity mockups & design system creation</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">Interactive prototypes for user testing</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">Design review sessions & collaborative feedback</span>
-              </div>
-            </div>
-          </div>
-        </div>
+            <p class="text-gray-600 text-sm mt-2">— Alex Chen, Operations Director</p>
 
-        <!-- Phase 3: Development -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="order-2 md:order-1">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-coral rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">3</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Development & Integration</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Week 3-12</div>
-            </div>
-            <p class="text-gray-600 mb-4">
-              Our kakis bring your app to life with clean, scalable code. We use modern frameworks like 
-              Svelte, TypeScript, and robust backend solutions to ensure your app is fast, secure, and maintainable.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">Sprint-based development with weekly demos</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">API development & third-party integrations</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">Continuous testing & quality assurance</span>
+            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
+              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Built</h5>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> Task management & automation</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Real-time collaboration features</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Advanced reporting dashboard</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> API integrations & notifications</div>
               </div>
             </div>
-          </div>
-          <div class="order-1 md:order-2">
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-coral/10 to-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Technical Excellence</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>⚡ Performance-optimized frontend & backend</div>
-                <div>🔒 Security best practices & data protection</div>
-                <div>📊 Analytics integration & monitoring setup</div>
-                <div>🧪 Comprehensive testing suite & CI/CD pipeline</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Phase 4: Testing & Launch -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-mint/10 to-lxk-peach/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Launch Checklist</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>🔍 User acceptance testing & bug fixes</div>
-                <div>🚀 Production deployment & DNS setup</div>
-                <div>📚 Training materials & documentation</div>
-                <div>🤝 Handover session & ongoing support setup</div>
-              </div>
+            <div class="mt-4">
+              <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
             </div>
-          </div>
-          <div>
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-mint rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">4</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Testing & Launch</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Final 2 weeks</div>
-            </div>
-            <p class="text-gray-600 mb-4">
-              Thorough testing ensures everything works perfectly before launch. We deploy your app, 
-              provide comprehensive training, and stay close for the first month to ensure smooth sailing.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Comprehensive testing across devices & browsers</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Production deployment & performance monitoring</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Team training & friendly documentation handover</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Communication & Tools -->
-      <div class="mt-12 painterly-card p-8">
-        <h4 class="text-xl font-semibold text-lxk-sage mb-6 text-center">How We Keep You in the Loop</h4>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div class="space-y-3">
-            <div class="text-3xl text-lxk-sage">💬</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Weekly Check-ins</h5>
-            <p class="text-gray-600 text-sm">Regular video calls to review progress, gather feedback, and plan next steps</p>
-          </div>
-          <div class="space-y-3">
-            <div class="text-3xl text-lxk-peach">🔄</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Live Demos</h5>
-            <p class="text-gray-600 text-sm">Working prototypes you can test and provide feedback on throughout development</p>
-          </div>
-          <div class="space-y-3">
-            <div class="text-3xl text-lxk-coral">📱</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Project Dashboard</h5>
-            <p class="text-gray-600 text-sm">Real-time visibility into milestones, tasks, and timeline progress</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Frequently Asked Questions</h3>
-      <div class="space-y-6 max-w-4xl mx-auto">
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">How do you ensure our app will scale as we grow?</h4>
-          <p class="text-gray-600">We build with growth in mind from day one - modular architecture, efficient databases, and clean code patterns. Plus, we provide documentation so your future team can extend the platform confidently.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">What happens if we need changes after launch?</h4>
-          <p class="text-gray-600">We're your long-term kakis! All projects include 30 days of post-launch support. After that, we offer maintenance packages or project-based updates - whatever works best for your team.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Can you work with our existing systems and APIs?</h4>
-          <p class="text-gray-600">Absolutely! We specialize in seamless integrations. We'll audit your current tech stack during discovery and design the most efficient connection points - no rip-and-replace needed.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">How involved will our team need to be during development?</h4>
-          <p class="text-gray-600">As much or as little as you prefer! We recommend weekly check-ins and milestone demos, but we're flexible. Some clients love being hands-on, others prefer to see polished updates - we adapt to your style.</p>
+    <!-- Tech Stack Overview -->
+    <div id="tech-stack" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Our Technology Stack</h3>
+      <div class="painterly-card p-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">⚡</div>
+            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Frontend</h4>
+            <p class="text-sm text-gray-600">Svelte, React, TypeScript, Tailwind CSS</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">🔧</div>
+            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Backend</h4>
+            <p class="text-sm text-gray-600">Node.js, Python, PostgreSQL, Redis</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-sage/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">☁️</div>
+            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Infrastructure</h4>
+            <p class="text-sm text-gray-600">AWS, Docker, CI/CD, Monitoring</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-mint/20 to-lxk-peach/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">🛡️</div>
+            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Security</h4>
+            <p class="text-sm text-gray-600">OAuth, Encryption, HTTPS, Best Practices</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Performance Metrics -->
+    <div id="performance" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Average App Performance</h3>
+      <div class="painterly-card p-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl border border-lxk-sage/10 p-4 text-center bg-white">
+            <div class="text-3xl font-extrabold text-lxk-sage">99.9%</div>
+            <div class="text-sm text-gray-600">Uptime</div>
+          </div>
+          <div class="rounded-xl border border-lxk-sage/10 p-4 text-center bg-white">
+            <div class="text-3xl font-extrabold text-lxk-peach">&lt; 2s</div>
+            <div class="text-sm text-gray-600">Load Time</div>
+          </div>
+          <div class="rounded-xl border border-lxk-sage/10 p-4 text-center bg-white">
+            <div class="text-3xl font-extrabold text-lxk-coral">100%</div>
+            <div class="text-sm text-gray-600">Mobile Ready</div>
+          </div>
+          <div class="rounded-xl border border-lxk-sage/10 p-4 text-center bg-white">
+            <div class="text-3xl font-extrabold text-lxk-sage">A+</div>
+            <div class="text-sm text-gray-600">Security Grade</div>
+          </div>
+        </div>
+        <div class="text-xs text-gray-500 mt-3 text-center">Performance benchmarks across our Singapore web applications</div>
+      </div>
+    </div>
+
+    <!-- Projects Rail -->
+    {#if relevantProjects.length > 0}
+    <div id="projects" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">Recent Web App Projects</h3>
+      <HorizontalProjectRail projects={relevantProjects} />
+      <div class="text-center mt-6">
+        <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
+          View All Projects →
+        </a>
+      </div>
+    </div>
+    {/if}
 
   </div>
 </section>
+
+<!-- FAQ Section -->
+<div id="faq"></div>
+<CompactFAQ faqs={webAppFAQs} />
+
+<!-- Testimonials Section -->
+<TestimonialCarousel testimonials={getTestimonialsByService('web-app')} />
 
 <!-- Enhanced CTA Section -->
 <EnhancedCTA
   service="web-app"
   primaryTitle="Ready to Build Your Web App?"
-  primaryDescription="Book a free technical consultation to discuss your features, timeline, and custom requirements"
-  primaryCTA="Book Free Tech Consultation →"
-  secondaryTitle="Want to Estimate First?"
-  secondaryDescription="Download our comprehensive planning guide with cost breakdowns and technical insights"
-  leadMagnetTitle="Web App Development Planning Guide"
+  primaryDescription="Book a free product consultation to discuss your vision and technical requirements"
+  primaryCTA="Book Free App Consultation →"
+  secondaryTitle="Need Technical Planning?"
+  secondaryDescription="Download our web app development guide with architecture and planning templates"
+  leadMagnetTitle="Singapore Web App Development Guide"
   leadMagnetBenefits={[
-    'Feature specification templates and user story formats',
-    'Technical stack recommendations for Singapore market',
-    'Cost breakdown calculators and timeline estimators',
-    'MVP vs Full Platform decision framework'
+    'Complete technical planning framework and architecture guide',
+    'MVP vs full platform decision matrix with cost estimates',
+    'Technology stack recommendations for Singapore businesses',
+    'Development timeline templates and milestone checklists'
   ]}
 />

@@ -1,20 +1,34 @@
 
 > lxk42-website@1.0.0 dev
-> vite --host 0.0.0.0
+> vite --host 0.0.0.0 --port 5173
 
-[2m10:16:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
 
-  [32m[1mVITE[22m v7.1.5[39m  [2mready in [0m[1m731[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v7.1.5[39m  [2mready in [0m[1m737[22m[2m[0m ms[22m
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.6:[1m5173[22m/[39m
-10:16:21 pm [vite-plugin-svelte] src/pages/WebApp.svelte:260:12 A form label must be associated with a control
-https://svelte.dev/e/a11y_label_has_associated_control
-[2m10:36:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
-[2m10:40:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
-[2m10:41:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/About.svelte, /src/style.css[22m
-[2m10:44:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
-[2m10:44:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
-[2m10:44:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Header.svelte, /src/style.css[22m
-[2m10:47:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/Contact.svelte, /src/style.css[22m
+4:50:59 pm [vite-plugin-svelte] src/components/ui/TestimonialCarousel.svelte:59:8 `<div>` with a mouseenter or mouseleave handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+4:51:00 pm [vite-plugin-svelte] src/components/ui/HorizontalProjectRail.svelte:27:2 Unused CSS selector ".scroll-snap"
+https://svelte.dev/e/css_unused_selector
+4:57:07 pm [vite-plugin-svelte] src/pages/AboutUs.svelte:193:2 Unused CSS selector ".painterly-card"
+https://svelte.dev/e/css_unused_selector
+4:57:07 pm [vite-plugin-svelte] src/pages/AboutUs.svelte:203:2 Unused CSS selector ".painterly-card:hover"
+https://svelte.dev/e/css_unused_selector
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:190:12 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:190:12 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:301:2 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:301:2 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:306:4 Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:306:4 `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
+5:12:26 pm [vite-plugin-svelte] src/pages/Portfolio.svelte:313:8 Buttons and links should either contain text or have an `aria-label` or `aria-labelledby` attribute
+https://svelte.dev/e/a11y_consider_explicit_label
+5:12:30 pm [vite-plugin-svelte] src/components/ui/ClientLogoStrip.svelte:52:8 `<div>` with a mouseenter or mouseleave handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions
 ^C

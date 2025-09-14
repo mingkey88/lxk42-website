@@ -1,0 +1,306 @@
+// Structured Data for SEO and Rich Snippets
+
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Light & Kaki Studio",
+  "alternateName": "LXK42 Studio",
+  "url": "https://www.lxk42.sg",
+  "logo": "https://www.lxk42.sg/logo.png",
+  "description": "Creative digital agency in Singapore specializing in web design, development, branding, and digital marketing with authentic 'kaki' (friendship) philosophy.",
+  "foundingDate": "2024",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "LXK42 Founders"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Singapore",
+    "addressRegion": "Singapore"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+65-9123-4567",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Chinese"]
+  },
+  "sameAs": [
+    "https://www.lxk42.sg"
+  ],
+  "services": [
+    "Web Design",
+    "Web Development",
+    "Web Application Development",
+    "Digital Marketing",
+    "Branding & Identity Design",
+    "Graphic Design",
+    "Motion Graphics & Animation"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Singapore"
+  },
+  "knowsAbout": [
+    "Svelte Development",
+    "React Development",
+    "JavaScript",
+    "TypeScript",
+    "UI/UX Design",
+    "SEO",
+    "Digital Marketing",
+    "Brand Strategy"
+  ]
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Light & Kaki Studio",
+  "alternateName": "LXK42 Studio",
+  "url": "https://www.lxk42.sg",
+  "description": "Singapore creative digital agency offering web design, development, and digital marketing services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
+  "inLanguage": "en-SG",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.lxk42.sg/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Light & Kaki Studio",
+  "image": "https://www.lxk42.sg/logo.png",
+  "description": "Creative digital companions specializing in web design, development, branding, and digital marketing. Where creativity meets friendship with authentic Singapore 'kaki' philosophy.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Singapore",
+    "addressRegion": "Singapore"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "1.3521",
+    "longitude": "103.8198"
+  },
+  "url": "https://www.lxk42.sg",
+  "telephone": "+65-9123-4567",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "serviceArea": {
+    "@type": "Country",
+    "name": "Singapore"
+  }
+};
+
+export const serviceSchemas = {
+  "web-design": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Design & Development",
+    "description": "Custom website design and development with Japanese-inspired aesthetics, responsive design, and modern technology stack including Svelte, React, and TypeScript.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceRange": "$$"
+    }
+  },
+  "web-app": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Application Development",
+    "description": "Custom web application development using modern frameworks like Svelte, React, and Node.js with focus on user experience and performance.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    }
+  },
+  "digital-marketing": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Marketing Services",
+    "description": "Comprehensive digital marketing including SEO, social media marketing, content strategy, and performance analytics for Singapore businesses.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    }
+  },
+  "branding": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Branding & Identity Design",
+    "description": "Brand strategy, logo design, visual identity systems, and brand guidelines with cultural sensitivity for Singapore market.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    }
+  },
+  "graphic-design": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Graphic Design Services",
+    "description": "Print and digital graphic design including marketing materials, social media graphics, and publication design with Japanese-inspired aesthetics.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    }
+  },
+  "motion-graphics": {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Motion Graphics & Animation",
+    "description": "Custom motion graphics, animation, and video content for digital marketing, social media, and brand storytelling.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Light & Kaki Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    }
+  }
+};
+
+export const breadcrumbSchema = (items) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+};
+
+export const faqSchema = (faqs) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+};
+
+export const reviewSchema = (reviews) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Light & Kaki Studio",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": reviews.length.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": reviews.map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": review.content,
+      "datePublished": review.date || new Date().toISOString().split('T')[0]
+    }))
+  };
+};
+
+// Helper function to inject structured data
+export const injectStructuredData = (schema, id = null) => {
+  if (typeof window === 'undefined') return;
+
+  const scriptId = id || `structured-data-${Date.now()}`;
+
+  // Remove existing script if updating
+  const existingScript = document.getElementById(scriptId);
+  if (existingScript) {
+    existingScript.remove();
+  }
+
+  const script = document.createElement('script');
+  script.id = scriptId;
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+// Update page title and meta description
+export const updatePageMeta = (title, description) => {
+  if (typeof window === 'undefined') return;
+
+  document.title = title;
+
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.content = description;
+
+  // Update Open Graph tags
+  let ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.content = title;
+
+  let ogDescription = document.querySelector('meta[property="og:description"]');
+  if (ogDescription) ogDescription.content = description;
+
+  // Update Twitter tags
+  let twitterTitle = document.querySelector('meta[property="twitter:title"]');
+  if (twitterTitle) twitterTitle.content = title;
+
+  let twitterDescription = document.querySelector('meta[property="twitter:description"]');
+  if (twitterDescription) twitterDescription.content = description;
+};

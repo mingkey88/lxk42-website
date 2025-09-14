@@ -1,51 +1,65 @@
 <!-- Services Section -->
 <section id="services" class="section-padding">
     <div class="container-custom">
-        <div class="text-center animate-on-scroll mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-lxk-warm-gray mb-8">
-                Our Services
+        <div class="text-center animate-on-scroll mb-20">
+            <h2 class="text-5xl lg:text-7xl font-bold text-lxk-warm-gray mb-6 leading-tight">
+                How We Help You <span class="text-lxk-peach">Thrive</span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                From web design to digital marketing, we create comprehensive digital experiences 
-                that help your business grow and connect with your audience.
-            </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <a href="#/web-design" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">🎨</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Web Design & Development</h3>
-                <p class="text-gray-600 text-sm">Beautiful, responsive websites that tell your story and convert visitors into customers.</p>
+            <a href="#/web-design" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">💻</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Web Design</h3>
+                </div>
             </a>
             
-            <a href="#/web-app" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">💻</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Web App Development</h3>
-                <p class="text-gray-600 text-sm">Progressive Web Apps (PWAs) and responsive web applications that work seamlessly across all devices and platforms.</p>
-            </a>
-            
-            <a href="#/digital-marketing" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">📈</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Digital Marketing</h3>
-                <p class="text-gray-600 text-sm">Strategic digital marketing campaigns that reach the right audience with the right message.</p>
-            </a>
-            
-            <a href="#/branding" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">✨</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Branding Solutions</h3>
-                <p class="text-gray-600 text-sm">Complete brand identity design that captures your essence and resonates with your market.</p>
+            <a href="#/web-app" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">📱</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Web Apps</h3>
+                </div>
             </a>
 
-            <a href="#/graphic-design" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">🖼️</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Graphic Design</h3>
-                <p class="text-gray-600 text-sm">Illustrations, social media visuals, brochures, and collateral with a warm, painterly touch.</p>
+            <a href="#/digital-marketing" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-coral/10 to-lxk-sage/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">📈</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Digital Marketing</h3>
+                </div>
             </a>
 
-            <a href="#/animation" class="animate-on-scroll bg-white rounded-3xl p-6 shadow-lg soft-shadow hover:shadow-xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
-                <div class="text-4xl mb-4">🎞️</div>
-                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3">Motion Graphics & Animation</h3>
-                <p class="text-gray-600 text-sm">Motion design and micro‑interactions that bring your brand to life across web and video.</p>
+            <a href="#/branding" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-mint/10 to-lxk-sage/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">✨</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Branding</h3>
+                </div>
+            </a>
+
+            <a href="#/graphic-design" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">🎨</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Graphic Design</h3>
+                </div>
+            </a>
+
+            <a href="#/motion-graphics" class="animate-on-scroll group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+                <div class="bg-gradient-to-br from-lxk-peach/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="text-7xl">🎞️</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-lxk-warm-gray">Motion Graphics</h3>
+                </div>
             </a>
         </div>
     </div>

@@ -47,7 +47,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-8">
-                    <a href="#/about" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">About</a>
+                    <a href="#/about-us" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
                     <div class="relative group">
                         <button 
                             class="text-lxk-warm-gray hover:text-lxk-sage transition-colors flex items-center"
@@ -73,6 +73,7 @@
                         </div>
                     </div>
                     <a href="#/portfolio" on:mouseenter={() => prefetch('/portfolio')} class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                    <a href="#/testimonials" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
                     <a href="#/contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
                 </div>
             </div>
@@ -100,7 +101,7 @@
         <!-- Mobile Navigation -->
         <div class="md:hidden {mobileMenuOpen ? '' : 'hidden'}" role="navigation" aria-label="Mobile menu">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-lxk-cream/95 backdrop-blur-md border-t border-lxk-sage/10">
-                <a href="#/about" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About</a>
+                <a href="#/about-us" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
                 <a href="#/web-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
                 <a href="#/web-app" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web App Dev</a>
                 <a href="#/digital-marketing" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
@@ -108,6 +109,7 @@
                 <a href="#/graphic-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Graphic Design</a>
                 <a href="#/motion-graphics" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Motion Graphics & Animation</a>
                 <a href="#/portfolio" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                <a href="#/testimonials" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
                 <a href="#/contact" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
             </div>
         </div>

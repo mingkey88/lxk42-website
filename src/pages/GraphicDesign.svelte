@@ -1,308 +1,195 @@
 <script>
+  import { projects } from '../data/portfolio.js';
   import DesignPackageBuilder from '../components/tools/DesignPackageBuilder.svelte';
+  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
+  import TestimonialCarousel from '../components/ui/TestimonialCarousel.svelte';
+  import CompactFAQ from '../components/ui/CompactFAQ.svelte';
+  import { getTestimonialsByService } from '../data/testimonials.js';
+  import { serviceSchemas, injectStructuredData, updatePageMeta } from '../lib/structuredData.js';
+  import { onMount } from 'svelte';
+  import StatCard from '../components/ui/StatCard.svelte';
+  import BrowserFrame from '../components/ui/BrowserFrame.svelte';
+  import HorizontalProjectRail from '../components/ui/HorizontalProjectRail.svelte';
+
+  // Filter projects relevant to graphic design
+  const relevantProjects = projects.filter(project =>
+    project.tags.includes('graphic design') || project.tags.includes('print design') || project.tags.includes('illustration')
+  );
+
+  // FAQ data for graphic design
+  const graphicDesignFAQs = [
+    {
+      question: "What types of design do you create?",
+      answer: "Everything from business cards to brochures, social media graphics, presentations, packaging, and more. If it needs design, we can help!"
+    },
+    {
+      question: "How many revisions do I get?",
+      answer: "We typically include 2-3 rounds of revisions in our projects. But we're reasonable people - if something isn't right, we'll work together to fix it."
+    },
+    {
+      question: "Can you match my existing brand style?",
+      answer: "Absolutely! Send us your brand guidelines or existing materials, and we'll create new designs that fit perfectly with your established look."
+    },
+    {
+      question: "Do you provide print-ready files?",
+      answer: "Yes! We'll provide high-resolution files in whatever format you need - print, web, social media. We can even help you find good printers in Singapore."
+    },
+    {
+      question: "What if I need ongoing design support?",
+      answer: "Perfect! We offer retainer packages for businesses that need regular design work. Think of us as your on-call design team."
+    }
+  ];
+
+  onMount(() => {
+    // SEO optimization
+    updatePageMeta(
+      'Graphic Design Singapore | Light & Kaki Studio',
+      'Professional graphic design services in Singapore. Print design, digital graphics, and illustrations with Japanese-inspired aesthetics and local market expertise.'
+    );
+    injectStructuredData(serviceSchemas['graphic-design'], 'service-graphic-design');
+  });
 </script>
 
-<section class="section-padding painterly-bg">
+<section class="section-padding painterly-bg relative overflow-hidden">
   <div class="container-custom">
-    <div class="text-center mb-12 animate-on-scroll">
+    <div class="text-center mb-6 md:mb-8 animate-on-scroll relative">
       <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">Graphic Design</h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">Illustrations and visuals with a gentle, handcrafted touch — made to be shared.</p>
+      <!-- painterly hero accents -->
+      <div class="texture-overlay"></div>
+      <div class="paint-splash-1 hidden md:block" style="top:-20px; right:5%;"></div>
+      <div class="paint-splash-2 hidden md:block" style="bottom:-10px; left:0;"></div>
+      <div class="paint-splash-3 hidden md:block" style="top:40%; right:20%;"></div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Social & Campaigns</h3>
-        <p class="text-gray-600">Post series, carousels, and campaign graphics that reflect your brand voice.</p>
-      </div>
-      <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Illustration</h3>
-        <p class="text-gray-600">Custom illustrations and iconography with a painterly style and warm palette.</p>
-      </div>
-      <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Print & Collateral</h3>
-        <p class="text-gray-600">Brochures, posters, and event materials with clean layouts and friendly typography.</p>
-      </div>
-    </div>
+    <!-- anchor mini-nav -->
+    <nav class="mb-12 md:mb-16">
+      <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
+        <li><a href="#design-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
+        <li><a href="#package-builder" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Package Builder</a></li>
+        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
+        <li><a href="#design-process" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Process</a></li>
+        <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
+        <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
+      </ul>
+    </nav>
 
-    <!-- Design Package Builder -->
-    <div class="mt-16 animate-on-scroll">
-      <DesignPackageBuilder />
+    <div id="design-overview" class="grid md:grid-cols-3 gap-8">
+      <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow">🎨</div>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Print & Digital</h3>
+        <p class="text-gray-700">Business cards, brochures, social graphics, and presentations with handcrafted attention to detail.</p>
+      </div>
+      <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow">✏️</div>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Illustration & Art</h3>
+        <p class="text-gray-700">Custom illustrations, icons, and artistic elements that bring warmth and personality to your brand.</p>
+      </div>
+      <div class="painterly-card p-8 animate-on-scroll">
+        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow">📦</div>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Packaging & Products</h3>
+        <p class="text-gray-700">Product packaging, labels, and retail materials that stand out on Singapore shelves.</p>
+      </div>
     </div>
 
     <div class="mt-16 grid md:grid-cols-2 gap-8">
       <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Our Design Philosophy</h3>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Our Approach</h3>
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
-          <li>Every design tells your story with warmth and authenticity</li>
-          <li>Hand-crafted aesthetics with digital precision</li>
-          <li>Collaborative feedback loops - your vision, our craft</li>
-          <li>Designs that work beautifully across Singapore's diverse culture</li>
+          <li>Design briefs and inspiration sessions over kopi ☕</li>
+          <li>Hand-sketched concepts before digital refinement</li>
+          <li>Japanese-inspired aesthetics with Singapore sensibility</li>
+          <li>Collaborative iterations with your design kakis</li>
         </ul>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">What Our Kakis Get</h3>
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-4">What You Get</h3>
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
-          <li>Original illustrations and custom iconography</li>
-          <li>Print-ready files and web-optimized assets</li>
-          <li>Brand-consistent templates for future use</li>
-          <li>Friendly handover session and usage guidance 🎨</li>
+          <li>Print-ready and web-optimized file formats</li>
+          <li>Source files for future edits and adaptations</li>
+          <li>Color and usage guidelines for consistency</li>
+          <li>Local printer recommendations and liaison</li>
         </ul>
       </div>
     </div>
 
-    <!-- Pricing Structure -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Investment & Packages</h3>
-      <div class="grid md:grid-cols-3 gap-8 mb-8">
-        
-        <!-- Design Essentials -->
-        <div class="painterly-card p-8 text-center relative">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-mint px-4 py-1 rounded-full text-lxk-warm-gray text-sm font-medium">
-              Perfect for Startups
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">Design Essentials</h4>
-          <div class="text-4xl font-bold text-lxk-sage mb-6">$1,200</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">5 custom graphic designs</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Social media post templates (5 designs)</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">One round of revisions included</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">Print & web-ready file formats</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span class="text-gray-600 text-sm">7-day turnaround</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: 1-2 weeks</div>
-        </div>
-
-        <!-- Creative Suite -->
-        <div class="painterly-card p-8 text-center relative border-2 border-lxk-peach shadow-xl">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-peach px-4 py-1 rounded-full text-white text-sm font-medium">
-              Most Popular
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">Creative Suite</h4>
-          <div class="text-4xl font-bold text-lxk-peach mb-6">$2,800</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">12 custom graphic designs</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Complete social media template set</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Custom illustrations (3 pieces)</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Print collateral design (brochure/flyer)</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Two rounds of revisions</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span class="text-gray-600 text-sm">Brand consistency guidelines</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: 2-3 weeks</div>
-        </div>
-
-        <!-- Premium Creative -->
-        <div class="painterly-card p-8 text-center relative">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div class="bg-lxk-coral px-4 py-1 rounded-full text-white text-sm font-medium">
-              Full Creative Support
-            </div>
-          </div>
-          <h4 class="text-2xl font-bold text-lxk-warm-gray mb-4 mt-4">Premium Creative</h4>
-          <div class="text-4xl font-bold text-lxk-coral mb-6">$5,500</div>
-          <div class="space-y-3 text-left mb-8">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">25+ custom graphic designs</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Complete brand illustration system</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Multi-format campaign materials</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Packaging design concepts</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Presentation deck templates</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span class="text-gray-600 text-sm">Unlimited revisions & ongoing support</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-500 italic mb-4">Timeline: 4-5 weeks</div>
-        </div>
-      </div>
-
-      <!-- À La Carte Services -->
-      <div class="painterly-card p-8">
-        <h4 class="text-xl font-semibold text-lxk-sage mb-6 text-center">À La Carte Design Services</h4>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-4">
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Single custom illustration</span>
-              <span class="font-semibold text-lxk-coral">$300-800</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Social media post design</span>
-              <span class="font-semibold text-lxk-coral">$80-150</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Brochure/flyer design</span>
-              <span class="font-semibold text-lxk-coral">$400-800</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Poster design (A2/A1)</span>
-              <span class="font-semibold text-lxk-coral">$500-900</span>
-            </div>
-          </div>
-          <div class="space-y-4">
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Icon set design (5 icons)</span>
-              <span class="font-semibold text-lxk-coral">$400-600</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Presentation template design</span>
-              <span class="font-semibold text-lxk-coral">$600-1,200</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Packaging design concept</span>
-              <span class="font-semibold text-lxk-coral">$800-2,500</span>
-            </div>
-            <div class="flex justify-between items-center py-2 border-b border-lxk-sage/20">
-              <span class="text-gray-700">Rush delivery (50% faster)</span>
-              <span class="font-semibold text-lxk-coral">+40% fee</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment Terms -->
-      <div class="mt-8 bg-lxk-cream/50 rounded-2xl p-6 text-center">
-        <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Investment Terms</h4>
-        <p class="text-gray-600 mb-4">
-          <strong>50% deposit</strong> to start • <strong>50% on final approval</strong> and file delivery
-        </p>
-        <p class="text-gray-600 text-sm italic">
-          All prices in SGD. Bundle discounts available for ongoing projects. Let's create something beautiful together! 🎨
-        </p>
-      </div>
+    <!-- Design Package Builder -->
+    <div id="package-builder" class="mt-16 painterly-card p-8 animate-on-scroll">
+      <h3 class="text-3xl font-bold text-lxk-sage mb-6 text-center">Design Package Builder</h3>
+      <p class="text-center text-gray-600 mb-8">Create a custom design package tailored to your needs and budget</p>
+      <DesignPackageBuilder />
     </div>
 
-    <!-- Portfolio Showcase -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Recent Design Work</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Social Media Campaign -->
-        <div class="painterly-card p-6">
-          <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/20 rounded-2xl p-6 mb-4 text-center">
-            <div class="text-6xl text-lxk-sage mb-2">📱</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Social Campaign</h5>
+    <!-- Case Study Preview -->
+    <div id="case-study" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
+      <div class="painterly-card p-8">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <!-- Visual mock -->
+          <div>
+            <BrowserFrame title="heritage-tea.sg">
+              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
+                <!-- simple packaging mock layout -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                  <div class="aspect-square bg-gradient-to-br from-lxk-sage/30 to-lxk-mint/30 rounded-xl p-3">
+                    <div class="h-full border-2 border-lxk-sage/40 rounded-lg flex items-center justify-center">
+                      <div class="text-center">
+                        <div class="text-lg mb-1">🍃</div>
+                        <div class="h-2 w-8 bg-lxk-sage/60 rounded mx-auto"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="aspect-square bg-gradient-to-br from-lxk-peach/30 to-lxk-coral/30 rounded-xl p-3">
+                    <div class="h-full border-2 border-lxk-peach/40 rounded-lg flex items-center justify-center">
+                      <div class="text-center">
+                        <div class="text-lg mb-1">🌸</div>
+                        <div class="h-2 w-8 bg-lxk-peach/60 rounded mx-auto"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="h-3 w-24 bg-lxk-sage/40 rounded mx-auto mb-2"></div>
+                  <div class="h-2 w-16 bg-gray-200 rounded mx-auto"></div>
+                </div>
+              </div>
+            </BrowserFrame>
           </div>
-          <div class="inline-block bg-lxk-sage/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-3">
-            GreenSpaces SG
-          </div>
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">"Plant Your Future" Series</h4>
-          <p class="text-gray-600 mb-4">15-post Instagram campaign celebrating urban sustainability with warm, hand-drawn illustrations and consistent brand messaging.</p>
-          <div class="space-y-2 text-sm text-gray-600">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span>Custom plant illustrations</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span>Instagram Stories & Feed templates</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-              <span>45% increase in engagement</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Event Materials -->
-        <div class="painterly-card p-6">
-          <div class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/20 rounded-2xl p-6 mb-4 text-center">
-            <div class="text-6xl text-lxk-peach mb-2">📋</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Event Materials</h5>
-          </div>
-          <div class="inline-block bg-lxk-peach/20 text-lxk-peach px-3 py-1 rounded-full text-sm font-medium mb-3">
-            TechConnect Asia
-          </div>
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Conference Collateral Suite</h4>
-          <p class="text-gray-600 mb-4">Complete visual identity for Singapore's largest startup conference - from banners to badge designs with cohesive branding.</p>
-          <div class="space-y-2 text-sm text-gray-600">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span>Stage backdrops & signage</span>
+          <!-- Text + stats -->
+          <div>
+            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
+              Complete Product Packaging
             </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span>Presentation templates</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-              <span>500+ attendee satisfaction</span>
-            </div>
-          </div>
-        </div>
+            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
+              Traditional Tea, Modern Appeal
+            </h4>
+            <p class="text-gray-700 mb-6">
+              Heritage Tea Co. needed packaging that honored Singapore's tea tradition while appealing to modern consumers.
+            </p>
 
-        <!-- Brand Illustration -->
-        <div class="painterly-card p-6">
-          <div class="bg-gradient-to-br from-lxk-coral/10 to-lxk-mint/20 rounded-2xl p-6 mb-4 text-center">
-            <div class="text-6xl text-lxk-coral mb-2">🎨</div>
-            <h5 class="font-semibold text-lxk-warm-gray">Custom Illustrations</h5>
-          </div>
-          <div class="inline-block bg-lxk-coral/20 text-lxk-coral px-3 py-1 rounded-full text-sm font-medium mb-3">
-            Hawker Heroes SG
-          </div>
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Singapore Food Heritage Series</h4>
-          <p class="text-gray-600 mb-4">Painterly illustration series celebrating local hawker culture for packaging and marketing materials across multiple touchpoints.</p>
-          <div class="space-y-2 text-sm text-gray-600">
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span>8 custom food illustrations</span>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <StatCard value={240} suffix="%" label="Sales Increase" color="peach" />
+              <StatCard value={85} suffix="%" label="Shelf Recognition" color="coral" />
             </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span>Packaging design system</span>
+
+            <p class="text-lxk-coral italic font-medium">
+              "The packaging perfectly captures our heritage story. Customers immediately connect with our authentic Singapore roots."
+            </p>
+            <p class="text-gray-600 text-sm mt-2">— Linda Tan, Founder</p>
+
+            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
+              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Created</h5>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> Tea tin & box packaging design</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Traditional-modern illustration style</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Retail display & point-of-sale</div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> Brand story & heritage messaging</div>
+              </div>
             </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-              <span>Award: SG Design Awards '23</span>
+
+            <div class="mt-4">
+              <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
             </div>
           </div>
         </div>
@@ -310,205 +197,78 @@
     </div>
 
     <!-- Design Process -->
-    <div class="mt-16 animate-on-scroll">
+    <div id="design-process" class="mt-16 animate-on-scroll">
       <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Our Design Process</h3>
-      <div class="space-y-8">
-        
-        <!-- Discovery -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="order-2 md:order-1">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-sage rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">1</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Brief & Discovery</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Day 1-2</div>
+      <div class="painterly-card p-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">💭</div>
             </div>
-            <p class="text-gray-600 mb-4">
-              We start with a friendly kopi session to understand your vision, brand personality, and project goals. Every great design begins with understanding your story.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">Creative brief & requirements gathering</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">Brand guidelines & style exploration</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-                <span class="text-gray-600 text-sm">Reference & mood board creation</span>
-              </div>
-            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Discovery</h4>
+            <p class="text-sm text-gray-600">Understanding your vision, audience, and design goals</p>
           </div>
-          <div class="order-1 md:order-2">
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Discovery Tools</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>💭 Creative brief questionnaire</div>
-                <div>🎨 Visual mood board collaboration</div>
-                <div>📋 Brand tone & style alignment</div>
-                <div>🎯 Success metrics & goals setting</div>
-              </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">✏️</div>
             </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Concept</h4>
+            <p class="text-sm text-gray-600">Hand-sketched ideas and initial design directions</p>
           </div>
-        </div>
-
-        <!-- Concept Development -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Creative Concepts</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>✏️ Initial sketches & wireframes</div>
-                <div>🌈 Color & composition studies</div>
-                <div>🖼️ Multiple design directions</div>
-                <div>📱 Format & application testing</div>
-              </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-sage/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">🎨</div>
             </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Design</h4>
+            <p class="text-sm text-gray-600">Digital refinement with Japanese painterly aesthetics</p>
           </div>
-          <div>
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-peach rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">2</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Concept Development</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Day 3-7</div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-lxk-mint/20 to-lxk-peach/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div class="text-2xl">📦</div>
             </div>
-            <p class="text-gray-600 mb-4">
-              Our kakis explore multiple creative directions, sketching ideas and developing concepts that bring your vision to life with our signature painterly style.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">Multiple concept sketches & directions</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">Color palette & typography exploration</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>
-                <span class="text-gray-600 text-sm">Initial digital mock-ups</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Design & Refinement -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="order-2 md:order-1">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-coral rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">3</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Design & Refinement</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Day 7-12</div>
-            </div>
-            <p class="text-gray-600 mb-4">
-              We create polished designs with careful attention to detail, incorporating your feedback to ensure every element perfectly represents your brand and message.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">High-fidelity design execution</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">Collaborative feedback & revisions</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-coral rounded-full"></div>
-                <span class="text-gray-600 text-sm">Format optimization & testing</span>
-              </div>
-            </div>
-          </div>
-          <div class="order-1 md:order-2">
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-coral/10 to-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Design Execution</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>🎨 Detailed design implementation</div>
-                <div>🔄 Iterative feedback cycles</div>
-                <div>📐 Precise formatting & sizing</div>
-                <div>✨ Final polish & quality checks</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Final Delivery -->
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div class="painterly-card p-6 bg-gradient-to-br from-lxk-mint/10 to-lxk-peach/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">Delivery Package</h5>
-              <div class="space-y-2 text-sm text-gray-600">
-                <div>📁 Organized file delivery system</div>
-                <div>🖼️ Multiple format exports</div>
-                <div>📖 Usage guidelines document</div>
-                <div>🤝 Friendly handover session</div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-lxk-mint rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">4</div>
-              <h4 class="text-xl font-semibold text-lxk-warm-gray">Final Delivery</h4>
-              <div class="ml-auto text-sm text-lxk-coral font-medium">Day 13-14</div>
-            </div>
-            <p class="text-gray-600 mb-4">
-              Your designs are ready! We organize files perfectly and provide clear usage guidelines so your team can implement the designs confidently across all channels.
-            </p>
-            <div class="space-y-2">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Complete file package delivery</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Usage guidelines & specifications</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-lxk-mint rounded-full"></div>
-                <span class="text-gray-600 text-sm">Follow-up support & minor adjustments</span>
-              </div>
-            </div>
+            <h4 class="font-semibold text-lxk-warm-gray mb-2">Delivery</h4>
+            <p class="text-sm text-gray-600">Final files and production guidance</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Common Questions About Graphic Design</h3>
-      <div class="space-y-6 max-w-4xl mx-auto">
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">What file formats will I receive for my designs?</h4>
-          <p class="text-gray-600">You'll receive all designs in multiple formats: high-resolution PNG and JPG for digital use, print-ready PDF files, and original vector files (AI/SVG) when applicable. We make sure you have everything needed for any application.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">How many revision rounds are included in each package?</h4>
-          <p class="text-gray-600">Our packages include 1-2 revision rounds as specified. We find this is usually sufficient when we start with a clear brief. Additional revisions can be added if needed - we want you to be completely happy with the final designs.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Can you match our existing brand guidelines?</h4>
-          <p class="text-gray-600">Absolutely! We're skilled at working within existing brand parameters while adding our creative touch. Send us your brand guidelines and we'll ensure all designs are perfectly on-brand while maintaining our signature warmth and quality.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Do you handle printing coordination for design projects?</h4>
-          <p class="text-gray-600">While we don't handle printing directly, we work with trusted local printing partners and can provide recommendations. We'll ensure all files are print-ready with proper specifications and can coordinate with your chosen printer if needed.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">What makes your design style uniquely Singapore?</h4>
-          <p class="text-gray-600">Our designs reflect Singapore's multicultural warmth and vibrancy. We incorporate local cultural elements sensitively, use colors and imagery that resonate with Singapore audiences, and ensure designs work across our diverse market while maintaining global appeal.</p>
-        </div>
-        <div class="painterly-card p-6">
-          <h4 class="text-lg font-semibold text-lxk-warm-gray mb-3">Can you create designs for both digital and print applications?</h4>
-          <p class="text-gray-600">Yes! We're experienced in creating designs that work beautifully across all mediums. We understand the technical requirements for both digital platforms and print production, ensuring your designs look perfect everywhere they're used.</p>
-        </div>
+    <!-- Projects Rail -->
+    {#if relevantProjects.length > 0}
+    <div id="projects" class="mt-16 animate-on-scroll">
+      <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">Recent Design Projects</h3>
+      <HorizontalProjectRail projects={relevantProjects} />
+      <div class="text-center mt-6">
+        <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
+          View All Projects →
+        </a>
       </div>
     </div>
+    {/if}
 
-    <div class="mt-16 text-center">
-      <p class="text-lg text-lxk-coral mb-6 italic">
-        "Great design isn't just pretty - it connects hearts and minds"
-      </p>
-      <a href="#/contact" class="btn-primary">Design With Our Kakis</a>
-    </div>
   </div>
 </section>
 
+<!-- FAQ Section -->
+<div id="faq"></div>
+<CompactFAQ faqs={graphicDesignFAQs} />
+
+<!-- Testimonials Section -->
+<TestimonialCarousel testimonials={getTestimonialsByService('graphic-design')} />
+
+<!-- Enhanced CTA Section -->
+<EnhancedCTA
+  service="graphic-design"
+  primaryTitle="Ready to Create Amazing Graphics?"
+  primaryDescription="Book a free design consultation to explore your creative vision and project needs"
+  primaryCTA="Book Free Design Consultation →"
+  secondaryTitle="Need Custom Package?"
+  secondaryDescription="Use our package builder to create a tailored design solution with instant pricing"
+  leadMagnetTitle="Singapore Design Brief Template"
+  leadMagnetBenefits={[
+    'Complete design brief template for clear project communication',
+    'Print specifications guide for Singapore market standards',
+    'Color psychology and cultural considerations for local audience',
+    'Design budget planning worksheet and timeline templates'
+  ]}
+/>

@@ -18,6 +18,12 @@ export const routes = [
     load: () => import('./pages/Home.svelte')
   },
   {
+    path: '/about-us',
+    name: 'AboutUs',
+    title: 'About Us — Light & Kaki Studio',
+    load: () => import('./pages/AboutUs.svelte')
+  },
+  {
     path: '/web-design',
     name: 'WebDesign',
     title: 'Web Design & Development — Light & Kaki Studio',
@@ -58,6 +64,12 @@ export const routes = [
     name: 'Portfolio',
     title: 'Portfolio — Light & Kaki Studio',
     load: () => import('./pages/Portfolio.svelte')
+  },
+  {
+    path: '/testimonials',
+    name: 'Testimonials',
+    title: 'Client Testimonials — Light & Kaki Studio',
+    load: () => import('./pages/Testimonials.svelte')
   }
 ];
 
