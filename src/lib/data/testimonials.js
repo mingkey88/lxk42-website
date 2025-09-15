@@ -61,7 +61,7 @@ export const testimonials = [
   }
 ];
 
-export const getTestimonialsByService = (service) => {
+export const getTestimonialsByService = (/** @type {string} */ service) => {
   const serviceMap = {
     'web-design': ['Web Design & Development', 'Graphic Design & Branding'],
     'web-app': ['Web App Development', 'Web Design & Development'],
@@ -71,7 +71,7 @@ export const getTestimonialsByService = (service) => {
     'motion-graphics': ['Motion Graphics & Animation', 'Digital Marketing Campaign']
   };
 
-  const relevantTypes = serviceMap[service] || [];
+  const relevantTypes = serviceMap[/** @type {keyof typeof serviceMap} */ (service)] || [];
   return testimonials.filter(testimonial =>
     relevantTypes.includes(testimonial.projectType)
   );

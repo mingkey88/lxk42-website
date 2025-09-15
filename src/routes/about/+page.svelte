@@ -1,10 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import About from '../components/About.svelte';
-  import HumbleAchievements from '../components/ui/HumbleAchievements.svelte';
-  import KakiProcess from '../components/ui/KakiProcess.svelte';
-  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
-  import { updatePageMeta, injectStructuredData, organizationSchema } from '../lib/structuredData.js';
+  import About from '$lib/components/About.svelte';
+  import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
+  import { updatePageMeta, injectStructuredData, organizationSchema } from '$lib/structuredData.js';
 
   onMount(() => {
     // SEO optimization

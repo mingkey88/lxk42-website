@@ -100,14 +100,14 @@ export const clients = [
 ];
 
 // Get clients by industry
-export const getClientsByIndustry = (industry) => {
+export const getClientsByIndustry = (/** @type {string} */ industry) => {
   return clients.filter(client =>
     client.industry.toLowerCase() === industry.toLowerCase()
   );
 };
 
 // Get clients by project type
-export const getClientsByProject = (projectType) => {
+export const getClientsByProject = (/** @type {string} */ projectType) => {
   return clients.filter(client =>
     client.projectType.toLowerCase().includes(projectType.toLowerCase())
   );

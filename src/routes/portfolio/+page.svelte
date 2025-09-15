@@ -1,23 +1,20 @@
 <script>
   import { onMount } from 'svelte';
   import { fade, fly, scale } from 'svelte/transition';
-  import { projects } from '../data/portfolio.js';
-  import TestimonialCarousel from '../components/ui/TestimonialCarousel.svelte';
-  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
-  import { getFeaturedTestimonials } from '../data/testimonials.js';
-  import { updatePageMeta, injectStructuredData } from '../lib/structuredData.js';
+  import { projects } from '$lib/data/portfolio.js';
+  import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
+  import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
+  import { getFeaturedTestimonials } from '$lib/data/testimonials.js';
+  import { updatePageMeta } from '$lib/structuredData.js';
 
   // Portfolio state management
-  const allTags = Array.from(new Set(projects.flatMap(p => p.tags)));
   let activeTag = 'all';
   let selectedProject = null;
   let isLoading = false;
-  let viewMode = 'grid'; // 'grid' or 'masonry'
   let sortBy = 'recent'; // 'recent', 'featured', 'alphabetical'
 
   // Computed filtered projects
   $: filtered = getFilteredProjects(activeTag, sortBy);
-  $: featuredProjects = projects.filter(p => p.featured);
 
   function getFilteredProjects(tag, sort) {
     let result = tag === 'all' ? projects : projects.filter(p => p.tags.includes(tag));
@@ -179,15 +176,15 @@
         <p class="text-lxk-warm-gray mt-4">Loading amazing projects...</p>
       </div>
     {:else}
-      <div class="grid {viewMode === 'masonry' ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {#each filtered as project, index (project.id)}
           <div
-            class="group relative {viewMode === 'masonry' && project.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''} {project.size === 'small' ? 'md:row-span-1' : ''}"
+            class="group relative"
             in:fly={{ y: 50, delay: index * 100, duration: 600 }}
             out:scale={{ duration: 300 }}
           >
             <!-- Project Card -->
-            <button class="relative h-full painterly-card group-hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden w-full text-left"
+            <button class="relative min-h-[600px] h-full painterly-card group-hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden w-full text-left flex flex-col"
                     type="button"
                     aria-label={`View details for ${project.title}`}
                     on:click={() => openProjectDetail(project)}
@@ -203,7 +200,7 @@
               {/if}
 
               <!-- Project Image/Icon Area -->
-              <div class="relative h-48 {viewMode === 'masonry' && project.size === 'large' ? 'md:h-64' : ''} bg-gradient-to-br {getIndustryColor(project.industry)} rounded-t-2xl flex items-center justify-center overflow-hidden">
+              <div class="relative h-48 bg-gradient-to-br {getIndustryColor(project.industry)} rounded-t-2xl flex items-center justify-center overflow-hidden">
                 {#if project.image}
                   <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                 {:else}
@@ -223,7 +220,7 @@
               </div>
 
               <!-- Project Content -->
-              <div class="p-6 {viewMode === 'masonry' && project.size === 'large' ? 'p-8' : ''}">
+              <div class="p-6 flex-1 flex flex-col">
                 <!-- Client & Industry -->
                 <div class="flex items-center gap-2 mb-3">
                   <span class="text-xs font-medium text-lxk-coral bg-lxk-coral/10 px-2 py-1 rounded-full">
@@ -233,10 +230,10 @@
                 </div>
 
                 <!-- Title & Summary -->
-                <h3 class="text-xl {viewMode === 'masonry' && project.size === 'large' ? 'md:text-2xl' : ''} font-bold text-lxk-warm-gray mb-3 group-hover:text-lxk-sage transition-colors duration-300">
+                <h3 class="text-xl font-bold text-lxk-warm-gray mb-3 group-hover:text-lxk-sage transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p class="text-gray-600 mb-4 leading-relaxed {viewMode === 'masonry' && project.size === 'large' ? 'md:text-lg' : ''}">
+                <p class="text-gray-600 mb-4 leading-relaxed flex-1">
                   {project.summary}
                 </p>
 
@@ -276,7 +273,7 @@
                 </div>
 
                 <!-- Duration -->
-                <div class="text-xs text-gray-500">
+                <div class="text-xs text-gray-500 mt-auto">
                   Project Duration: {project.duration}
                 </div>
               </div>

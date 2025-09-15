@@ -199,11 +199,11 @@ export const serviceSchemas = {
   }
 };
 
-export const breadcrumbSchema = (items) => {
+export const breadcrumbSchema = (/** @type {Array<{name: string, url: string}>} */ items) => {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, index) => ({
+    "itemListElement": items.map((/** @type {any} */ item, /** @type {number} */ index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
@@ -212,11 +212,11 @@ export const breadcrumbSchema = (items) => {
   };
 };
 
-export const faqSchema = (faqs) => {
+export const faqSchema = (/** @type {Array<{question: string, answer: string}>} */ faqs) => {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": faqs.map((/** @type {any} */ faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -227,7 +227,7 @@ export const faqSchema = (faqs) => {
   };
 };
 
-export const reviewSchema = (reviews) => {
+export const reviewSchema = (/** @type {Array<any>} */ reviews) => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -239,7 +239,7 @@ export const reviewSchema = (reviews) => {
       "bestRating": "5",
       "worstRating": "1"
     },
-    "review": reviews.map(review => ({
+    "review": reviews.map((/** @type {any} */ review) => ({
       "@type": "Review",
       "author": {
         "@type": "Person",
@@ -258,7 +258,7 @@ export const reviewSchema = (reviews) => {
 };
 
 // Helper function to inject structured data
-export const injectStructuredData = (schema, id = null) => {
+export const injectStructuredData = (/** @type {any} */ schema, /** @type {string|null} */ id = null) => {
   if (typeof window === 'undefined') return;
 
   const scriptId = id || `structured-data-${Date.now()}`;
@@ -277,7 +277,7 @@ export const injectStructuredData = (schema, id = null) => {
 };
 
 // Update page title and meta description
-export const updatePageMeta = (title, description) => {
+export const updatePageMeta = (/** @type {string} */ title, /** @type {string} */ description) => {
   if (typeof window === 'undefined') return;
 
   document.title = title;
@@ -285,22 +285,22 @@ export const updatePageMeta = (title, description) => {
   let metaDescription = document.querySelector('meta[name="description"]');
   if (!metaDescription) {
     metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
+    /** @type {HTMLMetaElement} */ (metaDescription).name = 'description';
     document.head.appendChild(metaDescription);
   }
-  metaDescription.content = description;
+  /** @type {HTMLMetaElement} */ (metaDescription).content = description;
 
   // Update Open Graph tags
-  let ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.content = title;
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) /** @type {HTMLMetaElement} */ (ogTitle).content = title;
 
-  let ogDescription = document.querySelector('meta[property="og:description"]');
-  if (ogDescription) ogDescription.content = description;
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  if (ogDescription) /** @type {HTMLMetaElement} */ (ogDescription).content = description;
 
   // Update Twitter tags
-  let twitterTitle = document.querySelector('meta[property="twitter:title"]');
-  if (twitterTitle) twitterTitle.content = title;
+  const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+  if (twitterTitle) /** @type {HTMLMetaElement} */ (twitterTitle).content = title;
 
-  let twitterDescription = document.querySelector('meta[property="twitter:description"]');
-  if (twitterDescription) twitterDescription.content = description;
+  const twitterDescription = document.querySelector('meta[property="twitter:description"]');
+  if (twitterDescription) /** @type {HTMLMetaElement} */ (twitterDescription).content = description;
 };

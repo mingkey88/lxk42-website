@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 
-const assetsDir = path.resolve(process.cwd(), 'src', 'assets');
+const assetsDir = path.resolve(process.cwd(), 'src', 'lib', 'assets');
 
 async function ensureWebpFor(filePath) {
   const ext = path.extname(filePath).toLowerCase();

@@ -37,7 +37,6 @@
     return () => clearInterval(autoplayInterval);
   });
 
-  $: currentTestimonial = testimonials[currentIndex];
 </script>
 
 <!-- Testimonial Carousel -->
@@ -77,7 +76,7 @@
                   <div class="relative z-10">
                     <!-- Rating Stars -->
                     <div class="flex justify-center mb-6">
-                      {#each Array(testimonial.rating || 5) as _, i}
+                      {#each Array(testimonial.rating || 5) as _, i (i)}
                         <svg class="w-5 h-5 text-lxk-peach fill-current" viewBox="0 0 20 20">
                           <path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/>
                         </svg>
@@ -137,7 +136,7 @@
         {#if testimonials.length > 1}
           <!-- Dot Indicators -->
           <div class="flex justify-center gap-3 mt-8">
-            {#each testimonials as _, index}
+            {#each testimonials as _, index (index)}
               <button
                 class="w-3 h-3 rounded-full transition-all duration-300 {currentIndex === index ? 'bg-lxk-sage w-8' : 'bg-lxk-sage/30 hover:bg-lxk-sage/50'}"
                 on:click={() => goToTestimonial(index)}

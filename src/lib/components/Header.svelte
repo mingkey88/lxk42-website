@@ -7,20 +7,7 @@
 
   // Removed unused smoothScroll function
 
-  // Prefetch page components on hover to speed up navigation
-  const prefetchMap = {
-    '/web-design': () => import('../pages/WebDesign.svelte'),
-    '/web-app': () => import('../pages/WebApp.svelte'),
-    '/digital-marketing': () => import('../pages/DigitalMarketing.svelte'),
-    '/branding': () => import('../pages/Branding.svelte'),
-    '/graphic-design': () => import('../pages/GraphicDesign.svelte'),
-    '/motion-graphics': () => import('../pages/MotionGraphics.svelte'),
-    '/portfolio': () => import('../pages/Portfolio.svelte')
-  };
-  function prefetch(path) {
-    const fn = prefetchMap[path];
-    if (fn) fn();
-  }
+  // SvelteKit handles prefetching automatically
   import ChevronDown from './icons/ChevronDown.svelte';
   import MenuIcon from './icons/Menu.svelte';
 </script>
@@ -39,7 +26,7 @@
         <div class="flex items-center justify-between h-16 md:h-20">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="#/" class="text-2xl font-bold text-lxk-sage">
+                <a href="/" class="text-2xl font-bold text-lxk-sage">
                     LXK<span class="text-lxk-peach">42</span>
                 </a>
             </div>
@@ -47,7 +34,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-8">
-                    <a href="#/about-us" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
+                    <a href="/about" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
                     <div class="relative group">
                         <button 
                             class="text-lxk-warm-gray hover:text-lxk-sage transition-colors flex items-center"
@@ -63,18 +50,18 @@
                             aria-label="Services submenu"
                         >
                             <div class="py-3">
-                                <a href="#/web-design" on:mouseenter={() => prefetch('/web-design')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web Design & Development</a>
-                                <a href="#/web-app" on:mouseenter={() => prefetch('/web-app')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web App Development</a>
-                                <a href="#/digital-marketing" on:mouseenter={() => prefetch('/digital-marketing')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Digital Marketing</a>
-                                <a href="#/branding" on:mouseenter={() => prefetch('/branding')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Branding Solutions</a>
-                                <a href="#/graphic-design" on:mouseenter={() => prefetch('/graphic-design')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Graphic Design</a>
-                                <a href="#/motion-graphics" on:mouseenter={() => prefetch('/motion-graphics')} class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Motion Graphics & Animation</a>
+                                <a href="/web-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web Design & Development</a>
+                                <a href="/web-app" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web App Development</a>
+                                <a href="/digital-marketing" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Digital Marketing</a>
+                                <a href="/branding" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Branding Solutions</a>
+                                <a href="/graphic-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Graphic Design</a>
+                                <a href="/motion-graphics" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Motion Graphics & Animation</a>
                             </div>
                         </div>
                     </div>
-                    <a href="#/portfolio" on:mouseenter={() => prefetch('/portfolio')} class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
-                    <a href="#/testimonials" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
-                    <a href="#/contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
+                    <a href="/portfolio" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                    <a href="/testimonials" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
+                    <a href="/#contact" class="text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
                 </div>
             </div>
 

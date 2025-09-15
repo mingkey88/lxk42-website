@@ -8,7 +8,15 @@
       "Bash(npm run dev:*)",
       "WebFetch(domain:www.elveslab.com)",
       "WebFetch(domain:sg.digisalad.cool)",
-      "WebFetch(domain:gvnmarketing.com)"
+      "WebFetch(domain:gvnmarketing.com)",
+      "Bash(git commit:*)",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Bash(npx eslint:*)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

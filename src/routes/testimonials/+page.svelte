@@ -1,22 +1,14 @@
 <script>
   import { onMount } from 'svelte';
-  import TestimonialCarousel from '../components/ui/TestimonialCarousel.svelte';
-  import ClientLogoStrip from '../components/ui/ClientLogoStrip.svelte';
-  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
-  import { testimonials, getTestimonialsByService } from '../data/testimonials.js';
-  import { clients, getFeaturedClients, industryStats } from '../data/clients.js';
-  import { updatePageMeta, injectStructuredData, reviewSchema } from '../lib/structuredData.js';
+  import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
+  import ClientLogoStrip from '$lib/components/ui/ClientLogoStrip.svelte';
+  import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
+  import { testimonials, getTestimonialsByService } from '$lib/data/testimonials.js';
+  import { clients, industryStats } from '$lib/data/clients.js';
+  import { updatePageMeta, injectStructuredData, reviewSchema } from '$lib/structuredData.js';
 
   let activeFilter = 'all';
   let filteredTestimonials = testimonials;
-
-  const serviceCategories = [
-    { id: 'all', name: 'All Projects', count: testimonials.length },
-    { id: 'web-design', name: 'Web Design', count: getTestimonialsByService('web-design').length },
-    { id: 'branding', name: 'Branding', count: getTestimonialsByService('branding').length },
-    { id: 'digital-marketing', name: 'Digital Marketing', count: getTestimonialsByService('digital-marketing').length },
-    { id: 'web-app', name: 'Web Apps', count: getTestimonialsByService('web-app').length }
-  ];
 
   function filterTestimonials(serviceType) {
     activeFilter = serviceType;
@@ -108,7 +100,7 @@
       >
         All Stories
       </button>
-      {#each ['web-design', 'branding', 'digital-marketing'] as service}
+      {#each ['web-design', 'branding', 'digital-marketing'] as service (service)}
         <button
           class="px-6 py-3 rounded-full transition-all duration-300 font-medium text-lg capitalize
             {activeFilter === service
@@ -132,11 +124,11 @@
     {:else}
       <!-- Filtered Grid View -->
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {#each filteredTestimonials as testimonial}
+        {#each filteredTestimonials as testimonial (testimonial.id)}
           <div class="painterly-card p-8 animate-on-scroll">
             <!-- Rating Stars -->
             <div class="flex justify-center mb-6">
-              {#each Array(testimonial.rating || 5) as _, i}
+              {#each Array(testimonial.rating || 5) as _, i (i)}
                 <svg class="w-5 h-5 text-lxk-peach fill-current" viewBox="0 0 20 20">
                   <path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/>
                 </svg>
@@ -217,7 +209,7 @@
         Industries We Serve
       </h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
-        {#each Object.entries(industryStats) as [industry, count]}
+        {#each Object.entries(industryStats) as [industry, count] (industry)}
           <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
             <div class="text-2xl font-bold text-lxk-sage mb-2">{count}</div>
             <div class="text-sm text-gray-600">{industry}</div>

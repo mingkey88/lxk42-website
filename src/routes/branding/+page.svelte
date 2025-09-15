@@ -1,15 +1,15 @@
 <script>
-  import { projects } from '../data/portfolio.js';
-  import EnhancedCTA from '../components/ui/EnhancedCTA.svelte';
-  import BrandPersonalityQuiz from '../components/tools/BrandPersonalityQuiz.svelte';
-  import TestimonialCarousel from '../components/ui/TestimonialCarousel.svelte';
-  import CompactFAQ from '../components/ui/CompactFAQ.svelte';
-  import { getTestimonialsByService } from '../data/testimonials.js';
-  import { serviceSchemas, injectStructuredData, updatePageMeta } from '../lib/structuredData.js';
+  import { projects } from '$lib/data/portfolio.js';
+  import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
+  import BrandPersonalityQuiz from '$lib/components/tools/BrandPersonalityQuiz.svelte';
+  import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
+  import CompactFAQ from '$lib/components/ui/CompactFAQ.svelte';
+  import { getTestimonialsByService } from '$lib/data/testimonials.js';
+  import { serviceSchemas, injectStructuredData, updatePageMeta } from '$lib/structuredData.js';
   import { onMount } from 'svelte';
-  import StatCard from '../components/ui/StatCard.svelte';
-  import BrowserFrame from '../components/ui/BrowserFrame.svelte';
-  import HorizontalProjectRail from '../components/ui/HorizontalProjectRail.svelte';
+  import StatCard from '$lib/components/ui/StatCard.svelte';
+  import BrowserFrame from '$lib/components/ui/BrowserFrame.svelte';
+  import HorizontalProjectRail from '$lib/components/ui/HorizontalProjectRail.svelte';
 
   // Filter projects relevant to branding
   const relevantProjects = projects.filter(project =>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="mt-4">
-              <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
+              <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
             </div>
           </div>
         </div>
@@ -217,7 +217,7 @@
       <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">Recent Branding Projects</h3>
       <HorizontalProjectRail projects={relevantProjects} />
       <div class="text-center mt-6">
-        <a href="#/portfolio" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
+        <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
           View All Projects →
         </a>
       </div>

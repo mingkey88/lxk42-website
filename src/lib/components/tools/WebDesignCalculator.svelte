@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
 
   let selectedStyle = '';
   let selectedScope = '';
@@ -42,9 +41,7 @@
     { id: 'tech', name: 'Tech / SaaS', adjustment: 1000 }
   ];
 
-  $: {
-    calculateEstimate();
-  }
+  $: selectedStyle, selectedScope, selectedFeatures, selectedIndustry, calculateEstimate();
 
   function calculateEstimate() {
     if (!selectedStyle || !selectedScope) {
@@ -196,7 +193,7 @@
           </div>
           {#if selectedFeatures.length > 0}
             <div class="text-sm text-gray-600">Additional Features:</div>
-            {#each selectedFeatures as featureId}
+            {#each selectedFeatures as featureId (featureId)}
               <div class="flex justify-between py-1 pl-4">
                 <span class="text-gray-600">{features.find(f => f.id === featureId)?.name}</span>
                 <span class="text-lxk-coral">+SGD ${features.find(f => f.id === featureId)?.price}</span>

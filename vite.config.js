@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import viteImagemin from 'vite-plugin-imagemin'
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+import viteImagemin from 'vite-plugin-imagemin';
 
 export default defineConfig({
   plugins: [
-    svelte(),
+    sveltekit(),
     viteImagemin({
       gifsicle: { optimizationLevel: 7 },
       mozjpeg: { quality: 85 },
@@ -16,16 +16,5 @@ export default defineConfig({
         ]
       }
     })
-  ],
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['svelte']
-        }
-      }
-    }
-  }
-})
+  ]
+});
