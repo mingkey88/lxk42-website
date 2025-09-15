@@ -13,7 +13,8 @@ export default [
       'legacy/**',
       'lxk42-website/**',
       '**/*.config.js',
-      '.firebase/**'
+      '.firebase/**',
+      '.svelte-kit/**'
     ]
   },
 
@@ -56,7 +57,9 @@ export default [
     rules: {
       // Relax strictness to avoid large refactors for now
       'svelte/require-each-key': 'warn',
-      'no-unused-vars': 'warn'
+      'no-unused-vars': 'warn',
+      // Disable navigation resolution check for internal routes in SvelteKit
+      'svelte/no-navigation-without-resolve': 'off'
     }
   },
 

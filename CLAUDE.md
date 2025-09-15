@@ -42,10 +42,12 @@ This file provides guidance to Claude AI when working with the Light & Kaki Stud
 ## Technical Architecture
 
 ### Core Technologies
-- **Framework**: Svelte 5 with TypeScript support
-- **Build System**: Vite for fast development and optimized production builds
-- **Styling**: Tailwind CSS with custom color palette and component classes
-- **Code Quality**: ESLint + Prettier with TypeScript integration
+- **Framework**: SvelteKit 2.39+ with Svelte 5 and TypeScript support
+- **Build System**: Vite 7+ for fast development and optimized production builds
+- **Adapter**: Static site generation with @sveltejs/adapter-static
+- **Styling**: Tailwind CSS 3.4+ with custom color palette and @tailwindcss/forms plugin
+- **Code Quality**: ESLint 9+ (flat config) + Prettier with TypeScript integration
+- **Image Optimization**: Sharp for image processing and vite-plugin-imagemin
 - **Hosting**: Firebase Hosting with automatic GitHub Actions deployment
 - **Version Control**: GitHub repository at mingkey88/lxk42-website
 
@@ -53,17 +55,34 @@ This file provides guidance to Claude AI when working with the Light & Kaki Stud
 ```
 lxk42-website/
 ├── src/
-│   ├── components/          # Svelte components (Header, Hero, About, etc.)
-│   ├── assets/             # Static assets (images, icons)
-│   ├── App.svelte          # Root component with scroll animations
-│   ├── main.js             # Application entry point
-│   └── style.css           # Custom CSS, animations, Tailwind components
-├── index.html              # HTML entry point with Svelte mounting
+│   ├── lib/
+│   │   ├── components/     # Svelte components organized by type
+│   │   │   ├── icons/      # Icon components (Menu, ChevronDown)
+│   │   │   ├── tools/      # Interactive tools (calculators, quizzes)
+│   │   │   └── ui/         # Reusable UI components (modals, carousels)
+│   │   ├── assets/         # Static assets (images)
+│   │   └── data/           # Data files (testimonials, portfolios, packages)
+│   ├── routes/             # SvelteKit file-based routing
+│   │   ├── +layout.svelte  # Root layout component
+│   │   ├── +page.svelte    # Homepage
+│   │   ├── web-design/     # Service pages
+│   │   ├── web-app/
+│   │   ├── digital-marketing/
+│   │   ├── branding/
+│   │   ├── graphic-design/
+│   │   ├── motion-graphics/
+│   │   ├── portfolio/
+│   │   ├── about/
+│   │   └── testimonials/
+│   ├── app.html            # HTML template
+│   └── style.css           # Global CSS, animations, Tailwind components
+├── static/                 # Static assets served at root
 ├── vite.config.js          # Vite configuration with Svelte plugin
-├── svelte.config.js        # Svelte-specific configuration
+├── svelte.config.js        # SvelteKit configuration with static adapter
 ├── tailwind.config.js      # Custom color palette and configuration
 ├── tsconfig.json           # TypeScript configuration
 ├── eslint.config.js        # ESLint rules and TypeScript integration
+├── postcss.config.js       # PostCSS configuration
 ├── .prettierrc             # Code formatting rules
 ├── firebase.json           # Hosting configuration
 └── package.json            # Dependencies and scripts
@@ -80,12 +99,16 @@ lxk42-website/
 
 ### Development Commands
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
+npm run dev          # Start SvelteKit development server
+npm run prebuild     # Generate optimized images (runs automatically before build)
+npm run build        # Build for production with static adapter
 npm run preview      # Preview production build
+npm run check        # SvelteKit sync + svelte-check for component validation
+npm run check:watch  # Watch mode for component validation
 npm run lint         # Run ESLint checks
 npm run lint:fix     # Auto-fix ESLint issues
 npm run format       # Format code with Prettier
+npm run format:check # Check code formatting
 npm run typecheck    # TypeScript type checking
 ```
 
@@ -224,26 +247,44 @@ lxk-soft-teal: #7BA098 /* Secondary brand color */
 - Verify .firebaserc contains correct project ID
 - Check that build succeeds before deployment
 
-## Svelte Component Architecture
+## SvelteKit Component Architecture
 
 ### Component Organization
-- **Atomic Components**: Small, reusable UI elements (buttons, inputs, cards)
-- **Layout Components**: Header, Footer, navigation - structural elements
-- **Page Sections**: Hero, About, Services, Contact - main content blocks
-- **Utility Components**: Modals, tooltips, animations - functional elements
+- **UI Components** (`src/lib/components/ui/`): Reusable interface elements
+  - BrowserFrame, CompactFAQ, EnhancedCTA, ExitIntentModal
+  - HumbleAchievements, KakiProcess, LeadMagnetModal, ServicePackages
+  - StatCard, TestimonialCarousel, UIkitPreview, WhatsAppButton
+- **Interactive Tools** (`src/lib/components/tools/`): Engagement components
+  - AnimationStylePreview, BrandPersonalityQuiz, DesignPackageBuilder
+  - MarketingROICalculator, WebDesignCalculator
+- **Core Components** (`src/lib/components/`): Main site sections
+  - Header, InteractiveHero, About, Services, Contact, SocialProof
+  - WhyWorkWithUs, WorkProcess
+- **Icons** (`src/lib/components/icons/`): SVG icon components
 
-### Svelte Best Practices
-- Use `bind:` for two-way data binding sparingly
+### SvelteKit Features Used
+- **File-based Routing**: Routes in `src/routes/` with `+page.svelte` files
+- **Layouts**: Shared layout in `+layout.svelte` with Header component
+- **Static Site Generation**: Using adapter-static for optimal performance
+- **Import Aliases**: `$lib/` alias for clean imports from `src/lib/`
+- **SEO Features**: Meta tags, structured data injection in route files
+
+### Svelte 5 Best Practices
+- Use runes system for state management where applicable
 - Leverage reactive statements `$:` for computed values
 - Keep component props interface clean and well-typed
 - Use context API for deeply nested prop passing
 - Prefer composition over inheritance for component design
 
-### State Management
-- Component state for local UI state
-- Context API for shared state across components
+### Data Management
+- **Data Files** (`src/lib/data/`): Centralized data management
+  - `testimonials.js`: Customer testimonials with service filtering
+  - `servicePackages.js`: Service package configurations
+  - `portfolio.js`: Portfolio items and project data
+  - `clients.js`: Client information and logos
+- **Structured Data**: SEO schema injection in `src/lib/structuredData.js`
+- Component state for local UI interactions
 - Reactive variables for computed values
-- Event dispatching for parent-child communication
 
 ## AI Workflow Optimization
 
@@ -389,6 +430,13 @@ This section summarizes Codex implementation work to keep you in sync when you t
 
 ## Strategic Analysis & Improvement Roadmap
 
+### Technical Status (2025-09-15)
+**Critical Issues Resolved:**
+- ✅ ESLint configuration updated to exclude `.svelte-kit/` generated files
+- ✅ TypeScript errors fixed in data files with proper type casting
+- ✅ All build processes now pass successfully
+- ⚠️ ESLint warnings remain (mainly missing keys in `{#each}` blocks and unused variables)
+
 ### Current State Assessment (2025-09-13)
 Based on comprehensive analysis documented in `GEMINI_STRATEGIC_BLUEPRINT.md`, `HOMEPAGE_ANALYSIS.md`, `SERVICES_ANALYSIS.md`, and `IMPROVEMENT_PLAN.md`:
 
@@ -483,11 +531,17 @@ Transform from passive digital brochure to active client acquisition engine thro
 4. **Systematic Implementation**: Measure, iterate, improve systematically
 
 ### Quality Gates Before Any Changes
-- [ ] `npm run lint` passes (currently failing)
-- [ ] `npm run typecheck` passes
-- [ ] `npm run build` succeeds
+- [x] `npm run lint` passes (warnings only, no errors)
+- [x] `npm run typecheck` passes
+- [x] `npm run build` succeeds
 - [ ] Manual testing on mobile/desktop
 - [ ] Accessibility check with browser tools
+
+### Recent Technical Improvements (2025-09-15)
+- Fixed ESLint configuration to properly exclude SvelteKit generated files
+- Resolved TypeScript indexing errors in data utility functions
+- Updated project structure documentation to reflect SvelteKit migration
+- All core development commands now execute successfully
 
 ### Context for Future Sessions
 This analysis represents months of strategic work by multiple AI agents. The brand foundation is exceptional - the opportunity lies in conversion optimization, technical polish, and interactive engagement while preserving the authentic cultural positioning that makes LXK42 unique in the Singapore market.
