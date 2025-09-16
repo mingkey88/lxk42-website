@@ -44,11 +44,11 @@ This file provides guidance to Claude AI when working with the Light & Kaki Stud
 ### Core Technologies
 - **Framework**: SvelteKit 2.39+ with Svelte 5 and TypeScript support
 - **Build System**: Vite 7+ for fast development and optimized production builds
-- **Adapter**: Static site generation with @sveltejs/adapter-static
+- **Adapter**: Vercel adapter for deployment with @sveltejs/adapter-vercel
 - **Styling**: Tailwind CSS 3.4+ with custom color palette and @tailwindcss/forms plugin
 - **Code Quality**: ESLint 9+ (flat config) + Prettier with TypeScript integration
 - **Image Optimization**: Sharp for image processing and vite-plugin-imagemin
-- **Hosting**: Firebase Hosting with automatic GitHub Actions deployment
+- **Hosting**: Vercel deployment with Firebase as secondary option
 - **Version Control**: GitHub repository at mingkey88/lxk42-website
 
 ### Current Project Structure

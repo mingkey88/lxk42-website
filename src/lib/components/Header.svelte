@@ -5,6 +5,10 @@
     mobileMenuOpen = !mobileMenuOpen;
   }
 
+  function closeMobileMenu() {
+    mobileMenuOpen = false;
+  }
+
   // Removed unused smoothScroll function
 
   // SvelteKit handles prefetching automatically
@@ -88,16 +92,16 @@
         <!-- Mobile Navigation -->
         <div class="md:hidden {mobileMenuOpen ? '' : 'hidden'}" role="navigation" aria-label="Mobile menu">
             <div class="px-2 pt-2 pb-3 space-y-1 bg-lxk-cream/95 backdrop-blur-md border-t border-lxk-sage/10">
-                <a href="#/about-us" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
-                <a href="#/web-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
-                <a href="#/web-app" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web App Dev</a>
-                <a href="#/digital-marketing" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
-                <a href="#/branding" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Branding</a>
-                <a href="#/graphic-design" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Graphic Design</a>
-                <a href="#/motion-graphics" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Motion Graphics & Animation</a>
-                <a href="#/portfolio" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
-                <a href="#/testimonials" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
-                <a href="#/contact" class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
+                <a href="/about" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
+                <a href="/web-design" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
+                <a href="/web-app" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web App Dev</a>
+                <a href="/digital-marketing" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
+                <a href="/branding" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Branding</a>
+                <a href="/graphic-design" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Graphic Design</a>
+                <a href="/motion-graphics" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Motion Graphics & Animation</a>
+                <a href="/portfolio" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>
+                <a href="/testimonials" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Testimonials</a>
+                <a href="/#contact" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Contact</a>
             </div>
         </div>
     </nav>
