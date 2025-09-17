@@ -3,6 +3,8 @@
   import teamImage from '../assets/team-collaboration.png';
   import teamImageWebp from '../assets/team-collaboration.webp';
   import LoadingSkeleton from './ui/LoadingSkeleton.svelte';
+  import { createScrollAnimation, createStaggeredAnimation } from '$lib/utils/scrollAnimations.ts';
+
   let imageLoaded = false;
   let imgEl;
 
@@ -10,6 +12,10 @@
     if (imgEl && imgEl.complete) {
       imageLoaded = true;
     }
+
+    // GSAP scroll animations
+    createScrollAnimation('.about-visual', 'slideInLeft');
+    createScrollAnimation('.about-content', 'slideInRight');
   });
 </script>
 
@@ -33,7 +39,7 @@
         <!-- Simplified hero section with asymmetrical layout -->
         <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <!-- Large visual placeholder -->
-            <div class="animate-on-scroll">
+            <div class="about-visual">
                 <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center overflow-hidden relative">
                     <!-- Realistic minimalistic workspace scene -->
                     <div class="relative w-80 h-64 transform rotate-2">
@@ -103,7 +109,7 @@
             </div>
 
             <!-- Minimal, impactful text -->
-            <div class="animate-on-scroll">
+            <div class="about-content">
                 <h2 class="text-5xl lg:text-6xl font-bold text-lxk-warm-gray mb-8 leading-tight">
                     Where Creativity Meets <span class="text-lxk-peach">Friendship</span>
                 </h2>
