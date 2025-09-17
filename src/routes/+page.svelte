@@ -39,7 +39,7 @@
   <link rel="canonical" href="https://www.lxk42.sg" />
 </svelte:head>
 
-<main class="min-h-screen">
+<main id="main-content" class="min-h-screen">
   <InteractiveHero />
   <div class="social-proof-section">
     <SocialProof />

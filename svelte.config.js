@@ -5,7 +5,8 @@ export default {
   kit: {
     adapter: adapter(),
     prerender: {
-      handleHttpError: 'warn'
+      handleHttpError: 'warn',
+      handleMissingId: 'warn'
     }
   },
   preprocess: vitePreprocess(),
