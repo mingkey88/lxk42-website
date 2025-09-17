@@ -207,7 +207,7 @@
             <!-- Alternative action -->
             <div class="pt-3 border-t border-gray-200">
               <a
-                href="#/contact?source=exit-intent"
+                href="#contact?source=exit-intent"
                 on:click={closeModal}
                 class="text-sm text-lxk-sage hover:text-lxk-soft-teal font-medium transition-colors">
                 Or book a free call instead →

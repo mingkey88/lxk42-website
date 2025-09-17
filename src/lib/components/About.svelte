@@ -212,7 +212,7 @@
         <div class="text-center">
             <div class="bg-gradient-to-r from-lxk-sage to-lxk-peach rounded-3xl p-16 text-white">
                 <h3 class="text-4xl font-bold mb-6">Ready to Be Kakis?</h3>
-                <a href="#/contact" class="inline-flex items-center bg-white text-lxk-sage px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg group">
+                <a href="#contact" class="inline-flex items-center bg-white text-lxk-sage px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg group">
                     Start Our Journey Together
                     <div class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
                         <span class="text-sm">→</span>

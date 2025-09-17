@@ -51,7 +51,7 @@
     <!-- Simple CTA -->
     <div class="text-center mt-12">
       <p class="text-gray-600 mb-6">Still have questions? Let's chat over kopi!</p>
-      <a href="#/contact" class="inline-flex items-center bg-lxk-sage text-white px-8 py-4 rounded-full hover:bg-lxk-soft-teal transition-all duration-300 font-medium text-lg group">
+      <a href="#contact" class="inline-flex items-center bg-lxk-sage text-white px-8 py-4 rounded-full hover:bg-lxk-soft-teal transition-all duration-300 font-medium text-lg group">
         Get in Touch
         <div class="ml-3 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
           <span class="text-sm">→</span>

@@ -58,7 +58,6 @@
   function getProjectIcon(tags) {
     if (tags.includes('web app') || tags.includes('saas')) return '⚡';
     if (tags.includes('ecommerce') || tags.includes('marketplace')) return '🛍️';
-    if (tags.includes('branding')) return '🎨';
     if (tags.includes('web design')) return '💻';
     if (tags.includes('motion graphics')) return '🎬';
     if (tags.includes('education')) return '📚';
@@ -84,7 +83,7 @@
   onMount(() => {
     updatePageMeta(
       'Portfolio - Our Creative Work | Light & Kaki Studio',
-      'Explore our portfolio of web design, development, branding, and digital marketing projects. Real work, real friendships, real results in Singapore.'
+      'Explore our portfolio of web design, development, and motion graphics projects. Real work, real friendships, real results in Singapore.'
     );
 
     // Animate elements on scroll
@@ -152,7 +151,7 @@
       >
         All Work
       </button>
-      {#each ['web design', 'branding', 'web app'] as tag (tag)}
+      {#each ['web design', 'graphic design', 'web app'] as tag (tag)}
         <button
           class="px-6 py-3 rounded-full transition-all duration-300 font-medium text-lg capitalize
             {activeTag === tag
@@ -403,7 +402,7 @@
           <p class="text-gray-600 mb-4">Inspired by this project? Let's create something amazing together!</p>
           <button
             class="bg-gradient-to-r from-lxk-sage to-lxk-soft-teal text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-            on:click={() => { closeProjectDetail(); window.location.hash = '#/contact'; }}
+            on:click={() => { closeProjectDetail(); window.location.hash = '#contact'; }}
           >
             Start Your Project →
           </button>

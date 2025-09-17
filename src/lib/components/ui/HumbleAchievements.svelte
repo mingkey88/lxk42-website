@@ -14,12 +14,6 @@
   // Humble achievements data
   const certifications = [
     {
-      name: "Google Partner",
-      icon: "🎯",
-      description: "Helps us create better digital marketing campaigns for our kakis",
-      year: "2024"
-    },
-    {
       name: "Svelte Society Member",
       icon: "⚡",
       description: "Keeping up with the latest web technologies to serve you better",
@@ -42,7 +36,7 @@
   const recognitions = [
     {
       title: "Featured in Design Singapore",
-      description: "Our kaki-first approach to branding caught some attention",
+      description: "Our kaki-first approach to design caught some attention",
       icon: "🏆",
       year: "2024"
     },

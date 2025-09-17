@@ -101,8 +101,8 @@
 
   <div class="space-y-8">
     <!-- Style Selection -->
-    <div>
-      <div class="block text-lg font-semibold text-lxk-warm-gray mb-4">Choose Your Style</div>
+    <fieldset>
+      <legend class="text-lg font-semibold text-lxk-warm-gray mb-4">Choose Your Style</legend>
       <div class="grid md:grid-cols-2 gap-4">
         {#each styles as style (style.id)}
           <button
@@ -118,11 +118,11 @@
           </button>
         {/each}
       </div>
-    </div>
+    </fieldset>
 
     <!-- Scope Selection -->
-    <div>
-      <div class="block text-lg font-semibold text-lxk-warm-gray mb-4">Project Scope</div>
+    <fieldset>
+      <legend class="text-lg font-semibold text-lxk-warm-gray mb-4">Project Scope</legend>
       <div class="grid md:grid-cols-2 gap-4">
         {#each scopes as scope (scope.id)}
           <button
@@ -138,7 +138,7 @@
           </button>
         {/each}
       </div>
-    </div>
+    </fieldset>
 
     <!-- Industry Selection -->
     <div>
@@ -209,7 +209,7 @@
             Start Over
           </button>
           <a
-            href="#/contact?service=web-design&estimate={estimatedCost}&timeline={estimatedTimeline}"
+            href="#contact?service=web-design&estimate={estimatedCost}&timeline={estimatedTimeline}"
             class="flex-1 bg-gradient-to-r from-lxk-sage to-lxk-soft-teal text-white py-3 rounded-2xl font-bold text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             Get Detailed Quote
           </a>
@@ -222,5 +222,12 @@
         Select both style and scope to see your estimate
       </div>
     {/if}
+
+    <!-- Screen reader live region for calculator updates -->
+    <div aria-live="polite" aria-atomic="true" class="sr-only">
+      {#if showResults}
+        Estimate updated: SGD {estimatedCost.toLocaleString()} for {estimatedTimeline} delivery
+      {/if}
+    </div>
   </div>
 </div>

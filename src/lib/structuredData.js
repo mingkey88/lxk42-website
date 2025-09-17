@@ -7,7 +7,7 @@ export const organizationSchema = {
   "alternateName": "LXK42 Studio",
   "url": "https://www.lxk42.sg",
   "logo": "https://www.lxk42.sg/logo.png",
-  "description": "Creative digital agency in Singapore specializing in web design, development, branding, and digital marketing with authentic 'kaki' (friendship) philosophy.",
+  "description": "Creative digital agency in Singapore specializing in web design, development, and motion graphics with authentic 'kaki' (friendship) philosophy.",
   "foundingDate": "2024",
   "founders": [
     {
@@ -33,8 +33,6 @@ export const organizationSchema = {
     "Web Design",
     "Web Development",
     "Web Application Development",
-    "Digital Marketing",
-    "Branding & Identity Design",
     "Graphic Design",
     "Motion Graphics & Animation"
   ],
@@ -48,9 +46,8 @@ export const organizationSchema = {
     "JavaScript",
     "TypeScript",
     "UI/UX Design",
-    "SEO",
-    "Digital Marketing",
-    "Brand Strategy"
+    "Web Development",
+    "Graphic Design"
   ]
 };
 
@@ -60,7 +57,7 @@ export const websiteSchema = {
   "name": "Light & Kaki Studio",
   "alternateName": "LXK42 Studio",
   "url": "https://www.lxk42.sg",
-  "description": "Singapore creative digital agency offering web design, development, and digital marketing services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
+  "description": "Singapore creative digital agency offering web design, development, and graphic design services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
   "inLanguage": "en-SG",
   "potentialAction": {
     "@type": "SearchAction",
@@ -74,7 +71,7 @@ export const localBusinessSchema = {
   "@type": "ProfessionalService",
   "name": "Light & Kaki Studio",
   "image": "https://www.lxk42.sg/logo.png",
-  "description": "Creative digital companions specializing in web design, development, branding, and digital marketing. Where creativity meets friendship with authentic Singapore 'kaki' philosophy.",
+  "description": "Creative digital companions specializing in web design, development, and motion graphics. Where creativity meets friendship with authentic Singapore 'kaki' philosophy.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "Singapore",
@@ -132,34 +129,6 @@ export const serviceSchemas = {
     "@type": "Service",
     "name": "Web Application Development",
     "description": "Custom web application development using modern frameworks like Svelte, React, and Node.js with focus on user experience and performance.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Light & Kaki Studio"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Singapore"
-    }
-  },
-  "digital-marketing": {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Digital Marketing Services",
-    "description": "Comprehensive digital marketing including SEO, social media marketing, content strategy, and performance analytics for Singapore businesses.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Light & Kaki Studio"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Singapore"
-    }
-  },
-  "branding": {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Branding & Identity Design",
-    "description": "Brand strategy, logo design, visual identity systems, and brand guidelines with cultural sensitivity for Singapore market.",
     "provider": {
       "@type": "Organization",
       "name": "Light & Kaki Studio"

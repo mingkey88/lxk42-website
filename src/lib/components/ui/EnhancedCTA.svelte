@@ -57,7 +57,7 @@
               </div>
 
               <a
-                href="#/contact?service={service}&type=consultation&offer=jan2025"
+                href="#contact?service={service}&type=consultation&offer=jan2025"
                 class="inline-flex items-center justify-center w-full bg-white text-lxk-sage px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group">
                 <span>{primaryCTA}</span>
                 <div class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">

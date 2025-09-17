@@ -19,44 +19,66 @@ interface AnimationPresets {
   [key: string]: AnimationPreset;
 }
 
+// Kaki-inspired easing curves that reflect warmth and friendship
+const KAKI_EASINGS = {
+  gentle: "power1.out", // Gentle, welcoming
+  warm: "power2.out", // Warm and approachable
+  friendly: "back.out(1.2)", // Friendly bounce
+  caring: "elastic.out(1, 0.5)", // Caring and responsive
+  trustworthy: "expo.out", // Reliable and trustworthy
+};
+
 // Animation presets that match the Japanese-inspired minimalistic design
 const ANIMATION_PRESETS: AnimationPresets = {
   fadeUp: {
     from: { opacity: 0, y: 40 },
     to: { opacity: 1, y: 0 },
     duration: 0.8,
-    ease: "power2.out"
+    ease: KAKI_EASINGS.warm
   },
   fadeIn: {
     from: { opacity: 0 },
     to: { opacity: 1 },
     duration: 0.6,
-    ease: "power1.out"
+    ease: KAKI_EASINGS.gentle
   },
   slideInLeft: {
     from: { opacity: 0, x: -40 },
     to: { opacity: 1, x: 0 },
     duration: 0.7,
-    ease: "power2.out"
+    ease: KAKI_EASINGS.warm
   },
   slideInRight: {
     from: { opacity: 0, x: 40 },
     to: { opacity: 1, x: 0 },
     duration: 0.7,
-    ease: "power2.out"
+    ease: KAKI_EASINGS.warm
   },
   scaleIn: {
     from: { opacity: 0, scale: 0.95 },
     to: { opacity: 1, scale: 1 },
     duration: 0.6,
-    ease: "power2.out"
+    ease: KAKI_EASINGS.friendly
   },
   stagger: {
     from: { opacity: 0, y: 20 },
     to: { opacity: 1, y: 0 },
     duration: 0.5,
-    ease: "power2.out",
+    ease: KAKI_EASINGS.warm,
     stagger: 0.1
+  },
+  // New kaki-inspired animations
+  kakiWelcome: {
+    from: { opacity: 0, y: 30, scale: 0.9 },
+    to: { opacity: 1, y: 0, scale: 1 },
+    duration: 1,
+    ease: KAKI_EASINGS.friendly
+  },
+  kakiFadeIn: {
+    from: { opacity: 0, y: 20 },
+    to: { opacity: 1, y: 0 },
+    duration: 0.8,
+    ease: KAKI_EASINGS.caring
   }
 };
 
@@ -277,4 +299,154 @@ export function refreshScrollTrigger() {
 export function killAllScrollTriggers() {
   if (!browser) return;
   ScrollTrigger.killAll();
+}
+
+// ===============================================
+// MICRO-INTERACTION UTILITIES
+// ===============================================
+
+/**
+ * Creates a kaki-inspired hover effect for buttons and interactive elements
+ * @param selector - CSS selector for elements to enhance
+ * @param options - Animation options
+ */
+export function createKakiHover(selector: string | Element, options: Record<string, any> = {}) {
+  if (!browser) return;
+
+  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
+
+  elements.forEach((element) => {
+    const htmlElement = element as HTMLElement;
+
+    htmlElement.addEventListener('mouseenter', () => {
+      gsap.to(element, {
+        scale: 1.05,
+        y: -2,
+        duration: 0.3,
+        ease: KAKI_EASINGS.friendly,
+        ...options.hover
+      });
+    });
+
+    htmlElement.addEventListener('mouseleave', () => {
+      gsap.to(element, {
+        scale: 1,
+        y: 0,
+        duration: 0.3,
+        ease: KAKI_EASINGS.warm,
+        ...options.leave
+      });
+    });
+  });
+}
+
+/**
+ * Creates a friendship-inspired button interaction
+ * @param selector - CSS selector for button elements
+ */
+export function createFriendlyButtonEffect(selector: string | Element) {
+  if (!browser) return;
+
+  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
+
+  elements.forEach((element) => {
+    const htmlElement = element as HTMLElement;
+
+    htmlElement.addEventListener('mousedown', () => {
+      gsap.to(element, {
+        scale: 0.95,
+        duration: 0.1,
+        ease: KAKI_EASINGS.trustworthy
+      });
+    });
+
+    htmlElement.addEventListener('mouseup', () => {
+      gsap.to(element, {
+        scale: 1.05,
+        duration: 0.2,
+        ease: KAKI_EASINGS.friendly
+      });
+    });
+
+    htmlElement.addEventListener('mouseleave', () => {
+      gsap.to(element, {
+        scale: 1,
+        duration: 0.2,
+        ease: KAKI_EASINGS.warm
+      });
+    });
+  });
+}
+
+/**
+ * Creates a warm welcome animation for cards
+ * @param selector - CSS selector for card elements
+ */
+export function createWarmCardAnimation(selector: string | Element) {
+  if (!browser) return;
+
+  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
+
+  elements.forEach((element) => {
+    const htmlElement = element as HTMLElement;
+
+    // Initial state
+    gsap.set(element, { transformOrigin: "center center" });
+
+    htmlElement.addEventListener('mouseenter', () => {
+      gsap.timeline()
+        .to(element, {
+          y: -8,
+          duration: 0.4,
+          ease: KAKI_EASINGS.caring
+        })
+        .to(element, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: KAKI_EASINGS.friendly
+        }, "-=0.2");
+    });
+
+    htmlElement.addEventListener('mouseleave', () => {
+      gsap.to(element, {
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        ease: KAKI_EASINGS.warm
+      });
+    });
+  });
+}
+
+/**
+ * Creates a subtle breathing animation for important CTAs
+ * @param selector - CSS selector for CTA elements
+ */
+export function createBreathingCTA(selector: string | Element) {
+  if (!browser) return;
+
+  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
+
+  elements.forEach((element) => {
+    gsap.to(element, {
+      scale: 1.02,
+      duration: 2,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1
+    });
+  });
+}
+
+/**
+ * Initializes all kaki micro-interactions on the page
+ */
+export function initializeKakiInteractions() {
+  if (!browser) return;
+
+  // Apply to common elements
+  createKakiHover('.service-card');
+  createFriendlyButtonEffect('.hero-cta, .btn-primary');
+  createWarmCardAnimation('.bg-white.rounded-3xl, .rounded-2xl.shadow');
+  createBreathingCTA('.hero-cta');
 }

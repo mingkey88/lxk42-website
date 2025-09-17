@@ -8,18 +8,6 @@
 
   const categories = [
     {
-      id: 'branding',
-      name: 'Brand Identity',
-      description: 'Logos, color systems, brand guidelines',
-      category: 'Brand'
-    },
-    {
-      id: 'marketing',
-      name: 'Marketing Materials',
-      description: 'Brochures, flyers, social media graphics',
-      category: 'Marketing'
-    },
-    {
       id: 'digital',
       name: 'Digital Assets',
       description: 'Social posts, web graphics, presentations',
@@ -34,22 +22,6 @@
   ];
 
   const designItems = {
-    branding: [
-      { id: 'logo', name: 'Logo Design', price: 800, description: 'Primary logo with variations' },
-      { id: 'color-system', name: 'Color System', price: 300, description: 'Brand color palette & guidelines' },
-      { id: 'typography', name: 'Typography Set', price: 250, description: 'Font selection & hierarchy' },
-      { id: 'brand-guide', name: 'Brand Guidelines', price: 500, description: 'Complete brand standards document' },
-      { id: 'business-card', name: 'Business Card Design', price: 200, description: 'Professional card design' },
-      { id: 'letterhead', name: 'Letterhead Design', price: 150, description: 'Company letterhead template' }
-    ],
-    marketing: [
-      { id: 'brochure', name: 'Brochure Design', price: 400, description: 'Tri-fold or bi-fold brochure' },
-      { id: 'flyer', name: 'Flyer/Poster', price: 200, description: 'Single-page promotional material' },
-      { id: 'banner', name: 'Banner Design', price: 300, description: 'Event or trade show banner' },
-      { id: 'catalog', name: 'Product Catalog', price: 600, description: '8-12 page product showcase' },
-      { id: 'menu', name: 'Restaurant Menu', price: 350, description: 'Food & beverage menu design' },
-      { id: 'newsletter', name: 'Newsletter Template', price: 250, description: 'Email newsletter design' }
-    ],
     digital: [
       { id: 'social-pack', name: 'Social Media Pack', price: 400, description: '10 post templates + story templates' },
       { id: 'presentation', name: 'Presentation Design', price: 500, description: '15-slide PowerPoint template' },
@@ -384,7 +356,7 @@
               Start Over
             </button>
             <a
-              href="#/contact?service=graphic-design&package={selectedCategory}&items={selectedItems.length}&total={totalPrice}"
+              href="#contact?service=graphic-design&package={selectedCategory}&items={selectedItems.length}&total={totalPrice}"
               class="flex-1 bg-gradient-to-r from-lxk-sage to-lxk-mint text-white py-3 rounded-2xl font-bold text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105">
               Request Quote
             </a>

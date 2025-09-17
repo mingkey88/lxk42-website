@@ -23,7 +23,7 @@
     // SEO optimization
     updatePageMeta(
       'Client Testimonials & Reviews | Light & Kaki Studio',
-      'Read authentic testimonials from our happy kakis. Real client stories about web design, development, branding, and digital marketing projects in Singapore.'
+      'Read authentic testimonials from our happy kakis. Real client stories about web design, development, and motion graphics projects in Singapore.'
     );
 
     // Inject review structured data
@@ -100,7 +100,7 @@
       >
         All Stories
       </button>
-      {#each ['web-design', 'branding', 'digital-marketing'] as service (service)}
+      {#each ['web-design', 'graphic-design', 'motion-graphics'] as service (service)}
         <button
           class="px-6 py-3 rounded-full transition-all duration-300 font-medium text-lg capitalize
             {activeFilter === service

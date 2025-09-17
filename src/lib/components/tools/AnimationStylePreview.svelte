@@ -251,7 +251,7 @@
   <!-- Action Button -->
   <div class="mt-8 text-center">
     <a
-      href="#/contact?service=motion-graphics&style={selectedStyle}&duration={selectedDuration}&estimate={estimate.price}"
+      href="#contact?service=motion-graphics&style={selectedStyle}&duration={selectedDuration}&estimate={estimate.price}"
       class="inline-flex items-center bg-gradient-to-r from-lxk-mint to-lxk-sage text-white px-8 py-4 rounded-2xl font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
       <span>Get Custom Animation Quote</span>
       <div class="ml-3 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">

@@ -15,13 +15,13 @@
 <section id="services" class="section-padding">
     <div class="container-custom">
         <div class="text-center mb-20 services-title">
-            <h2 class="text-5xl lg:text-7xl font-bold text-lxk-warm-gray mb-6 leading-tight">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-lxk-warm-gray mb-6 leading-tight">
                 How We Help You <span class="text-lxk-peach">Thrive</span>
             </h2>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid">
-            <a href="#/web-design" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 services-grid">
+            <a href="#/web-design" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]">
                 <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
                     <!-- Minimalistic desk setup -->
                     <div class="relative w-32 h-24 transform rotate-3 group-hover:rotate-6 transition-transform duration-300">
@@ -47,7 +47,7 @@
                 </div>
             </a>
             
-            <a href="#/web-app" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+            <a href="#/web-app" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]">
                 <div class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <!-- Realistic smartphone -->
                     <div class="relative w-16 h-28 transform -rotate-12 group-hover:-rotate-18 transition-transform duration-300">
@@ -78,7 +78,7 @@
             </a>
 
 
-            <a href="#/graphic-design" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+            <a href="#/graphic-design" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]">
                 <div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <!-- Designer's workspace -->
                     <div class="relative w-32 h-24 transform -rotate-6 group-hover:-rotate-12 transition-transform duration-300">
@@ -118,7 +118,7 @@
                 </div>
             </a>
 
-            <a href="#/motion-graphics" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage">
+            <a href="#/motion-graphics" class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]">
                 <div class="bg-gradient-to-br from-lxk-peach/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                     <!-- Film/video equipment -->
                     <div class="relative w-28 h-20 transform rotate-6 group-hover:rotate-12 transition-transform duration-300">

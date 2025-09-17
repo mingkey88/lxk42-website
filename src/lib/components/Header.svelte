@@ -56,8 +56,6 @@
                             <div class="py-3">
                                 <a href="/web-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web Design & Development</a>
                                 <a href="/web-app" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Web App Development</a>
-                                <a href="/digital-marketing" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Digital Marketing</a>
-                                <a href="/branding" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Branding Solutions</a>
                                 <a href="/graphic-design" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Graphic Design</a>
                                 <a href="/motion-graphics" class="block px-4 py-3 text-lxk-warm-gray hover:bg-lxk-mint hover:bg-opacity-20 hover:text-lxk-sage rounded-lg mx-2 transition-colors" role="menuitem">Motion Graphics & Animation</a>
                             </div>
@@ -95,8 +93,6 @@
                 <a href="/about" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">About Us</a>
                 <a href="/web-design" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web Design</a>
                 <a href="/web-app" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Web App Dev</a>
-                <a href="/digital-marketing" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Digital Marketing</a>
-                <a href="/branding" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Branding</a>
                 <a href="/graphic-design" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Graphic Design</a>
                 <a href="/motion-graphics" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Motion Graphics & Animation</a>
                 <a href="/portfolio" on:click={closeMobileMenu} class="block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-colors">Portfolio</a>

@@ -16,7 +16,11 @@
       "Bash(echo \"Exit code: $?\")",
       "Bash(pkill:*)",
       "Bash(taskkill:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []

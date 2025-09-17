@@ -8,7 +8,7 @@
   import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
   import { getFeaturedTestimonials } from '$lib/data/testimonials.js';
   import { organizationSchema, websiteSchema, localBusinessSchema, injectStructuredData } from '$lib/structuredData.js';
-  import { createScrollAnimation, createStaggeredAnimation } from '$lib/utils/scrollAnimations.ts';
+  import { createScrollAnimation, createStaggeredAnimation, initializeKakiInteractions } from '$lib/utils/scrollAnimations.ts';
 
   onMount(() => {
     // Inject structured data for SEO
@@ -22,6 +22,9 @@
     createScrollAnimation('.services-section', 'fadeUp');
     createScrollAnimation('.testimonials-section', 'fadeUp');
     createScrollAnimation('.contact-section', 'fadeUp');
+
+    // Initialize kaki-inspired micro-interactions
+    initializeKakiInteractions();
   });
 </script>
 

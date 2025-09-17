@@ -11,25 +11,9 @@ export const projects = [
     tags: ['web design', 'ecommerce', 'sustainability'],
     technologies: ['Svelte', 'TypeScript', 'Tailwind CSS', 'Node.js'],
     image: null,
-    results: ['40% increase in conversion rate', '60% reduction in bounce rate', 'Featured in GreenTech Weekly'],
+    results: ['Improved user experience', 'Enhanced accessibility', 'Featured in GreenTech Weekly'],
     featured: true,
     size: 'large' // for masonry layout
-  },
-  {
-    id: 'heritage-hospitality',
-    title: 'Heritage Hospitality Brand',
-    summary: 'Cultural storytelling through modern web experiences for boutique hotel chain.',
-    description: 'A sophisticated digital presence that celebrates Singapore\'s heritage while providing seamless booking experiences. Integrated cultural storytelling with modern hospitality standards.',
-    client: 'Heritage Hospitality',
-    industry: 'Hospitality',
-    year: '2024',
-    duration: '8 weeks',
-    tags: ['branding', 'web design', 'hospitality'],
-    technologies: ['React', 'Next.js', 'Framer Motion', 'Contentful'],
-    image: null,
-    results: ['25% increase in direct bookings', '90% client satisfaction score', 'Singapore Tourism Board recognition'],
-    featured: true,
-    size: 'medium'
   },
   {
     id: 'artisan-collective',
@@ -43,7 +27,7 @@ export const projects = [
     tags: ['web app', 'ecommerce', 'marketplace'],
     technologies: ['Vue.js', 'Nuxt', 'Stripe', 'Firebase'],
     image: null,
-    results: ['200+ artisans onboarded', '$100K+ GMV in first month', '4.8/5 user rating'],
+    results: ['200+ artisans onboarded', 'Successful platform launch', '4.8/5 user rating'],
     featured: false,
     size: 'medium'
   },
@@ -59,41 +43,9 @@ export const projects = [
     tags: ['web app', 'education', 'saas'],
     technologies: ['Svelte Kit', 'PostgreSQL', 'WebRTC', 'Docker'],
     image: null,
-    results: ['500+ students active daily', '35% improvement in learning outcomes', 'Ministry of Education pilot program'],
+    results: ['500+ students active daily', 'Enhanced learning experience', 'Ministry of Education pilot program'],
     featured: true,
     size: 'large'
-  },
-  {
-    id: 'local-favorites-campaign',
-    title: 'Local Favorites Brand Campaign',
-    summary: 'Motion graphics and social media campaign celebrating hawker culture heritage.',
-    description: 'A multimedia campaign bringing hawker stories to life through animation, celebrating Singapore\'s food heritage while attracting younger audiences.',
-    client: 'Local Favorites F&B',
-    industry: 'Food & Beverage',
-    year: '2024',
-    duration: '4 weeks',
-    tags: ['motion graphics', 'branding', 'social media'],
-    technologies: ['After Effects', 'Lottie', 'Figma', 'Adobe Premiere'],
-    image: null,
-    results: ['2M+ social media impressions', '150% increase in foot traffic', 'Singapore Tourism Board feature'],
-    featured: false,
-    size: 'small'
-  },
-  {
-    id: 'wellness-co-identity',
-    title: 'Wellness & Co. Complete Identity',
-    summary: 'Holistic brand identity for wellness consultancy, from logo to digital experiences.',
-    description: 'A comprehensive brand identity system that balances professionalism with wellness philosophy, including digital touchpoints and physical materials.',
-    client: 'Wellness & Co',
-    industry: 'Healthcare',
-    year: '2024',
-    duration: '5 weeks',
-    tags: ['branding', 'graphic design', 'wellness'],
-    technologies: ['Figma', 'Adobe Creative Suite', 'Webflow'],
-    image: null,
-    results: ['40% increase in consultation bookings', 'Featured in Design Singapore', 'Brand consistency score: 95%'],
-    featured: false,
-    size: 'medium'
   },
   {
     id: 'fintech-dashboard',
@@ -107,25 +59,9 @@ export const projects = [
     tags: ['web app', 'fintech', 'data visualization'],
     technologies: ['React', 'D3.js', 'WebSocket', 'Redis'],
     image: null,
-    results: ['50% reduction in analysis time', '99.9% uptime achieved', 'MAS regulatory compliance'],
+    results: ['Streamlined data analysis', '99.9% uptime achieved', 'MAS regulatory compliance'],
     featured: true,
     size: 'large'
   },
-  {
-    id: 'creative-minds-materials',
-    title: 'Creative Minds Academy Materials',
-    summary: 'Educational materials and brand system for creative arts academy.',
-    description: 'A complete suite of educational materials, brand guidelines, and digital assets that inspire creativity while maintaining professional standards.',
-    client: 'Creative Minds Academy',
-    industry: 'Education',
-    year: '2024',
-    duration: '6 weeks',
-    tags: ['graphic design', 'branding', 'education'],
-    technologies: ['InDesign', 'Illustrator', 'Figma', 'Notion'],
-    image: null,
-    results: ['30% increase in enrollment', 'Student satisfaction: 4.9/5', 'Design Awards Singapore finalist'],
-    featured: false,
-    size: 'small'
-  }
 ];
 
