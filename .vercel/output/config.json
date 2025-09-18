@@ -1,121 +1,121 @@
 {
-  "version": 3,
-  "routes": [
-    {
-      "src": "/about",
-      "dest": "/about/"
-    },
-    {
-      "src": "/about/",
-      "status": 308,
-      "headers": {
-        "Location": "/about"
-      }
-    },
-    {
-      "src": "/graphic-design",
-      "dest": "/graphic-design/"
-    },
-    {
-      "src": "/graphic-design/",
-      "status": 308,
-      "headers": {
-        "Location": "/graphic-design"
-      }
-    },
-    {
-      "src": "/motion-graphics",
-      "dest": "/motion-graphics/"
-    },
-    {
-      "src": "/motion-graphics/",
-      "status": 308,
-      "headers": {
-        "Location": "/motion-graphics"
-      }
-    },
-    {
-      "src": "/portfolio",
-      "dest": "/portfolio/"
-    },
-    {
-      "src": "/portfolio/",
-      "status": 308,
-      "headers": {
-        "Location": "/portfolio"
-      }
-    },
-    {
-      "src": "/testimonials",
-      "dest": "/testimonials/"
-    },
-    {
-      "src": "/testimonials/",
-      "status": 308,
-      "headers": {
-        "Location": "/testimonials"
-      }
-    },
-    {
-      "src": "/web-app",
-      "dest": "/web-app/"
-    },
-    {
-      "src": "/web-app/",
-      "status": 308,
-      "headers": {
-        "Location": "/web-app"
-      }
-    },
-    {
-      "src": "/web-design",
-      "dest": "/web-design/"
-    },
-    {
-      "src": "/web-design/",
-      "status": 308,
-      "headers": {
-        "Location": "/web-design"
-      }
-    },
-    {
-      "src": "/_app/immutable/.+",
-      "headers": {
-        "cache-control": "public, immutable, max-age=31536000"
-      }
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/![-]/catchall"
-    }
-  ],
-  "overrides": {
-    "index.html": {
-      "path": ""
-    },
-    "about.html": {
-      "path": "about"
-    },
-    "graphic-design.html": {
-      "path": "graphic-design"
-    },
-    "motion-graphics.html": {
-      "path": "motion-graphics"
-    },
-    "portfolio.html": {
-      "path": "portfolio"
-    },
-    "testimonials.html": {
-      "path": "testimonials"
-    },
-    "web-app.html": {
-      "path": "web-app"
-    },
-    "web-design.html": {
-      "path": "web-design"
-    }
-  }
+	"version": 3,
+	"routes": [
+		{
+			"src": "/about",
+			"dest": "/about/"
+		},
+		{
+			"src": "/about/",
+			"status": 308,
+			"headers": {
+				"Location": "/about"
+			}
+		},
+		{
+			"src": "/graphic-design",
+			"dest": "/graphic-design/"
+		},
+		{
+			"src": "/graphic-design/",
+			"status": 308,
+			"headers": {
+				"Location": "/graphic-design"
+			}
+		},
+		{
+			"src": "/motion-graphics",
+			"dest": "/motion-graphics/"
+		},
+		{
+			"src": "/motion-graphics/",
+			"status": 308,
+			"headers": {
+				"Location": "/motion-graphics"
+			}
+		},
+		{
+			"src": "/portfolio",
+			"dest": "/portfolio/"
+		},
+		{
+			"src": "/portfolio/",
+			"status": 308,
+			"headers": {
+				"Location": "/portfolio"
+			}
+		},
+		{
+			"src": "/testimonials",
+			"dest": "/testimonials/"
+		},
+		{
+			"src": "/testimonials/",
+			"status": 308,
+			"headers": {
+				"Location": "/testimonials"
+			}
+		},
+		{
+			"src": "/web-app",
+			"dest": "/web-app/"
+		},
+		{
+			"src": "/web-app/",
+			"status": 308,
+			"headers": {
+				"Location": "/web-app"
+			}
+		},
+		{
+			"src": "/web-design",
+			"dest": "/web-design/"
+		},
+		{
+			"src": "/web-design/",
+			"status": 308,
+			"headers": {
+				"Location": "/web-design"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/![-]/catchall"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"about.html": {
+			"path": "about"
+		},
+		"graphic-design.html": {
+			"path": "graphic-design"
+		},
+		"motion-graphics.html": {
+			"path": "motion-graphics"
+		},
+		"portfolio.html": {
+			"path": "portfolio"
+		},
+		"testimonials.html": {
+			"path": "testimonials"
+		},
+		"web-app.html": {
+			"path": "web-app"
+		},
+		"web-design.html": {
+			"path": "web-design"
+		}
+	}
 }
