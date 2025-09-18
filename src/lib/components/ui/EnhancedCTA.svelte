@@ -13,7 +13,7 @@
   export let leadMagnetBenefits = [
     'Expert insights and proven strategies',
     'Real Singapore market examples',
-    'Actionable checklists and templates'
+    'Actionable checklists and templates',
   ];
 
   let showLeadMagnet = false;
@@ -39,8 +39,12 @@
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Primary CTA - High Intent -->
         <div class="relative">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-lxk-sage to-lxk-soft-teal rounded-3xl blur opacity-20"></div>
-          <div class="relative bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-300 shadow-xl">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-r from-lxk-sage to-lxk-soft-teal rounded-3xl blur opacity-20"
+          ></div>
+          <div
+            class="relative bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-300 shadow-xl"
+          >
             <div class="absolute top-4 right-4">
               <div class="w-3 h-3 bg-white/30 rounded-full animate-pulse"></div>
             </div>
@@ -53,14 +57,19 @@
               <!-- Urgency Element -->
               <div class="bg-white/20 rounded-2xl p-4 backdrop-blur-sm">
                 <div class="text-sm font-medium mb-2">🔥 January Special Offer</div>
-                <div class="text-sm opacity-90">Save 20% on any package • Only 3 spots left this month</div>
+                <div class="text-sm opacity-90">
+                  Save 20% on any package • Only 3 spots left this month
+                </div>
               </div>
 
               <a
                 href="#contact?service={service}&type=consultation&offer=jan2025"
-                class="inline-flex items-center justify-center w-full bg-white text-lxk-sage px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group">
+                class="inline-flex items-center justify-center w-full bg-white text-lxk-sage px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              >
                 <span>{primaryCTA}</span>
-                <div class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div
+                  class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                >
                   <span class="text-sm">→</span>
                 </div>
               </a>
@@ -71,7 +80,9 @@
         </div>
 
         <!-- Secondary CTA - Lead Magnet -->
-        <div class="painterly-card p-8 hover:shadow-xl transition-all duration-300 border border-lxk-sage/10">
+        <div
+          class="painterly-card p-8 hover:shadow-xl transition-all duration-300 border border-lxk-sage/10"
+        >
           <div class="text-center space-y-6">
             <div class="text-4xl mb-4">📚</div>
             <h3 class="text-xl font-bold text-lxk-warm-gray">{secondaryTitle}</h3>
@@ -81,13 +92,16 @@
             <div class="bg-lxk-cream/50 rounded-2xl p-4 text-left">
               <div class="font-semibold text-lxk-warm-gray text-sm mb-2">Free Resource:</div>
               <div class="text-lxk-coral font-medium">{leadMagnetTitle}</div>
-              <div class="text-xs text-gray-600 mt-2">✓ Expert insights ✓ Real examples ✓ Actionable checklist</div>
+              <div class="text-xs text-gray-600 mt-2">
+                ✓ Expert insights ✓ Real examples ✓ Actionable checklist
+              </div>
             </div>
 
             <!-- Lead Magnet Button -->
             <button
               on:click={openLeadMagnet}
-              class="w-full bg-lxk-peach text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-lxk-coral transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              class="w-full bg-lxk-peach text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-lxk-coral transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
               {secondaryResource}
             </button>
 

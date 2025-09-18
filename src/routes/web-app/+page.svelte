@@ -11,32 +11,40 @@
   import HorizontalProjectRail from '$lib/components/ui/HorizontalProjectRail.svelte';
 
   // Filter projects relevant to web app development
-  const relevantProjects = projects.filter(project =>
-    project.tags.includes('web app') || project.tags.includes('development') || project.tags.includes('full-stack')
+  const relevantProjects = projects.filter(
+    project =>
+      project.tags.includes('web app') ||
+      project.tags.includes('development') ||
+      project.tags.includes('full-stack')
   );
 
   // FAQ data for web apps
   const webAppFAQs = [
     {
       question: "What's the difference between MVP and Full Platform?",
-      answer: "MVP focuses on core features to test your concept quickly. Full Platform includes advanced features, integrations, and scalability for established businesses."
+      answer:
+        'MVP focuses on core features to test your concept quickly. Full Platform includes advanced features, integrations, and scalability for established businesses.',
     },
     {
-      question: "Do you handle both frontend and backend?",
-      answer: "Yes! We're full-stack developers who handle everything from user interface to server setup, databases, and API integrations."
+      question: 'Do you handle both frontend and backend?',
+      answer:
+        "Yes! We're full-stack developers who handle everything from user interface to server setup, databases, and API integrations.",
     },
     {
-      question: "Can you integrate with existing systems?",
-      answer: "Absolutely. We specialize in connecting web apps with CRMs, payment systems, APIs, and other business tools you already use."
+      question: 'Can you integrate with existing systems?',
+      answer:
+        'Absolutely. We specialize in connecting web apps with CRMs, payment systems, APIs, and other business tools you already use.',
     },
     {
-      question: "What tech stack do you use?",
-      answer: "We choose the best technology for your specific needs - React, Svelte, Node.js, Python, or others. We'll explain our recommendations in simple terms."
+      question: 'What tech stack do you use?',
+      answer:
+        "We choose the best technology for your specific needs - React, Svelte, Node.js, Python, or others. We'll explain our recommendations in simple terms.",
     },
     {
-      question: "Do you provide ongoing maintenance?",
-      answer: "Yes! Web apps need regular updates and monitoring. We offer maintenance packages and are always here when you need support or new features."
-    }
+      question: 'Do you provide ongoing maintenance?',
+      answer:
+        'Yes! Web apps need regular updates and monitoring. We offer maintenance packages and are always here when you need support or new features.',
+    },
   ];
 
   onMount(() => {
@@ -51,10 +59,19 @@
 
 <svelte:head>
   <title>Web App Development Singapore | Light & Kaki Studio</title>
-  <meta name="description" content="Custom web application development in Singapore. Full-stack solutions with modern frameworks, scalable architecture, and authentic kaki collaboration." />
-  <meta name="keywords" content="web app development singapore, custom web applications, full stack development singapore, web application development" />
+  <meta
+    name="description"
+    content="Custom web application development in Singapore. Full-stack solutions with modern frameworks, scalable architecture, and authentic kaki collaboration."
+  />
+  <meta
+    name="keywords"
+    content="web app development singapore, custom web applications, full stack development singapore, web application development"
+  />
   <meta property="og:title" content="Web App Development Singapore | Light & Kaki Studio" />
-  <meta property="og:description" content="Custom web application development in Singapore. Full-stack solutions with modern frameworks and authentic collaboration." />
+  <meta
+    property="og:description"
+    content="Custom web application development in Singapore. Full-stack solutions with modern frameworks and authentic collaboration."
+  />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://www.lxk42.sg/web-app" />
 </svelte:head>
@@ -62,8 +79,13 @@
 <section class="section-padding painterly-bg relative overflow-hidden">
   <div class="container-custom">
     <div class="text-center mb-6 md:mb-8 animate-on-scroll relative">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">Web App Development</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">From idea to interactive product — we build friendly, scalable web apps that people love to use.</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">
+        Web App Development
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        From idea to interactive product — we build friendly, scalable web apps that people love to
+        use.
+      </p>
       <!-- painterly hero accents -->
       <div class="texture-overlay"></div>
       <div class="paint-splash-1 hidden md:block" style="top:-20px; right:5%;"></div>
@@ -74,29 +96,77 @@
     <!-- anchor mini-nav -->
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
-        <li><a href="#webapp-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#tech-stack" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Tech Stack</a></li>
-        <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Performance</a></li>
-        <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
-        <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
+        <li>
+          <a
+            href="#webapp-overview"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Overview</a
+          >
+        </li>
+        <li>
+          <a
+            href="#tech-stack"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Tech Stack</a
+          >
+        </li>
+        <li>
+          <a
+            href="#performance"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Performance</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#faq"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >FAQ</a
+          >
+        </li>
       </ul>
     </nav>
 
     <div id="webapp-overview" class="grid md:grid-cols-3 gap-8">
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow">💻</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow"
+        >
+          💻
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Modern Stack</h3>
-        <p class="text-gray-700">Svelte + TypeScript with performance‑first patterns and accessible UX.</p>
+        <p class="text-gray-700">
+          Svelte + TypeScript with performance‑first patterns and accessible UX.
+        </p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow">🔗</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow"
+        >
+          🔗
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">API & Data</h3>
-        <p class="text-gray-700">Clean data flows and well‑structured APIs, with room to grow as your product evolves.</p>
+        <p class="text-gray-700">
+          Clean data flows and well‑structured APIs, with room to grow as your product evolves.
+        </p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow">🛠️</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow"
+        >
+          🛠️
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Quality & Handover</h3>
-        <p class="text-gray-700">Linting, typechecks, and docs for maintainable apps your team can confidently extend.</p>
+        <p class="text-gray-700">
+          Linting, typechecks, and docs for maintainable apps your team can confidently extend.
+        </p>
       </div>
     </div>
 
@@ -121,35 +191,42 @@
       </div>
     </div>
 
-
     <!-- Tech Stack Overview -->
     <div id="tech-stack" class="mt-16 animate-on-scroll">
       <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Our Technology Stack</h3>
       <div class="painterly-card p-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
               <div class="text-2xl">⚡</div>
             </div>
             <h4 class="font-semibold text-lxk-warm-gray mb-2">Frontend</h4>
             <p class="text-sm text-gray-600">Svelte, React, TypeScript, Tailwind CSS</p>
           </div>
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
               <div class="text-2xl">🔧</div>
             </div>
             <h4 class="font-semibold text-lxk-warm-gray mb-2">Backend</h4>
             <p class="text-sm text-gray-600">Node.js, Python, PostgreSQL, Redis</p>
           </div>
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-sage/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-sage/20 rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
               <div class="text-2xl">☁️</div>
             </div>
             <h4 class="font-semibold text-lxk-warm-gray mb-2">Infrastructure</h4>
             <p class="text-sm text-gray-600">AWS, Docker, CI/CD, Monitoring</p>
           </div>
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-mint/20 to-lxk-peach/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-mint/20 to-lxk-peach/20 rounded-xl flex items-center justify-center mx-auto mb-3"
+            >
               <div class="text-2xl">🛡️</div>
             </div>
             <h4 class="font-semibold text-lxk-warm-gray mb-2">Security</h4>
@@ -181,23 +258,30 @@
             <div class="text-sm text-gray-600">Security Grade</div>
           </div>
         </div>
-        <div class="text-xs text-gray-500 mt-3 text-center">Performance benchmarks across our Singapore web applications</div>
+        <div class="text-xs text-gray-500 mt-3 text-center">
+          Performance benchmarks across our Singapore web applications
+        </div>
       </div>
     </div>
 
     <!-- Projects Rail -->
     {#if relevantProjects.length > 0}
-    <div id="projects" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">Recent Web App Projects</h3>
-      <HorizontalProjectRail projects={relevantProjects} />
-      <div class="text-center mt-6">
-        <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
-          View All Projects →
-        </a>
+      <div id="projects" class="mt-16 animate-on-scroll">
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">
+          Recent Web App Projects
+        </h3>
+        <HorizontalProjectRail projects={relevantProjects} />
+        <div class="text-center mt-6">
+          <a
+            href="/portfolio"
+            data-sveltekit-preload-data="hover"
+            class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium"
+          >
+            View All Projects →
+          </a>
+        </div>
       </div>
-    </div>
     {/if}
-
   </div>
 </section>
 
@@ -221,6 +305,6 @@
     'Complete technical planning framework and architecture guide',
     'MVP vs full platform decision matrix with cost estimates',
     'Technology stack recommendations for Singapore businesses',
-    'Development timeline templates and milestone checklists'
+    'Development timeline templates and milestone checklists',
   ]}
 />

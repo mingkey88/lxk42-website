@@ -9,7 +9,7 @@
   export let benefits = [
     'Expert insights and proven strategies',
     'Real Singapore market examples',
-    'Actionable checklists and templates'
+    'Actionable checklists and templates',
   ];
 
   const dispatch = createEventDispatcher();
@@ -18,7 +18,7 @@
     email: '',
     firstName: '',
     company: '',
-    projectType: ''
+    projectType: '',
   };
 
   let isSubmitting = false;
@@ -52,7 +52,7 @@
       gtag('event', 'lead_magnet_download', {
         event_category: 'Lead Generation',
         event_label: service,
-        value: 1
+        value: 1,
       });
     }
 
@@ -80,15 +80,18 @@
     role="dialog"
     aria-modal="true"
     aria-labelledby="modal-title"
-    tabindex="-1">
-
+    tabindex="-1"
+  >
     <!-- Modal Content -->
-    <div class="bg-white rounded-3xl max-w-md w-full mx-4 shadow-2xl transform transition-all duration-300 scale-100">
+    <div
+      class="bg-white rounded-3xl max-w-md w-full mx-4 shadow-2xl transform transition-all duration-300 scale-100"
+    >
       <!-- Close Button -->
       <button
         class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-10"
         on:click={closeModal}
-        aria-label="Close modal">
+        aria-label="Close modal"
+      >
         <span class="text-gray-600 text-lg">×</span>
       </button>
 
@@ -97,7 +100,9 @@
         <div class="p-8">
           <!-- Header -->
           <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage to-lxk-peach rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-sage to-lxk-peach rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
               <span class="text-2xl text-white">📚</span>
             </div>
             <h3 id="modal-title" class="text-2xl font-bold text-lxk-warm-gray mb-2">{title}</h3>
@@ -171,7 +176,8 @@
                 <select
                   id="projectType"
                   bind:value={formData.projectType}
-                  class="w-full p-3 rounded-2xl border border-gray-200 focus:border-lxk-sage focus:ring-2 focus:ring-lxk-sage/20 transition-all outline-none">
+                  class="w-full p-3 rounded-2xl border border-gray-200 focus:border-lxk-sage focus:ring-2 focus:ring-lxk-sage/20 transition-all outline-none"
+                >
                   <option value="">Select project type</option>
                   <option value="business-website">Business Website</option>
                   <option value="ecommerce">E-commerce Store</option>
@@ -186,10 +192,13 @@
             <button
               type="submit"
               disabled={isSubmitting || !formData.email}
-              class="w-full bg-gradient-to-r from-lxk-sage to-lxk-soft-teal text-white py-4 rounded-2xl font-bold text-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105">
+              class="w-full bg-gradient-to-r from-lxk-sage to-lxk-soft-teal text-white py-4 rounded-2xl font-bold text-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+            >
               {#if isSubmitting}
                 <div class="flex items-center justify-center space-x-2">
-                  <div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <div
+                    class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
+                  ></div>
                   <span>Preparing Your Guide...</span>
                 </div>
               {:else}
@@ -200,24 +209,26 @@
 
           <!-- Privacy Note -->
           <p class="text-xs text-gray-500 text-center mt-4">
-            No spam, just valuable insights for Singapore businesses ✓<br>
+            No spam, just valuable insights for Singapore businesses ✓<br />
             Unsubscribe anytime with one click
           </p>
         </div>
       {:else}
         <!-- Success State -->
         <div class="p-8 text-center">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div
+            class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
             <span class="text-3xl">✅</span>
           </div>
           <h3 class="text-2xl font-bold text-lxk-warm-gray mb-4">Success! Check Your Email</h3>
           <p class="text-gray-600 mb-6">
-            We've sent your <strong>{resourceName}</strong> to {formData.email}.
-            It should arrive within the next few minutes.
+            We've sent your <strong>{resourceName}</strong> to {formData.email}. It should arrive
+            within the next few minutes.
           </p>
           <div class="bg-lxk-cream/50 rounded-2xl p-4">
             <p class="text-sm text-gray-600">
-              <strong>What's next?</strong><br>
+              <strong>What's next?</strong><br />
               Want to discuss your project? We'd love to have a kopi session with you! ☕
             </p>
           </div>

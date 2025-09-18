@@ -10,11 +10,8 @@ export default defineConfig({
       mozjpeg: { quality: 85 },
       pngquant: { quality: [0.8, 0.9], speed: 4 },
       svgo: {
-        plugins: [
-          { name: 'removeViewBox' },
-          { name: 'removeEmptyAttrs', active: false }
-        ]
-      }
-    })
-  ]
+        plugins: [{ name: 'removeViewBox' }, { name: 'removeEmptyAttrs', active: false }],
+      },
+    }),
+  ],
 });

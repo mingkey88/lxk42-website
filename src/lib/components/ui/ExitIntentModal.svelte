@@ -34,7 +34,7 @@
         if (typeof gtag !== 'undefined') {
           gtag('event', 'exit_intent_triggered', {
             event_category: 'User Behavior',
-            event_label: 'Exit Intent Modal'
+            event_label: 'Exit Intent Modal',
           });
         }
       }
@@ -50,7 +50,7 @@
         if (typeof gtag !== 'undefined') {
           gtag('event', 'time_based_exit_intent', {
             event_category: 'User Behavior',
-            event_label: 'Exit Intent Modal - Time Based'
+            event_label: 'Exit Intent Modal - Time Based',
           });
         }
       }
@@ -94,7 +94,7 @@
       gtag('event', 'exit_intent_conversion', {
         event_category: 'Lead Generation',
         event_label: 'Exit Intent Email Capture',
-        value: 1
+        value: 1,
       });
     }
 
@@ -122,14 +122,15 @@
     role="dialog"
     aria-modal="true"
     aria-labelledby="exit-modal-title"
-    tabindex="-1">
-
+    tabindex="-1"
+  >
     <div class="bg-white rounded-3xl max-w-sm w-full mx-4 shadow-2xl transform animate-slideUp">
       <!-- Close Button -->
       <button
         class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors z-10 text-gray-600 hover:text-gray-800"
         on:click={closeModal}
-        aria-label="Close modal">
+        aria-label="Close modal"
+      >
         <span class="text-xl">×</span>
       </button>
 
@@ -138,20 +139,27 @@
         <div class="p-6 text-center">
           <!-- Attention-grabbing header -->
           <div class="mb-4">
-            <div class="w-16 h-16 bg-gradient-to-br from-lxk-coral to-lxk-peach rounded-full flex items-center justify-center mx-auto mb-3">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-lxk-coral to-lxk-peach rounded-full flex items-center justify-center mx-auto mb-3"
+            >
               <span class="text-2xl text-white">👋</span>
             </div>
             <h3 id="exit-modal-title" class="text-xl font-bold text-lxk-warm-gray mb-2">
               Wait! Don't Leave Empty-Handed
             </h3>
             <p class="text-gray-600 text-sm">
-              Get our <strong>Singapore Business Digital Checklist</strong> — see how your website stacks up!
+              Get our <strong>Singapore Business Digital Checklist</strong> — see how your website stacks
+              up!
             </p>
           </div>
 
           <!-- Value proposition -->
-          <div class="bg-gradient-to-br from-lxk-cream/50 to-lxk-mint/30 rounded-2xl p-4 mb-4 text-left">
-            <h4 class="font-semibold text-lxk-warm-gray mb-3 text-center text-sm">🎁 Free Checklist (Worth $200)</h4>
+          <div
+            class="bg-gradient-to-br from-lxk-cream/50 to-lxk-mint/30 rounded-2xl p-4 mb-4 text-left"
+          >
+            <h4 class="font-semibold text-lxk-warm-gray mb-3 text-center text-sm">
+              🎁 Free Checklist (Worth $200)
+            </h4>
             <div class="space-y-2 text-xs">
               <div class="flex items-center space-x-2">
                 <div class="w-1.5 h-1.5 bg-lxk-sage rounded-full flex-shrink-0"></div>
@@ -186,10 +194,13 @@
             <button
               type="submit"
               disabled={isSubmitting || !email}
-              class="w-full bg-gradient-to-r from-lxk-coral to-lxk-peach text-white py-3 rounded-2xl font-bold hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105">
+              class="w-full bg-gradient-to-r from-lxk-coral to-lxk-peach text-white py-3 rounded-2xl font-bold hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+            >
               {#if isSubmitting}
                 <div class="flex items-center justify-center space-x-2">
-                  <div class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <div
+                    class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"
+                  ></div>
                   <span class="text-sm">Sending...</span>
                 </div>
               {:else}
@@ -200,16 +211,15 @@
 
           <!-- Trust and urgency -->
           <div class="mt-4 space-y-2">
-            <p class="text-xs text-gray-500">
-              No spam • 450+ downloads • ⭐ 4.9/5 rating
-            </p>
+            <p class="text-xs text-gray-500">No spam • 450+ downloads • ⭐ 4.9/5 rating</p>
 
             <!-- Alternative action -->
             <div class="pt-3 border-t border-gray-200">
               <a
                 href="#contact?source=exit-intent"
                 on:click={closeModal}
-                class="text-sm text-lxk-sage hover:text-lxk-soft-teal font-medium transition-colors">
+                class="text-sm text-lxk-sage hover:text-lxk-soft-teal font-medium transition-colors"
+              >
                 Or book a free call instead →
               </a>
             </div>
@@ -218,7 +228,9 @@
       {:else}
         <!-- Success State -->
         <div class="p-6 text-center">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
             <span class="text-2xl">🎉</span>
           </div>
           <h3 class="text-lg font-bold text-lxk-warm-gray mb-3">Check Your Email!</h3>
@@ -227,7 +239,8 @@
           </p>
           <div class="bg-lxk-cream/50 rounded-2xl p-4">
             <p class="text-sm text-gray-600">
-              <strong>What's next?</strong> After reviewing, we'd love to help implement the recommendations. Book a free consultation! ☕
+              <strong>What's next?</strong> After reviewing, we'd love to help implement the recommendations.
+              Book a free consultation! ☕
             </p>
           </div>
         </div>
@@ -238,8 +251,12 @@
 
 <style>
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {

@@ -15,7 +15,7 @@ export const webDesignPackages = [
       'Basic SEO optimization',
       'Contact form integration',
       'Social media links',
-      '1 round of revisions'
+      '1 round of revisions',
     ],
     deliverables: [
       'Custom website design',
@@ -25,7 +25,7 @@ export const webDesignPackages = [
       'Social media integration',
       'Google Analytics setup',
       'Basic training session',
-      '30-day support'
+      '30-day support',
     ],
     included: [
       'Discovery session and brand consultation',
@@ -38,9 +38,9 @@ export const webDesignPackages = [
       'Basic CMS training (if applicable)',
       '30 days of post-launch support',
       'Performance optimization',
-      'Cross-browser testing'
+      'Cross-browser testing',
     ],
-    bestFor: 'Small businesses, personal brands, simple portfolios'
+    bestFor: 'Small businesses, personal brands, simple portfolios',
   },
   {
     id: 'professional',
@@ -58,7 +58,7 @@ export const webDesignPackages = [
       'Blog/News system',
       'Custom contact forms',
       'Performance optimization',
-      '2 rounds of revisions'
+      '2 rounds of revisions',
     ],
     deliverables: [
       'Professional website design',
@@ -68,7 +68,7 @@ export const webDesignPackages = [
       'Performance optimization',
       'Analytics setup',
       'Training & documentation',
-      '60-day support'
+      '60-day support',
     ],
     included: [
       'Comprehensive brand and competitor analysis',
@@ -84,9 +84,9 @@ export const webDesignPackages = [
       'Comprehensive training and documentation',
       '60 days of post-launch support and maintenance',
       'Cross-browser and device testing',
-      'Basic accessibility compliance (WCAG 2.1 AA)'
+      'Basic accessibility compliance (WCAG 2.1 AA)',
     ],
-    bestFor: 'Growing businesses, professional services, content creators'
+    bestFor: 'Growing businesses, professional services, content creators',
   },
   {
     id: 'enterprise',
@@ -103,7 +103,7 @@ export const webDesignPackages = [
       'Multi-language support',
       'Advanced analytics',
       'Priority support',
-      'Unlimited revisions'
+      'Unlimited revisions',
     ],
     deliverables: [
       'Enterprise-grade website',
@@ -113,7 +113,7 @@ export const webDesignPackages = [
       'Comprehensive training',
       'Ongoing support',
       'Performance monitoring',
-      '90-day warranty'
+      '90-day warranty',
     ],
     included: [
       'Strategic consultation and digital roadmap',
@@ -130,10 +130,10 @@ export const webDesignPackages = [
       '90 days of priority support and maintenance',
       'Ongoing performance monitoring',
       'Full accessibility compliance',
-      'Custom documentation and style guides'
+      'Custom documentation and style guides',
     ],
-    bestFor: 'Large businesses, enterprises, complex requirements'
-  }
+    bestFor: 'Large businesses, enterprises, complex requirements',
+  },
 ];
 
 export const webAppPackages = [
@@ -151,7 +151,7 @@ export const webAppPackages = [
       'Database design & setup',
       'Admin dashboard',
       'API development',
-      'Testing & deployment'
+      'Testing & deployment',
     ],
     deliverables: [
       'Functional web application',
@@ -159,9 +159,9 @@ export const webAppPackages = [
       'Admin panel',
       'API documentation',
       'Deployment setup',
-      'Technical documentation'
+      'Technical documentation',
     ],
-    bestFor: 'Startups, new product launches, proof of concept'
+    bestFor: 'Startups, new product launches, proof of concept',
   },
   {
     id: 'full-stack',
@@ -179,7 +179,7 @@ export const webAppPackages = [
       'Real-time notifications',
       'Advanced analytics',
       'Performance optimization',
-      'Scalable architecture'
+      'Scalable architecture',
     ],
     deliverables: [
       'Production-ready application',
@@ -187,9 +187,9 @@ export const webAppPackages = [
       'Real-time features',
       'Analytics dashboard',
       'Performance optimization',
-      'Comprehensive testing'
+      'Comprehensive testing',
     ],
-    bestFor: 'Growing businesses, SaaS products, advanced requirements'
+    bestFor: 'Growing businesses, SaaS products, advanced requirements',
   },
   {
     id: 'enterprise-app',
@@ -206,7 +206,7 @@ export const webAppPackages = [
       'Multi-tenant support',
       'Reporting & analytics',
       'Dedicated support',
-      'Ongoing maintenance'
+      'Ongoing maintenance',
     ],
     deliverables: [
       'Enterprise-grade application',
@@ -214,10 +214,10 @@ export const webAppPackages = [
       'Integration suite',
       'Advanced reporting',
       'Training program',
-      'Support & maintenance'
+      'Support & maintenance',
     ],
-    bestFor: 'Large enterprises, complex systems, high-scale requirements'
-  }
+    bestFor: 'Large enterprises, complex systems, high-scale requirements',
+  },
 ];
 
 export const digitalMarketingPackages = [
@@ -234,16 +234,16 @@ export const digitalMarketingPackages = [
       'Content creation (8 posts/month)',
       'Basic SEO optimization',
       'Monthly analytics report',
-      'Community management'
+      'Community management',
     ],
     deliverables: [
       'Social media strategy',
       'Content calendar',
       'Graphic assets',
       'Performance reports',
-      'SEO improvements'
+      'SEO improvements',
     ],
-    bestFor: 'Small businesses, startups, local services'
+    bestFor: 'Small businesses, startups, local services',
   },
   {
     id: 'growth-marketing',
@@ -260,7 +260,7 @@ export const digitalMarketingPackages = [
       'Advanced SEO & content marketing',
       'Paid advertising management',
       'Email marketing campaigns',
-      'Conversion optimization'
+      'Conversion optimization',
     ],
     deliverables: [
       'Comprehensive strategy',
@@ -268,9 +268,9 @@ export const digitalMarketingPackages = [
       'Ad campaign management',
       'Email sequences',
       'Performance optimization',
-      'Detailed analytics'
+      'Detailed analytics',
     ],
-    bestFor: 'Growing businesses, e-commerce, professional services'
+    bestFor: 'Growing businesses, e-commerce, professional services',
   },
   {
     id: 'enterprise-marketing',
@@ -286,7 +286,7 @@ export const digitalMarketingPackages = [
       'Advanced automation',
       'Multi-channel campaigns',
       'Dedicated account team',
-      'Advanced reporting & insights'
+      'Advanced reporting & insights',
     ],
     deliverables: [
       'Strategic planning',
@@ -294,10 +294,10 @@ export const digitalMarketingPackages = [
       'Campaign management',
       'Marketing automation',
       'Team collaboration',
-      'Executive reporting'
+      'Executive reporting',
     ],
-    bestFor: 'Enterprises, market leaders, complex campaigns'
-  }
+    bestFor: 'Enterprises, market leaders, complex campaigns',
+  },
 ];
 
 export const brandingPackages = [
@@ -315,7 +315,7 @@ export const brandingPackages = [
       'Typography selection',
       'Basic brand guidelines',
       'Business card design',
-      '2 rounds of revisions'
+      '2 rounds of revisions',
     ],
     deliverables: [
       'Logo package (multiple formats)',
@@ -323,9 +323,9 @@ export const brandingPackages = [
       'Typography guide',
       'Business card design',
       'Basic style guide',
-      'Brand file package'
+      'Brand file package',
     ],
-    bestFor: 'New businesses, startups, rebranding basics'
+    bestFor: 'New businesses, startups, rebranding basics',
   },
   {
     id: 'complete-identity',
@@ -342,7 +342,7 @@ export const brandingPackages = [
       'Marketing collateral design',
       'Digital asset creation',
       'Brand voice & messaging',
-      'Application examples'
+      'Application examples',
     ],
     deliverables: [
       'Full logo system',
@@ -350,9 +350,9 @@ export const brandingPackages = [
       'Marketing materials',
       'Digital templates',
       'Brand voice guide',
-      'Implementation examples'
+      'Implementation examples',
     ],
-    bestFor: 'Established businesses, professional services, growth stage'
+    bestFor: 'Established businesses, professional services, growth stage',
   },
   {
     id: 'brand-ecosystem',
@@ -368,7 +368,7 @@ export const brandingPackages = [
       'Brand experience design',
       'Multi-touchpoint applications',
       'Brand training & workshops',
-      'Ongoing brand support'
+      'Ongoing brand support',
     ],
     deliverables: [
       'Brand strategy document',
@@ -376,10 +376,10 @@ export const brandingPackages = [
       'Experience guidelines',
       'Application suite',
       'Team training',
-      'Brand maintenance'
+      'Brand maintenance',
     ],
-    bestFor: 'Large organizations, complete rebrands, market positioning'
-  }
+    bestFor: 'Large organizations, complete rebrands, market positioning',
+  },
 ];
 
 export const graphicDesignPackages = [
@@ -396,15 +396,10 @@ export const graphicDesignPackages = [
       'Letterhead & envelope',
       'Social media templates (5)',
       'Basic flyer design',
-      '1 round of revisions'
+      '1 round of revisions',
     ],
-    deliverables: [
-      'Print-ready designs',
-      'Digital assets',
-      'Template files',
-      'Usage guidelines'
-    ],
-    bestFor: 'Small businesses, basic marketing needs'
+    deliverables: ['Print-ready designs', 'Digital assets', 'Template files', 'Usage guidelines'],
+    bestFor: 'Small businesses, basic marketing needs',
   },
   {
     id: 'marketing-suite',
@@ -421,16 +416,16 @@ export const graphicDesignPackages = [
       'Social media template suite (15)',
       'Presentation template',
       'Email template design',
-      'Digital ad templates'
+      'Digital ad templates',
     ],
     deliverables: [
       'Print design package',
       'Digital template suite',
       'Presentation materials',
       'Email designs',
-      'Social media assets'
+      'Social media assets',
     ],
-    bestFor: 'Growing businesses, marketing campaigns, professional services'
+    bestFor: 'Growing businesses, marketing campaigns, professional services',
   },
   {
     id: 'creative-partnership',
@@ -446,17 +441,17 @@ export const graphicDesignPackages = [
       'Priority turnaround',
       'Brand consistency management',
       'Creative consultation',
-      'Asset library management'
+      'Asset library management',
     ],
     deliverables: [
       'Design team access',
       'Rapid design delivery',
       'Brand asset library',
       'Creative consultation',
-      'Ongoing support'
+      'Ongoing support',
     ],
-    bestFor: 'Large teams, ongoing design needs, brand consistency'
-  }
+    bestFor: 'Large teams, ongoing design needs, brand consistency',
+  },
 ];
 
 export const motionGraphicsPackages = [
@@ -473,15 +468,10 @@ export const motionGraphicsPackages = [
       'Social media animations (3)',
       'Basic transitions',
       'Multiple format exports',
-      '1 round of revisions'
+      '1 round of revisions',
     ],
-    deliverables: [
-      'Animated logo',
-      'Social media clips',
-      'Multiple formats',
-      'Usage guidelines'
-    ],
-    bestFor: 'Social media presence, basic animation needs'
+    deliverables: ['Animated logo', 'Social media clips', 'Multiple formats', 'Usage guidelines'],
+    bestFor: 'Social media presence, basic animation needs',
   },
   {
     id: 'video-storytelling',
@@ -498,16 +488,16 @@ export const motionGraphicsPackages = [
       'Character animations',
       'Sound design integration',
       'Multi-platform optimization',
-      'Storyboard development'
+      'Storyboard development',
     ],
     deliverables: [
       'Explainer video',
       'Motion graphics library',
       'Animated characters',
       'Sound-designed content',
-      'Platform-optimized versions'
+      'Platform-optimized versions',
     ],
-    bestFor: 'Product launches, explainer content, brand storytelling'
+    bestFor: 'Product launches, explainer content, brand storytelling',
   },
   {
     id: 'cinematic-production',
@@ -523,7 +513,7 @@ export const motionGraphicsPackages = [
       'Custom illustrations',
       'Professional voiceover',
       'Color grading & post-production',
-      'Multi-language versions'
+      'Multi-language versions',
     ],
     deliverables: [
       'Professional video content',
@@ -531,10 +521,10 @@ export const motionGraphicsPackages = [
       'Custom artwork',
       'Professional audio',
       'Post-production polish',
-      'Localized versions'
+      'Localized versions',
     ],
-    bestFor: 'Brand campaigns, product launches, high-end content'
-  }
+    bestFor: 'Brand campaigns, product launches, high-end content',
+  },
 ];
 
 export const getPackagesByService = (/** @type {string} */ service) => {
@@ -542,9 +532,9 @@ export const getPackagesByService = (/** @type {string} */ service) => {
     'web-design': webDesignPackages,
     'web-app': webAppPackages,
     'digital-marketing': digitalMarketingPackages,
-    'branding': brandingPackages,
+    branding: brandingPackages,
     'graphic-design': graphicDesignPackages,
-    'motion-graphics': motionGraphicsPackages
+    'motion-graphics': motionGraphicsPackages,
   };
 
   return packageMap[/** @type {keyof typeof packageMap} */ (service)] || [];

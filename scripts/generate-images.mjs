@@ -27,7 +27,9 @@ async function ensureWebpFor(filePath) {
     // Convert to webp with quality tuned for ~150KB target for medium images
     const webpBuffer = await image.webp({ quality: 80, effort: 5 }).toBuffer();
     await fs.writeFile(webpPath, webpBuffer);
-    console.log(`Generated WebP: ${path.relative(process.cwd(), webpPath)} (${Math.round(webpBuffer.length / 1024)}KB)`);
+    console.log(
+      `Generated WebP: ${path.relative(process.cwd(), webpPath)} (${Math.round(webpBuffer.length / 1024)}KB)`
+    );
   } catch (err) {
     console.error(`Failed to generate WebP for ${filePath}:`, err.message);
   }

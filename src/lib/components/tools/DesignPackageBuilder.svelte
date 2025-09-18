@@ -11,33 +11,88 @@
       id: 'digital',
       name: 'Digital Assets',
       description: 'Social posts, web graphics, presentations',
-      category: 'Digital'
+      category: 'Digital',
     },
     {
       id: 'print',
       name: 'Print Design',
       description: 'Business cards, posters, packaging',
-      category: 'Print'
-    }
+      category: 'Print',
+    },
   ];
 
   const designItems = {
     digital: [
-      { id: 'social-pack', name: 'Social Media Pack', price: 400, description: '10 post templates + story templates' },
-      { id: 'presentation', name: 'Presentation Design', price: 500, description: '15-slide PowerPoint template' },
-      { id: 'web-graphics', name: 'Web Graphics Set', price: 300, description: 'Icons, buttons, banners for website' },
-      { id: 'email-template', name: 'Email Template', price: 200, description: 'HTML email design' },
-      { id: 'infographic', name: 'Infographic', price: 450, description: 'Data visualization design' },
-      { id: 'digital-ad', name: 'Digital Ad Set', price: 350, description: 'Google/Facebook ad variations' }
+      {
+        id: 'social-pack',
+        name: 'Social Media Pack',
+        price: 400,
+        description: '10 post templates + story templates',
+      },
+      {
+        id: 'presentation',
+        name: 'Presentation Design',
+        price: 500,
+        description: '15-slide PowerPoint template',
+      },
+      {
+        id: 'web-graphics',
+        name: 'Web Graphics Set',
+        price: 300,
+        description: 'Icons, buttons, banners for website',
+      },
+      {
+        id: 'email-template',
+        name: 'Email Template',
+        price: 200,
+        description: 'HTML email design',
+      },
+      {
+        id: 'infographic',
+        name: 'Infographic',
+        price: 450,
+        description: 'Data visualization design',
+      },
+      {
+        id: 'digital-ad',
+        name: 'Digital Ad Set',
+        price: 350,
+        description: 'Google/Facebook ad variations',
+      },
     ],
     print: [
-      { id: 'packaging', name: 'Package Design', price: 600, description: 'Product packaging design' },
-      { id: 'stationery', name: 'Stationery Set', price: 400, description: 'Business cards, letterhead, envelopes' },
-      { id: 'signage', name: 'Signage Design', price: 350, description: 'Storefront or directional signage' },
-      { id: 'book-cover', name: 'Book/Magazine Cover', price: 300, description: 'Publication cover design' },
+      {
+        id: 'packaging',
+        name: 'Package Design',
+        price: 600,
+        description: 'Product packaging design',
+      },
+      {
+        id: 'stationery',
+        name: 'Stationery Set',
+        price: 400,
+        description: 'Business cards, letterhead, envelopes',
+      },
+      {
+        id: 'signage',
+        name: 'Signage Design',
+        price: 350,
+        description: 'Storefront or directional signage',
+      },
+      {
+        id: 'book-cover',
+        name: 'Book/Magazine Cover',
+        price: 300,
+        description: 'Publication cover design',
+      },
       { id: 'label', name: 'Product Labels', price: 250, description: 'Product labeling design' },
-      { id: 'poster', name: 'Large Format Poster', price: 400, description: 'A1 or larger poster design' }
-    ]
+      {
+        id: 'poster',
+        name: 'Large Format Poster',
+        price: 400,
+        description: 'A1 or larger poster design',
+      },
+    ],
   };
 
   const styles = [
@@ -46,38 +101,54 @@
       name: 'Singapore Modern',
       description: 'Clean, contemporary with local cultural elements',
       multiplier: 1.0,
-      popular: true
+      popular: true,
     },
     {
       id: 'traditional-heritage',
       name: 'Traditional Heritage',
       description: 'Classic Singapore shophouse & heritage inspired',
-      multiplier: 1.1
+      multiplier: 1.1,
     },
     {
       id: 'minimalist-zen',
       name: 'Minimalist Zen',
       description: 'Simple, clean, focused design philosophy',
-      multiplier: 0.9
+      multiplier: 0.9,
     },
     {
       id: 'vibrant-tropical',
       name: 'Vibrant Tropical',
       description: 'Bold colors, energetic, Southeast Asian flair',
-      multiplier: 1.2
+      multiplier: 1.2,
     },
     {
       id: 'corporate-professional',
       name: 'Corporate Professional',
       description: 'Trustworthy, established, business-focused',
-      multiplier: 1.0
-    }
+      multiplier: 1.0,
+    },
   ];
 
   const revisionOptions = [
-    { id: 'basic', name: 'Basic (2 rounds)', multiplier: 1.0, description: 'Standard revision process' },
-    { id: 'standard', name: 'Standard (3 rounds)', multiplier: 1.1, description: 'Most popular option', popular: true },
-    { id: 'premium', name: 'Premium (5 rounds)', multiplier: 1.25, description: 'Maximum flexibility' }
+    {
+      id: 'basic',
+      name: 'Basic (2 rounds)',
+      multiplier: 1.0,
+      description: 'Standard revision process',
+    },
+    {
+      id: 'standard',
+      name: 'Standard (3 rounds)',
+      multiplier: 1.1,
+      description: 'Most popular option',
+      popular: true,
+    },
+    {
+      id: 'premium',
+      name: 'Premium (5 rounds)',
+      multiplier: 1.25,
+      description: 'Maximum flexibility',
+    },
   ];
 
   function toggleItem(itemId) {
@@ -151,9 +222,13 @@
 </script>
 
 <!-- Design Package Builder Tool -->
-<div class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 rounded-3xl p-8 border border-lxk-sage/20">
+<div
+  class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 rounded-3xl p-8 border border-lxk-sage/20"
+>
   <div class="text-center mb-8">
-    <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage to-lxk-mint rounded-2xl flex items-center justify-center mx-auto mb-4">
+    <div
+      class="w-16 h-16 bg-gradient-to-br from-lxk-sage to-lxk-mint rounded-2xl flex items-center justify-center mx-auto mb-4"
+    >
       <span class="text-2xl text-white">🎨</span>
     </div>
     <h3 class="text-2xl font-bold text-lxk-warm-gray mb-2">Custom Design Package Builder</h3>
@@ -167,13 +242,21 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {#each categories as category (category.id)}
           <button
-            on:click={() => {selectedCategory = category.id; selectedItems = []; showResults = false;}}
-            class="text-center p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg {
-              selectedCategory === category.id
-                ? 'border-lxk-sage bg-lxk-sage/10 shadow-lg'
-                : 'border-gray-200 hover:border-lxk-sage/50'
-            }">
-            <div class="text-xs font-bold text-lxk-sage bg-lxk-sage/10 px-3 py-1 rounded-full mb-3 inline-block">{category.category}</div>
+            on:click={() => {
+              selectedCategory = category.id;
+              selectedItems = [];
+              showResults = false;
+            }}
+            class="text-center p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-lg {selectedCategory ===
+            category.id
+              ? 'border-lxk-sage bg-lxk-sage/10 shadow-lg'
+              : 'border-gray-200 hover:border-lxk-sage/50'}"
+          >
+            <div
+              class="text-xs font-bold text-lxk-sage bg-lxk-sage/10 px-3 py-1 rounded-full mb-3 inline-block"
+            >
+              {category.category}
+            </div>
             <div class="font-semibold text-lxk-warm-gray mb-2">{category.name}</div>
             <div class="text-sm text-gray-600">{category.description}</div>
           </button>
@@ -189,11 +272,12 @@
           {#each designItems[selectedCategory] as item (item.id)}
             <button
               on:click={() => toggleItem(item.id)}
-              class="text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md {
-                selectedItems.includes(item.id)
-                  ? 'border-lxk-peach bg-lxk-peach/10 shadow-md'
-                  : 'border-gray-200 hover:border-lxk-peach/50'
-              }">
+              class="text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md {selectedItems.includes(
+                item.id
+              )
+                ? 'border-lxk-peach bg-lxk-peach/10 shadow-md'
+                : 'border-gray-200 hover:border-lxk-peach/50'}"
+            >
               <div class="flex justify-between items-start mb-2">
                 <div class="font-semibold text-lxk-warm-gray">{item.name}</div>
                 <div class="text-lg font-bold text-lxk-peach">SGD ${item.price}</div>
@@ -213,21 +297,27 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {#each styles as style}
             <button
-              on:click={() => selectedStyle = style.id}
-              class="text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md relative {
-                selectedStyle === style.id
-                  ? 'border-lxk-coral bg-lxk-coral/10 shadow-md'
-                  : 'border-gray-200 hover:border-lxk-coral/50'
-              }">
+              on:click={() => (selectedStyle = style.id)}
+              class="text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md relative {selectedStyle ===
+              style.id
+                ? 'border-lxk-coral bg-lxk-coral/10 shadow-md'
+                : 'border-gray-200 hover:border-lxk-coral/50'}"
+            >
               {#if style.popular}
-                <div class="absolute -top-2 -right-2 bg-lxk-peach text-white text-xs px-2 py-1 rounded-full font-medium">
+                <div
+                  class="absolute -top-2 -right-2 bg-lxk-peach text-white text-xs px-2 py-1 rounded-full font-medium"
+                >
                   Popular
                 </div>
               {/if}
               <div class="font-semibold text-lxk-warm-gray mb-1">{style.name}</div>
               <div class="text-sm text-gray-600 mb-2">{style.description}</div>
               <div class="text-xs text-lxk-coral">
-                {style.multiplier === 1.0 ? 'Standard pricing' : style.multiplier > 1.0 ? `+${Math.round((style.multiplier - 1) * 100)}% premium` : `${Math.round((1 - style.multiplier) * 100)}% discount`}
+                {style.multiplier === 1.0
+                  ? 'Standard pricing'
+                  : style.multiplier > 1.0
+                    ? `+${Math.round((style.multiplier - 1) * 100)}% premium`
+                    : `${Math.round((1 - style.multiplier) * 100)}% discount`}
               </div>
             </button>
           {/each}
@@ -242,14 +332,16 @@
           <div class="space-y-3">
             {#each revisionOptions as option}
               <button
-                on:click={() => selectedRevisions = option.id}
-                class="w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md relative {
-                  selectedRevisions === option.id
-                    ? 'border-lxk-mint bg-lxk-mint/10 shadow-md'
-                    : 'border-gray-200 hover:border-lxk-mint/50'
-                }">
+                on:click={() => (selectedRevisions = option.id)}
+                class="w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-md relative {selectedRevisions ===
+                option.id
+                  ? 'border-lxk-mint bg-lxk-mint/10 shadow-md'
+                  : 'border-gray-200 hover:border-lxk-mint/50'}"
+              >
                 {#if option.popular}
-                  <div class="absolute -top-1 -right-1 bg-lxk-sage text-white text-xs px-2 py-1 rounded-full font-medium">
+                  <div
+                    class="absolute -top-1 -right-1 bg-lxk-sage text-white text-xs px-2 py-1 rounded-full font-medium"
+                  >
                     Most Popular
                   </div>
                 {/if}
@@ -263,7 +355,9 @@
         <!-- Rush Order -->
         <div>
           <h4 class="text-lg font-semibold text-lxk-warm-gray mb-4">5. Timeline Options</h4>
-          <label class="flex items-start space-x-3 p-4 rounded-2xl border-2 border-gray-200 hover:border-lxk-coral/50 transition-colors cursor-pointer">
+          <label
+            class="flex items-start space-x-3 p-4 rounded-2xl border-2 border-gray-200 hover:border-lxk-coral/50 transition-colors cursor-pointer"
+          >
             <input
               type="checkbox"
               bind:checked={selectedRushOrder}
@@ -293,7 +387,9 @@
       <!-- Results -->
       {#if showResults && totalPrice}
         <div class="bg-white rounded-3xl p-8 border-2 border-lxk-sage/20 shadow-lg">
-          <h4 class="text-xl font-bold text-lxk-warm-gray mb-6 text-center">Your Custom Design Package</h4>
+          <h4 class="text-xl font-bold text-lxk-warm-gray mb-6 text-center">
+            Your Custom Design Package
+          </h4>
 
           <!-- Package Summary -->
           <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -313,7 +409,9 @@
               {#if selectedStyle}
                 <div class="mt-4 p-3 bg-lxk-cream/30 rounded-xl">
                   <div class="text-sm font-medium text-lxk-warm-gray">Design Style:</div>
-                  <div class="text-sm text-gray-600">{styles.find(s => s.id === selectedStyle)?.name}</div>
+                  <div class="text-sm text-gray-600">
+                    {styles.find(s => s.id === selectedStyle)?.name}
+                  </div>
                 </div>
               {/if}
             </div>
@@ -321,8 +419,12 @@
             <!-- Pricing Breakdown -->
             <div class="bg-gradient-to-br from-lxk-sage/5 to-lxk-peach/5 rounded-2xl p-6">
               <div class="text-center mb-4">
-                <div class="text-4xl font-bold text-lxk-sage mb-2">SGD ${totalPrice.toLocaleString()}</div>
-                <div class="text-lg text-lxk-coral font-medium">{timeline} week{timeline !== 1 ? 's' : ''} delivery</div>
+                <div class="text-4xl font-bold text-lxk-sage mb-2">
+                  SGD ${totalPrice.toLocaleString()}
+                </div>
+                <div class="text-lg text-lxk-coral font-medium">
+                  {timeline} week{timeline !== 1 ? 's' : ''} delivery
+                </div>
               </div>
 
               <div class="space-y-2 text-sm">
@@ -332,11 +434,15 @@
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Style:</span>
-                  <span class="text-gray-700">{styles.find(s => s.id === selectedStyle)?.name || 'Not selected'}</span>
+                  <span class="text-gray-700"
+                    >{styles.find(s => s.id === selectedStyle)?.name || 'Not selected'}</span
+                  >
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Revisions:</span>
-                  <span class="text-gray-700">{revisionOptions.find(r => r.id === selectedRevisions)?.name}</span>
+                  <span class="text-gray-700"
+                    >{revisionOptions.find(r => r.id === selectedRevisions)?.name}</span
+                  >
                 </div>
                 {#if selectedRushOrder}
                   <div class="flex justify-between text-lxk-coral">
@@ -352,18 +458,21 @@
           <div class="flex gap-4">
             <button
               on:click={resetBuilder}
-              class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-2xl font-medium hover:bg-gray-200 transition-colors">
+              class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-2xl font-medium hover:bg-gray-200 transition-colors"
+            >
               Start Over
             </button>
             <a
               href="#contact?service=graphic-design&package={selectedCategory}&items={selectedItems.length}&total={totalPrice}"
-              class="flex-1 bg-gradient-to-r from-lxk-sage to-lxk-mint text-white py-3 rounded-2xl font-bold text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+              class="flex-1 bg-gradient-to-r from-lxk-sage to-lxk-mint text-white py-3 rounded-2xl font-bold text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
               Request Quote
             </a>
           </div>
 
           <p class="text-xs text-gray-500 text-center mt-4">
-            * Final pricing may vary based on specific requirements. Let's have a kopi session to discuss details! ☕
+            * Final pricing may vary based on specific requirements. Let's have a kopi session to
+            discuss details! ☕
           </p>
         </div>
       {/if}

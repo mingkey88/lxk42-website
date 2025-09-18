@@ -2,8 +2,10 @@ export const projects = [
   {
     id: 'greentech-website',
     title: 'GreenTech Solutions Platform',
-    summary: 'Sustainable technology showcase with interactive carbon calculator and seamless product discovery.',
-    description: 'A comprehensive platform that educates visitors about sustainable technology while providing an intuitive shopping experience. Features include an interactive carbon footprint calculator, dynamic product filtering, and educational content sections.',
+    summary:
+      'Sustainable technology showcase with interactive carbon calculator and seamless product discovery.',
+    description:
+      'A comprehensive platform that educates visitors about sustainable technology while providing an intuitive shopping experience. Features include an interactive carbon footprint calculator, dynamic product filtering, and educational content sections.',
     client: 'GreenTech Solutions SG',
     industry: 'Technology',
     year: '2024',
@@ -13,13 +15,15 @@ export const projects = [
     image: null,
     results: ['Improved user experience', 'Enhanced accessibility', 'Featured in GreenTech Weekly'],
     featured: true,
-    size: 'large' // for masonry layout
+    size: 'large', // for masonry layout
   },
   {
     id: 'artisan-collective',
     title: 'Artisan Collective Marketplace',
-    summary: 'E-commerce platform connecting local craftsmen with design enthusiasts across Singapore.',
-    description: 'A vibrant online marketplace celebrating local craftsmanship with advanced filtering, artist profiles, and seamless checkout experiences.',
+    summary:
+      'E-commerce platform connecting local craftsmen with design enthusiasts across Singapore.',
+    description:
+      'A vibrant online marketplace celebrating local craftsmanship with advanced filtering, artist profiles, and seamless checkout experiences.',
     client: 'Artisan Collective',
     industry: 'E-commerce',
     year: '2024',
@@ -29,13 +33,14 @@ export const projects = [
     image: null,
     results: ['200+ artisans onboarded', 'Successful platform launch', '4.8/5 user rating'],
     featured: false,
-    size: 'medium'
+    size: 'medium',
   },
   {
     id: 'edutech-platform',
     title: 'EduTech Learning Platform',
     summary: 'Interactive learning management system for Southeast Asian educational institutions.',
-    description: 'A comprehensive LMS with real-time collaboration tools, progress tracking, and adaptive learning algorithms tailored for the Asian education market.',
+    description:
+      'A comprehensive LMS with real-time collaboration tools, progress tracking, and adaptive learning algorithms tailored for the Asian education market.',
     client: 'EduTech Innovations',
     industry: 'Education',
     year: '2024',
@@ -43,15 +48,20 @@ export const projects = [
     tags: ['web app', 'education', 'saas'],
     technologies: ['Svelte Kit', 'PostgreSQL', 'WebRTC', 'Docker'],
     image: null,
-    results: ['500+ students active daily', 'Enhanced learning experience', 'Ministry of Education pilot program'],
+    results: [
+      '500+ students active daily',
+      'Enhanced learning experience',
+      'Ministry of Education pilot program',
+    ],
     featured: true,
-    size: 'large'
+    size: 'large',
   },
   {
     id: 'fintech-dashboard',
     title: 'FinTech Analytics Dashboard',
     summary: 'Real-time financial data visualization platform for Southeast Asian markets.',
-    description: 'An intuitive dashboard that transforms complex financial data into actionable insights, designed specifically for the Southeast Asian fintech landscape.',
+    description:
+      'An intuitive dashboard that transforms complex financial data into actionable insights, designed specifically for the Southeast Asian fintech landscape.',
     client: 'FinTech Forward',
     industry: 'Financial Services',
     year: '2024',
@@ -61,7 +71,6 @@ export const projects = [
     image: null,
     results: ['Streamlined data analysis', '99.9% uptime achieved', 'MAS regulatory compliance'],
     featured: true,
-    size: 'large'
+    size: 'large',
   },
 ];
-

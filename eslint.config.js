@@ -14,8 +14,8 @@ export default [
       'lxk42-website/**',
       '**/*.config.js',
       '.firebase/**',
-      '.svelte-kit/**'
-    ]
+      '.svelte-kit/**',
+    ],
   },
 
   // Base JS recommended
@@ -31,18 +31,18 @@ export default [
       parser: typescriptParser,
       parserOptions: {
         project: false,
-        sourceType: 'module'
-      }
+        sourceType: 'module',
+      },
     },
     plugins: {
-      '@typescript-eslint': typescript
+      '@typescript-eslint': typescript,
     },
     rules: {
       'no-unused-vars': 'warn',
       'no-console': 'warn',
       'prefer-const': 'error',
-      'no-debugger': 'warn'
-    }
+      'no-debugger': 'warn',
+    },
   },
 
   // Ensure Svelte files are parsed with svelte-eslint-parser + TS for script blocks
@@ -51,16 +51,16 @@ export default [
     languageOptions: {
       // parser is provided by svelte flat config above; only extend parserOptions here
       parserOptions: {
-        parser: typescriptParser
-      }
+        parser: typescriptParser,
+      },
     },
     rules: {
       // Relax strictness to avoid large refactors for now
       'svelte/require-each-key': 'warn',
       'no-unused-vars': 'warn',
       // Disable navigation resolution check for internal routes in SvelteKit
-      'svelte/no-navigation-without-resolve': 'off'
-    }
+      'svelte/no-navigation-without-resolve': 'off',
+    },
   },
 
   // Node scripts (allow process/console globals)
@@ -73,9 +73,9 @@ export default [
         console: 'readonly',
         __dirname: 'readonly',
         module: 'readonly',
-        require: 'readonly'
-      }
-    }
+        require: 'readonly',
+      },
+    },
   },
 
   // Browser globals for app source
@@ -84,8 +84,8 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        gtag: 'readonly'
-      }
-    }
-  }
+        gtag: 'readonly',
+      },
+    },
+  },
 ];

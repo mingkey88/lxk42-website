@@ -5,12 +5,12 @@
     businesses: 0,
     revenue: 0,
     satisfaction: 0,
-    timeToResults: 0
+    timeToResults: 0,
   };
 
   onMount(() => {
     // Animate numbers when component becomes visible
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           animateNumbers();
@@ -78,8 +78,8 @@
         Real Results, Real Friendships
       </h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Since 2020, we've been the growth kakis for ambitious Singapore businesses.
-        Here's the impact we've made together.
+        Since 2020, we've been the growth kakis for ambitious Singapore businesses. Here's the
+        impact we've made together.
       </p>
     </div>
 
@@ -88,11 +88,15 @@
       <!-- Businesses Served -->
       <div class="text-center group">
         <div class="relative mb-4">
-          <div class="w-20 h-20 bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          >
             <span class="text-2xl text-white">🤝</span>
           </div>
           <!-- Animated number -->
-          <div class="absolute -top-2 -right-2 w-6 h-6 bg-lxk-peach rounded-full flex items-center justify-center">
+          <div
+            class="absolute -top-2 -right-2 w-6 h-6 bg-lxk-peach rounded-full flex items-center justify-center"
+          >
             <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
           </div>
         </div>
@@ -106,7 +110,9 @@
       <!-- Revenue Increase -->
       <div class="text-center group">
         <div class="relative mb-4">
-          <div class="w-20 h-20 bg-gradient-to-br from-lxk-peach to-lxk-coral rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-lxk-peach to-lxk-coral rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          >
             <span class="text-2xl text-white">📈</span>
           </div>
         </div>
@@ -120,7 +126,9 @@
       <!-- Client Satisfaction -->
       <div class="text-center group">
         <div class="relative mb-4">
-          <div class="w-20 h-20 bg-gradient-to-br from-lxk-coral to-lxk-sage rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-lxk-coral to-lxk-sage rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          >
             <span class="text-2xl text-white">⭐</span>
           </div>
         </div>
@@ -134,7 +142,9 @@
       <!-- Time to Results -->
       <div class="text-center group">
         <div class="relative mb-4">
-          <div class="w-20 h-20 bg-gradient-to-br from-lxk-mint to-lxk-sage rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-lxk-mint to-lxk-sage rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          >
             <span class="text-2xl text-white">⚡</span>
           </div>
         </div>
@@ -151,10 +161,14 @@
       <!-- Success Story 1 -->
       <div class="painterly-card p-6 text-center hover:shadow-xl transition-all duration-300 group">
         <div class="relative mb-4">
-          <div class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-2xl flex items-center justify-center mx-auto">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-lxk-sage/20 to-lxk-mint/20 rounded-2xl flex items-center justify-center mx-auto"
+          >
             <span class="text-2xl">🍜</span>
           </div>
-          <div class="absolute -top-1 -right-1 text-xs bg-lxk-peach text-white px-2 py-1 rounded-full font-medium">
+          <div
+            class="absolute -top-1 -right-1 text-xs bg-lxk-peach text-white px-2 py-1 rounded-full font-medium"
+          >
             F&B
           </div>
         </div>
@@ -162,8 +176,8 @@
           <div class="text-2xl font-bold text-lxk-coral">+340%</div>
           <p class="text-sm text-gray-600 font-medium">Online Orders</p>
           <p class="text-xs text-gray-500">
-            "From 20 to 88 orders daily after our website redesign.
-            The kopi sessions really helped understand our customers."
+            "From 20 to 88 orders daily after our website redesign. The kopi sessions really helped
+            understand our customers."
           </p>
           <div class="flex items-center justify-center space-x-2 text-xs text-gray-400">
             <span>—</span>
@@ -175,10 +189,14 @@
       <!-- Success Story 2 -->
       <div class="painterly-card p-6 text-center hover:shadow-xl transition-all duration-300 group">
         <div class="relative mb-4">
-          <div class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-2xl flex items-center justify-center mx-auto">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-lxk-peach/20 to-lxk-coral/20 rounded-2xl flex items-center justify-center mx-auto"
+          >
             <span class="text-2xl">💼</span>
           </div>
-          <div class="absolute -top-1 -right-1 text-xs bg-lxk-sage text-white px-2 py-1 rounded-full font-medium">
+          <div
+            class="absolute -top-1 -right-1 text-xs bg-lxk-sage text-white px-2 py-1 rounded-full font-medium"
+          >
             Tech
           </div>
         </div>
@@ -186,8 +204,8 @@
           <div class="text-2xl font-bold text-lxk-sage">+250%</div>
           <p class="text-sm text-gray-600 font-medium">Lead Generation</p>
           <p class="text-xs text-gray-500">
-            "Our web app now generates 3x more qualified leads.
-            The collaboration felt more like working with friends."
+            "Our web app now generates 3x more qualified leads. The collaboration felt more like
+            working with friends."
           </p>
           <div class="flex items-center justify-center space-x-2 text-xs text-gray-400">
             <span>—</span>
@@ -199,10 +217,14 @@
       <!-- Success Story 3 -->
       <div class="painterly-card p-6 text-center hover:shadow-xl transition-all duration-300 group">
         <div class="relative mb-4">
-          <div class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-peach/20 rounded-2xl flex items-center justify-center mx-auto">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-lxk-coral/20 to-lxk-peach/20 rounded-2xl flex items-center justify-center mx-auto"
+          >
             <span class="text-2xl">🛍️</span>
           </div>
-          <div class="absolute -top-1 -right-1 text-xs bg-lxk-coral text-white px-2 py-1 rounded-full font-medium">
+          <div
+            class="absolute -top-1 -right-1 text-xs bg-lxk-coral text-white px-2 py-1 rounded-full font-medium"
+          >
             Retail
           </div>
         </div>
@@ -210,8 +232,8 @@
           <div class="text-2xl font-bold text-lxk-peach">+180%</div>
           <p class="text-sm text-gray-600 font-medium">Online Sales</p>
           <p class="text-xs text-gray-500">
-            "Digital transformation that actually worked.
-            They understood our Singapore market perfectly."
+            "Digital transformation that actually worked. They understood our Singapore market
+            perfectly."
           </p>
           <div class="flex items-center justify-center space-x-2 text-xs text-gray-400">
             <span>—</span>
@@ -223,7 +245,9 @@
 
     <!-- Trust Badges -->
     <div class="mt-16 text-center">
-      <div class="flex flex-wrap justify-center items-center gap-8 opacity-60 hover:opacity-80 transition-opacity">
+      <div
+        class="flex flex-wrap justify-center items-center gap-8 opacity-60 hover:opacity-80 transition-opacity"
+      >
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
           <span class="text-sm text-gray-600">Google Partner Certified</span>

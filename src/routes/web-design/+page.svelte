@@ -12,32 +12,37 @@
   import HorizontalProjectRail from '$lib/components/ui/HorizontalProjectRail.svelte';
 
   // Filter projects relevant to web design
-  const relevantProjects = projects.filter(project =>
-    project.tags.includes('web design') || project.tags.includes('ecommerce')
+  const relevantProjects = projects.filter(
+    project => project.tags.includes('web design') || project.tags.includes('ecommerce')
   );
 
   // FAQ data for web design
   const webDesignFAQs = [
     {
       question: "What's included in a website project?",
-      answer: "Every website includes custom design, mobile optimization, basic SEO, contact forms, and post-launch support. We'll walk through exactly what you need during our kopi chat!"
+      answer:
+        "Every website includes custom design, mobile optimization, basic SEO, contact forms, and post-launch support. We'll walk through exactly what you need during our kopi chat!",
     },
     {
-      question: "How long does a website take?",
-      answer: "Most websites take 3-6 weeks from start to finish. We'll give you a realistic timeline after understanding your specific needs and content requirements."
+      question: 'How long does a website take?',
+      answer:
+        "Most websites take 3-6 weeks from start to finish. We'll give you a realistic timeline after understanding your specific needs and content requirements.",
     },
     {
-      question: "Do you provide ongoing support?",
-      answer: "Absolutely! We offer 30-90 days of post-launch support, plus ongoing maintenance packages. Think of us as your website kakis for life."
+      question: 'Do you provide ongoing support?',
+      answer:
+        'Absolutely! We offer 30-90 days of post-launch support, plus ongoing maintenance packages. Think of us as your website kakis for life.',
     },
     {
-      question: "Can you redesign my existing website?",
-      answer: "Yes! We love breathing new life into existing websites. We'll analyze what's working, what isn't, and create a fresh design that keeps your best content."
+      question: 'Can you redesign my existing website?',
+      answer:
+        "Yes! We love breathing new life into existing websites. We'll analyze what's working, what isn't, and create a fresh design that keeps your best content.",
     },
     {
-      question: "Do you work with e-commerce?",
-      answer: "We do! From simple product catalogs to full online stores, we'll help you sell online with style. Shopify, WooCommerce, or custom solutions - whatever fits your business."
-    }
+      question: 'Do you work with e-commerce?',
+      answer:
+        "We do! From simple product catalogs to full online stores, we'll help you sell online with style. Shopify, WooCommerce, or custom solutions - whatever fits your business.",
+    },
   ];
 
   onMount(() => {
@@ -52,10 +57,19 @@
 
 <svelte:head>
   <title>Web Design & Development Singapore | Light & Kaki Studio</title>
-  <meta name="description" content="Professional web design and development services in Singapore. Custom websites with Japanese-inspired design, modern technology, and authentic kaki collaboration." />
-  <meta name="keywords" content="web design singapore, website development singapore, responsive web design, custom websites singapore, professional web design" />
+  <meta
+    name="description"
+    content="Professional web design and development services in Singapore. Custom websites with Japanese-inspired design, modern technology, and authentic kaki collaboration."
+  />
+  <meta
+    name="keywords"
+    content="web design singapore, website development singapore, responsive web design, custom websites singapore, professional web design"
+  />
   <meta property="og:title" content="Web Design & Development Singapore | Light & Kaki Studio" />
-  <meta property="og:description" content="Professional web design and development services in Singapore. Custom websites with modern technology and authentic collaboration." />
+  <meta
+    property="og:description"
+    content="Professional web design and development services in Singapore. Custom websites with modern technology and authentic collaboration."
+  />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://www.lxk42.sg/web-design" />
 </svelte:head>
@@ -63,8 +77,13 @@
 <section class="section-padding painterly-bg relative overflow-hidden">
   <div class="container-custom">
     <div class="text-center mb-6 md:mb-8 animate-on-scroll relative">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">Web Design & Development</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Thoughtful, friendly, and effective websites crafted with care — built for your story and your audience.</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-lxk-warm-gray mb-4">
+        Web Design & Development
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Thoughtful, friendly, and effective websites crafted with care — built for your story and
+        your audience.
+      </p>
       <!-- painterly hero accents -->
       <div class="texture-overlay"></div>
       <div class="paint-splash-1 hidden md:block" style="top:-20px; right:5%;"></div>
@@ -75,28 +94,73 @@
     <!-- anchor mini-nav -->
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
-        <li><a href="#web-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Performance</a></li>
-        <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
-        <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
+        <li>
+          <a
+            href="#web-overview"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Overview</a
+          >
+        </li>
+        <li>
+          <a
+            href="#performance"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Performance</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#faq"
+            class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition"
+            >FAQ</a
+          >
+        </li>
       </ul>
     </nav>
 
     <div id="web-overview" class="grid md:grid-cols-3 gap-8">
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow">🖥️</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-sage text-white flex items-center justify-center text-xl shadow"
+        >
+          🖥️
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Brand‑aligned UI</h3>
-        <p class="text-gray-700">Warm, painterly interfaces that feel authentic and approachable — using our signature color palette and typography.</p>
+        <p class="text-gray-700">
+          Warm, painterly interfaces that feel authentic and approachable — using our signature
+          color palette and typography.
+        </p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow">⚡</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-peach text-white flex items-center justify-center text-xl shadow"
+        >
+          ⚡
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">Performance & SEO</h3>
-        <p class="text-gray-700">Fast loads, accessible structure, and clean semantics to help both people and search engines understand your site.</p>
+        <p class="text-gray-700">
+          Fast loads, accessible structure, and clean semantics to help both people and search
+          engines understand your site.
+        </p>
       </div>
       <div class="painterly-card p-8 animate-on-scroll">
-        <div class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow">🧩</div>
+        <div
+          class="w-12 h-12 mb-4 rounded-full bg-lxk-coral text-white flex items-center justify-center text-xl shadow"
+        >
+          🧩
+        </div>
         <h3 class="text-2xl font-semibold text-lxk-sage mb-3">CMS & Hand‑off</h3>
-        <p class="text-gray-700">Optional CMS integration and friendly documentation so your team can easily update content.</p>
+        <p class="text-gray-700">
+          Optional CMS integration and friendly documentation so your team can easily update
+          content.
+        </p>
       </div>
     </div>
 
@@ -121,8 +185,6 @@
       </div>
     </div>
 
-
-
     <!-- Performance Snapshot -->
     <div id="performance" class="mt-16 animate-on-scroll">
       <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Performance Snapshot</h3>
@@ -145,28 +207,30 @@
             <div class="text-sm text-gray-600">SEO</div>
           </div>
         </div>
-        <div class="text-xs text-gray-500 mt-3 text-center">Indicative targets we design for in production builds</div>
+        <div class="text-xs text-gray-500 mt-3 text-center">
+          Indicative targets we design for in production builds
+        </div>
       </div>
     </div>
-
 
     <!-- Projects Rail -->
     {#if relevantProjects.length > 0}
-    <div id="projects" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">More Recent Projects</h3>
-      <HorizontalProjectRail projects={relevantProjects} />
-      <div class="text-center mt-6">
-        <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">
-          View All Projects →
-        </a>
+      <div id="projects" class="mt-16 animate-on-scroll">
+        <h3 class="text-2xl font-semibold text-lxk-sage mb-6 text-center">More Recent Projects</h3>
+        <HorizontalProjectRail projects={relevantProjects} />
+        <div class="text-center mt-6">
+          <a
+            href="/portfolio"
+            data-sveltekit-preload-data="hover"
+            class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium"
+          >
+            View All Projects →
+          </a>
+        </div>
       </div>
-    </div>
     {/if}
-
-
   </div>
 </section>
-
 
 <!-- FAQ Section -->
 <div id="faq"></div>
@@ -188,6 +252,6 @@
     'Complete project scope template with budget estimates',
     '15-point website checklist from Singapore experts',
     'Real examples from local successful businesses',
-    'Content planning worksheets and wireframe templates'
+    'Content planning worksheets and wireframe templates',
   ]}
 />

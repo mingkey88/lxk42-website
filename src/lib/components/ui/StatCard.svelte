@@ -15,7 +15,7 @@
   const gradients = {
     sage: 'from-lxk-sage to-lxk-soft-teal',
     peach: 'from-lxk-peach to-lxk-coral',
-    coral: 'from-lxk-coral to-lxk-peach'
+    coral: 'from-lxk-coral to-lxk-peach',
   };
 
   function animateCount(to) {
@@ -36,8 +36,8 @@
   onMount(() => {
     if (typeof value !== 'number' || !countUp) return;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting && !animated) {
             animated = true;
             animateCount(value);
@@ -54,7 +54,9 @@
 
 <div bind:this={el} class="painterly-card p-6 text-center">
   <div class="mb-2">
-    <div class={`text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r ${gradients[color] || gradients.sage} tabular-nums`}>
+    <div
+      class={`text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r ${gradients[color] || gradients.sage} tabular-nums`}
+    >
       {#if typeof value === 'number'}
         {displayValue}{suffix}
       {:else}
@@ -73,4 +75,3 @@
     font-variant-numeric: tabular-nums;
   }
 </style>
-

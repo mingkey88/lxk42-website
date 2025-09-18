@@ -1,0 +1,45 @@
+@keyframes svelte-1tf7169-scroll {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+.animate-scroll.svelte-1tf7169 {
+  animation: svelte-1tf7169-scroll var(--animation-duration, 30s) linear infinite;
+}
+.animate-scroll.paused.svelte-1tf7169 {
+  animation-play-state: paused;
+}
+.animate-scroll.svelte-1tf7169 {
+  will-change: transform;
+}
+.painterly-card.svelte-1892cyx {
+  background: linear-gradient(135deg, #fff, #f9f7f4);
+  border: 1px solid rgba(143, 166, 142, 0.1);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px #8fa68e14,
+    0 2px 8px #8fa68e0a;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.painterly-card.svelte-1892cyx:hover {
+  box-shadow:
+    0 16px 48px #8fa68e1f,
+    0 4px 16px #8fa68e14;
+  transform: translateY(-4px);
+}
+@keyframes svelte-1892cyx-fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-on-scroll.svelte-1892cyx {
+  animation: svelte-1892cyx-fadeInUp 0.8s ease-out forwards;
+}

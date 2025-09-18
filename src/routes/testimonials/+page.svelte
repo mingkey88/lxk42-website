@@ -31,17 +31,17 @@
       name: t.name,
       rating: t.rating,
       content: t.content,
-      date: '2024-01-01' // Add actual dates in real implementation
+      date: '2024-01-01', // Add actual dates in real implementation
     }));
     injectStructuredData(reviewSchema(reviewData), 'reviews');
 
     // Animate elements on scroll
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fadeInUp');
@@ -55,12 +55,16 @@
 </script>
 
 <!-- Simplified Testimonials Hero -->
-<section class="min-h-[80vh] flex items-center bg-gradient-to-br from-lxk-cream/30 via-white to-lxk-mint/20">
+<section
+  class="min-h-[80vh] flex items-center bg-gradient-to-br from-lxk-cream/30 via-white to-lxk-mint/20"
+>
   <div class="container-custom">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <!-- Large visual element -->
       <div class="animate-on-scroll">
-        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center">
+        <div
+          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center"
+        >
           <div class="text-center">
             <div class="text-8xl mb-6">💬</div>
             <h3 class="text-2xl font-semibold text-lxk-warm-gray">Client Stories</h3>
@@ -74,7 +78,8 @@
           What Our <span class="text-lxk-peach">Kakis</span> Say
         </h1>
         <p class="text-2xl text-gray-700 mb-12 leading-relaxed font-light">
-          Real stories from real friendships. Authentic testimonials from our Singapore creative partnerships.
+          Real stories from real friendships. Authentic testimonials from our Singapore creative
+          partnerships.
         </p>
 
         <!-- Single key stat -->
@@ -94,8 +99,8 @@
       <button
         class="px-6 py-3 rounded-full transition-all duration-300 font-medium text-lg
           {activeFilter === 'all'
-            ? 'bg-lxk-sage text-white shadow-lg'
-            : 'border-2 border-lxk-sage/30 text-lxk-sage hover:bg-lxk-sage hover:text-white'}"
+          ? 'bg-lxk-sage text-white shadow-lg'
+          : 'border-2 border-lxk-sage/30 text-lxk-sage hover:bg-lxk-sage hover:text-white'}"
         on:click={() => filterTestimonials('all')}
       >
         All Stories
@@ -104,8 +109,8 @@
         <button
           class="px-6 py-3 rounded-full transition-all duration-300 font-medium text-lg capitalize
             {activeFilter === service
-              ? 'bg-lxk-sage text-white shadow-lg'
-              : 'border-2 border-lxk-sage/30 text-lxk-sage hover:bg-lxk-sage hover:text-white'}"
+            ? 'bg-lxk-sage text-white shadow-lg'
+            : 'border-2 border-lxk-sage/30 text-lxk-sage hover:bg-lxk-sage hover:text-white'}"
           on:click={() => filterTestimonials(service)}
         >
           {service.replace('-', ' ')}
@@ -130,7 +135,9 @@
             <div class="flex justify-center mb-6">
               {#each Array(testimonial.rating || 5) as _, i (i)}
                 <svg class="w-5 h-5 text-lxk-peach fill-current" viewBox="0 0 20 20">
-                  <path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/>
+                  <path
+                    d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"
+                  />
                 </svg>
               {/each}
             </div>
@@ -149,7 +156,9 @@
                   class="w-16 h-16 rounded-full object-cover border-4 border-lxk-mint"
                 />
               {:else}
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-lxk-sage to-lxk-soft-teal flex items-center justify-center text-white text-xl font-bold">
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-lxk-sage to-lxk-soft-teal flex items-center justify-center text-white text-xl font-bold"
+                >
                   {testimonial.name.charAt(0)}
                 </div>
               {/if}
@@ -172,7 +181,9 @@
             <!-- Project Type Badge -->
             {#if testimonial.projectType}
               <div class="text-center mt-6">
-                <span class="inline-block bg-lxk-sage/10 text-lxk-sage px-4 py-2 rounded-full text-sm font-medium">
+                <span
+                  class="inline-block bg-lxk-sage/10 text-lxk-sage px-4 py-2 rounded-full text-sm font-medium"
+                >
                   {testimonial.projectType}
                 </span>
               </div>
@@ -198,7 +209,7 @@
 
     <!-- Client Logo Strip -->
     <ClientLogoStrip
-      clients={clients}
+      {clients}
       title="Our Extended Kaki Family"
       subtitle="Diverse industries, shared success stories"
     />
@@ -210,7 +221,9 @@
       </h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
         {#each Object.entries(industryStats) as [industry, count] (industry)}
-          <div class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div
+            class="text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
             <div class="text-2xl font-bold text-lxk-sage mb-2">{count}</div>
             <div class="text-sm text-gray-600">{industry}</div>
           </div>
@@ -224,9 +237,7 @@
 <section class="section-padding">
   <div class="container-custom">
     <div class="text-center mb-12 animate-on-scroll">
-      <h2 class="text-3xl md:text-4xl font-bold text-lxk-warm-gray mb-4">
-        Results That Matter 📈
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-lxk-warm-gray mb-4">Results That Matter 📈</h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Beyond testimonials, here's how our kakis have grown and succeeded
       </p>
@@ -270,11 +281,10 @@
     <div class="max-w-4xl mx-auto text-center animate-on-scroll">
       <div class="text-6xl mb-6">💝</div>
       <blockquote class="text-2xl md:text-3xl text-lxk-warm-gray leading-relaxed mb-8 italic">
-        "The best projects don't feel like work — they feel like collaborating with friends who happen to be incredibly talented."
+        "The best projects don't feel like work — they feel like collaborating with friends who
+        happen to be incredibly talented."
       </blockquote>
-      <div class="text-lg text-gray-600">
-        — A sentiment shared by many of our kakis
-      </div>
+      <div class="text-lg text-gray-600">— A sentiment shared by many of our kakis</div>
     </div>
   </div>
 </section>
@@ -292,7 +302,7 @@
   leadMagnetBenefits={[
     'Detailed project case studies with metrics',
     'Before and after transformations',
-    'Client journey and collaboration insights'
+    'Client journey and collaboration insights',
   ]}
 />
 
