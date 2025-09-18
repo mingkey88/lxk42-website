@@ -17,7 +17,7 @@ export const testimonials = [
     avatar: null,
     rating: 5,
     projectType: "Digital Marketing Campaign",
-    content: "The team at LXK42 transformed our digital presence completely. Their cultural sensitivity in balancing modern aesthetics with our heritage brand was remarkable. What impressed us most was how they made the entire process feel collaborative - like we were working with trusted friends rather than just another agency."
+    content: "The team at LXK42 transformed our digital presence completely. Their cultural sensitivity in balancing modern aesthetics with our heritage brand was remarkable. What impressed us most was how they made the entire process feel collaborative - like we were working with trusted friends rather than just another studio."
   },
   {
     id: 3,

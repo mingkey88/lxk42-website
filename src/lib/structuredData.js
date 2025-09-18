@@ -7,7 +7,7 @@ export const organizationSchema = {
   "alternateName": "LXK42 Studio",
   "url": "https://www.lxk42.sg",
   "logo": "https://www.lxk42.sg/logo.png",
-  "description": "Creative digital agency in Singapore specializing in web design, development, and motion graphics with authentic 'kaki' (friendship) philosophy.",
+  "description": "Creative digital studio in Singapore specializing in web design, development, and motion graphics with authentic 'kaki' (friendship) philosophy.",
   "foundingDate": "2024",
   "founders": [
     {
@@ -57,7 +57,7 @@ export const websiteSchema = {
   "name": "Light & Kaki Studio",
   "alternateName": "LXK42 Studio",
   "url": "https://www.lxk42.sg",
-  "description": "Singapore creative digital agency offering web design, development, and graphic design services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
+  "description": "Singapore creative digital studio offering web design, development, and graphic design services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
   "inLanguage": "en-SG",
   "potentialAction": {
     "@type": "SearchAction",

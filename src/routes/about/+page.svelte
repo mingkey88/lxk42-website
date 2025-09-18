@@ -7,7 +7,7 @@
   onMount(() => {
     // SEO optimization
     updatePageMeta(
-      'About Us - Light & Kaki Studio | Singapore Creative Agency',
+      'About Us - Light & Kaki Studio | Singapore Creative Studio',
       'Learn about Light & Kaki Studio\'s journey, our "kaki" philosophy, and how we build genuine friendships while creating amazing digital experiences in Singapore.'
     );
     injectStructuredData(organizationSchema, 'about-organization');

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Light & Kaki Studio (LXK42) is a creative digital agency website built with SvelteKit. The project emphasizes Japanese-inspired minimalistic design with warm, natural color palettes and the Singapore "kaki" (friendship) philosophy. The site is configured for deployment on both Firebase Hosting and Vercel.
+Light & Kaki Studio (LXK42) is a creative digital studio website built with SvelteKit. The project emphasizes Japanese-inspired minimalistic design with warm, natural color palettes and the Singapore "kaki" (friendship) philosophy. The site is configured for deployment on both Firebase Hosting and Vercel.
 
 ## Development Commands
 
