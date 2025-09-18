@@ -75,7 +75,6 @@
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
         <li><a href="#webapp-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
         <li><a href="#tech-stack" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Tech Stack</a></li>
         <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Performance</a></li>
         <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
@@ -122,81 +121,6 @@
       </div>
     </div>
 
-    <!-- Case Study Preview -->
-    <div id="case-study" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
-      <div class="painterly-card p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <!-- Visual mock -->
-          <div>
-            <BrowserFrame title="taskmanger-pro.sg">
-              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
-                <!-- simple web app mock layout -->
-                <div class="flex items-center justify-between mb-4">
-                  <div class="h-3 w-24 bg-lxk-sage/40 rounded"></div>
-                  <div class="flex gap-2">
-                    <div class="w-6 h-6 bg-lxk-peach/40 rounded"></div>
-                    <div class="w-6 h-6 bg-lxk-coral/40 rounded"></div>
-                  </div>
-                </div>
-                <div class="grid grid-cols-3 gap-3 mb-4">
-                  <div class="h-20 rounded bg-lxk-sage/20 p-2">
-                    <div class="h-2 w-full bg-lxk-sage/40 rounded mb-2"></div>
-                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
-                  </div>
-                  <div class="h-20 rounded bg-lxk-peach/20 p-2">
-                    <div class="h-2 w-full bg-lxk-peach/40 rounded mb-2"></div>
-                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
-                  </div>
-                  <div class="h-20 rounded bg-lxk-coral/20 p-2">
-                    <div class="h-2 w-full bg-lxk-coral/40 rounded mb-2"></div>
-                    <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
-                  </div>
-                </div>
-                <div class="h-2 w-2/3 bg-gray-200 rounded"></div>
-              </div>
-            </BrowserFrame>
-          </div>
-
-          <!-- Text + stats -->
-          <div>
-            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
-              Full-Stack Web Application
-            </div>
-            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
-              From Manual Processes to 90% Automation
-            </h4>
-            <p class="text-gray-700 mb-6">
-              TaskManager Pro needed a complete digital transformation. Their team was drowning in spreadsheets and manual workflows.
-            </p>
-
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <StatCard value={90} suffix="%" label="Process Automation" color="peach" />
-              <StatCard value={5} suffix="hrs" label="Daily Time Saved" color="coral" />
-            </div>
-
-            <p class="text-lxk-coral italic font-medium">
-              "Our web app kakis built exactly what we needed. The team finally has time to focus on strategy instead of admin work."
-            </p>
-            <p class="text-gray-600 text-sm mt-2">— Alex Chen, Operations Director</p>
-
-            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Built</h5>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> Task management & automation</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Real-time collaboration features</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Advanced reporting dashboard</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> API integrations & notifications</div>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Tech Stack Overview -->
     <div id="tech-stack" class="mt-16 animate-on-scroll">

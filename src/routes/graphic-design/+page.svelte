@@ -66,8 +66,6 @@
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
         <li><a href="#design-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#package-builder" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Package Builder</a></li>
-        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
         <li><a href="#design-process" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Process</a></li>
         <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
         <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
@@ -113,88 +111,7 @@
       </div>
     </div>
 
-    <!-- Design Package Builder -->
-    <div id="package-builder" class="mt-16 painterly-card p-8 animate-on-scroll">
-      <h3 class="text-3xl font-bold text-lxk-sage mb-6 text-center">Design Package Builder</h3>
-      <p class="text-center text-gray-600 mb-8">Create a custom design package tailored to your needs and budget</p>
-      <DesignPackageBuilder />
-    </div>
 
-    <!-- Case Study Preview -->
-    <div id="case-study" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
-      <div class="painterly-card p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <!-- Visual mock -->
-          <div>
-            <BrowserFrame title="heritage-tea.sg">
-              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
-                <!-- simple packaging mock layout -->
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                  <div class="aspect-square bg-gradient-to-br from-lxk-sage/30 to-lxk-mint/30 rounded-xl p-3">
-                    <div class="h-full border-2 border-lxk-sage/40 rounded-lg flex items-center justify-center">
-                      <div class="text-center">
-                        <div class="text-lg mb-1">🍃</div>
-                        <div class="h-2 w-8 bg-lxk-sage/60 rounded mx-auto"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="aspect-square bg-gradient-to-br from-lxk-peach/30 to-lxk-coral/30 rounded-xl p-3">
-                    <div class="h-full border-2 border-lxk-peach/40 rounded-lg flex items-center justify-center">
-                      <div class="text-center">
-                        <div class="text-lg mb-1">🌸</div>
-                        <div class="h-2 w-8 bg-lxk-peach/60 rounded mx-auto"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div class="h-3 w-24 bg-lxk-sage/40 rounded mx-auto mb-2"></div>
-                  <div class="h-2 w-16 bg-gray-200 rounded mx-auto"></div>
-                </div>
-              </div>
-            </BrowserFrame>
-          </div>
-
-          <!-- Text + stats -->
-          <div>
-            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
-              Complete Product Packaging
-            </div>
-            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
-              Traditional Tea, Modern Appeal
-            </h4>
-            <p class="text-gray-700 mb-6">
-              Heritage Tea Co. needed packaging that honored Singapore's tea tradition while appealing to modern consumers.
-            </p>
-
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <StatCard value={240} suffix="%" label="Sales Increase" color="peach" />
-              <StatCard value={85} suffix="%" label="Shelf Recognition" color="coral" />
-            </div>
-
-            <p class="text-lxk-coral italic font-medium">
-              "The packaging perfectly captures our heritage story. Customers immediately connect with our authentic Singapore roots."
-            </p>
-            <p class="text-gray-600 text-sm mt-2">— Linda Tan, Founder</p>
-
-            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Created</h5>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> Tea tin & box packaging design</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Traditional-modern illustration style</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Retail display & point-of-sale</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> Brand story & heritage messaging</div>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Design Process -->
     <div id="design-process" class="mt-16 animate-on-scroll">

@@ -65,7 +65,6 @@
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
         <li><a href="#motion-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
         <li><a href="#animation-types" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Animation Types</a></li>
         <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Impact</a></li>
         <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
@@ -112,77 +111,6 @@
       </div>
     </div>
 
-    <!-- Case Study Preview -->
-    <div id="case-study" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
-      <div class="painterly-card p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <!-- Visual mock -->
-          <div>
-            <BrowserFrame title="fintech-explainer.sg">
-              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
-                <!-- simple animation mock layout -->
-                <div class="relative mb-4">
-                  <div class="aspect-video bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-lg flex items-center justify-center">
-                    <div class="text-center">
-                      <div class="w-16 h-16 bg-lxk-sage/40 rounded-full mx-auto mb-3 flex items-center justify-center animate-pulse">
-                        <div class="text-2xl">▶️</div>
-                      </div>
-                      <div class="text-sm text-gray-600">Explainer Animation</div>
-                    </div>
-                  </div>
-                  <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">2:30</div>
-                </div>
-                <div class="flex justify-between items-center">
-                  <div class="h-2 w-3/4 bg-gray-200 rounded"></div>
-                  <div class="flex gap-2">
-                    <div class="w-4 h-4 bg-lxk-coral/40 rounded"></div>
-                    <div class="w-4 h-4 bg-lxk-peach/40 rounded"></div>
-                  </div>
-                </div>
-              </div>
-            </BrowserFrame>
-          </div>
-
-          <!-- Text + stats -->
-          <div>
-            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
-              Fintech Explainer Video
-            </div>
-            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
-              Complex Concept, Simple Story
-            </h4>
-            <p class="text-gray-700 mb-6">
-              SecurePay SG needed to explain their cryptocurrency payment solution in a way that everyday Singapore businesses could understand.
-            </p>
-
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <StatCard value={85} suffix="%" label="Comprehension Rate" color="peach" />
-              <StatCard value={300} suffix="%" label="Conversion Boost" color="coral" />
-            </div>
-
-            <p class="text-lxk-coral italic font-medium">
-              "The animation made our complex product feel approachable. Our sales team loves showing this video to potential clients."
-            </p>
-            <p class="text-gray-600 text-sm mt-2">— Rachel Ng, Marketing Director</p>
-
-            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Animated</h5>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> Product walkthrough animation</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Singapore business scenarios</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Character-driven storytelling</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> Multi-language versions</div>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Watch the Full Video →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Animation Types -->
     <div id="animation-types" class="mt-16 animate-on-scroll">

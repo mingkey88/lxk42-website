@@ -76,9 +76,7 @@
     <nav class="mb-12 md:mb-16">
       <ul class="flex flex-wrap justify-center gap-2 md:gap-3">
         <li><a href="#web-overview" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Overview</a></li>
-        <li><a href="#case-study" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Case Study</a></li>
         <li><a href="#performance" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Performance</a></li>
-        <li><a href="#ui-kit" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">UI Kit</a></li>
         <li><a href="#projects" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">Projects</a></li>
         <li><a href="#faq" class="px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-lxk-sage/10 text-sm text-lxk-warm-gray hover:bg-lxk-cream/80 transition">FAQ</a></li>
       </ul>
@@ -124,67 +122,6 @@
     </div>
 
 
-    <!-- Case Study Preview -->
-    <div id="case-study" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Case Study Spotlight</h3>
-      <div class="painterly-card p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <!-- Visual mock in browser frame -->
-          <div>
-            <BrowserFrame title="greenspace.sg">
-              <div class="rounded-xl border border-lxk-sage/10 p-4 bg-gradient-to-br from-lxk-cream/50 to-white">
-                <!-- simple mock layout -->
-                <div class="h-4 w-40 bg-lxk-sage/40 rounded mb-3"></div>
-                <div class="grid grid-cols-3 gap-3 mb-4">
-                  <div class="h-24 rounded-xl bg-lxk-mint/30"></div>
-                  <div class="h-24 rounded-xl bg-lxk-peach/30"></div>
-                  <div class="h-24 rounded-xl bg-lxk-coral/30"></div>
-                </div>
-                <div class="h-3 w-2/3 bg-gray-200 rounded mb-2"></div>
-                <div class="h-3 w-1/2 bg-gray-200 rounded"></div>
-              </div>
-            </BrowserFrame>
-          </div>
-
-          <!-- Text + stats -->
-          <div>
-            <div class="inline-block bg-lxk-mint/20 text-lxk-sage px-3 py-1 rounded-full text-sm font-medium mb-4">
-              E-commerce Transformation
-            </div>
-            <h4 class="text-2xl font-bold text-lxk-warm-gray mb-3">
-              From 30% Bounce Rate to 15% in 3 Months
-            </h4>
-            <p class="text-gray-700 mb-6">
-              GreenSpace SG needed a complete website overhaul. Their old site was driving away potential customers with slow loading times and confusing navigation.
-            </p>
-
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <StatCard value={50} suffix="%" label="Faster Load Time" color="peach" />
-              <StatCard value={180} suffix="%" label="More Conversions" color="coral" />
-            </div>
-
-            <p class="text-lxk-coral italic font-medium">
-              "Working with Light & Kaki felt like having creative friends who truly cared about our success."
-            </p>
-            <p class="text-gray-600 text-sm mt-2">— Sarah Chen, Founder</p>
-
-            <div class="mt-6 rounded-2xl p-5 bg-lxk-cream/60 border border-lxk-sage/10">
-              <h5 class="font-semibold text-lxk-warm-gray mb-3">What We Did</h5>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-sage rounded-full"></span> User research & competitive analysis</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-peach rounded-full"></span> Complete UX/UI redesign</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-coral rounded-full"></span> Performance optimization</div>
-                <div class="flex items-center gap-2"><span class="w-2 h-2 bg-lxk-mint rounded-full"></span> SEO foundation & analytics setup</div>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <a href="/portfolio" data-sveltekit-preload-data="hover" class="text-lxk-coral hover:text-lxk-peach transition-colors duration-200 font-medium">Read the Full Case Study →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Performance Snapshot -->
     <div id="performance" class="mt-16 animate-on-scroll">
@@ -212,11 +149,6 @@
       </div>
     </div>
 
-    <!-- UI Kit Preview -->
-    <div id="ui-kit" class="mt-16 animate-on-scroll">
-      <h3 class="text-2xl font-semibold text-lxk-sage mb-8 text-center">Mini UI Kit</h3>
-      <UIkitPreview />
-    </div>
 
     <!-- Projects Rail -->
     {#if relevantProjects.length > 0}
