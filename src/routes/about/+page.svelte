@@ -61,7 +61,7 @@
         <!-- Key stats grid -->
         <div class="grid grid-cols-2 gap-8">
           <div class="flex items-center gap-4">
-            <div class="text-4xl font-bold text-lxk-sage">2024</div>
+            <div class="text-4xl font-bold text-lxk-sage">2025</div>
             <div class="text-lg text-gray-600">Founded in Singapore</div>
           </div>
           <div class="flex items-center gap-4">

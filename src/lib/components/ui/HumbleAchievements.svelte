@@ -17,19 +17,19 @@
       name: 'Svelte Society Member',
       icon: '⚡',
       description: 'Keeping up with the latest web technologies to serve you better',
-      year: '2024',
+      year: '2025',
     },
     {
       name: 'Singapore Tech Association',
       icon: '🇸🇬',
       description: 'Connected with the local tech community we love',
-      year: '2024',
+      year: '2025',
     },
     {
       name: 'Accessibility Certified',
       icon: '♿',
       description: 'Making sure everyone can enjoy the websites we build together',
-      year: '2024',
+      year: '2025',
     },
   ];
 
@@ -38,19 +38,19 @@
       title: 'Featured in Design Singapore',
       description: 'Our kaki-first approach to design caught some attention',
       icon: '🏆',
-      year: '2024',
+      year: '2025',
     },
     {
       title: 'Client Choice Award',
       description: 'When your kakis nominate you, that means everything ❤️',
       icon: '🌟',
-      year: '2024',
+      year: '2025',
     },
     {
       title: 'Sustainable Web Design Initiative',
       description: 'Proud to build websites that are kind to our planet',
       icon: '🌱',
-      year: '2024',
+      year: '2025',
     },
   ];
 

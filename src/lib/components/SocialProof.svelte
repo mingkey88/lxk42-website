@@ -258,7 +258,7 @@
         </div>
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-lxk-peach rounded-full"></div>
-          <span class="text-sm text-gray-600">100% Client Retention (2024)</span>
+          <span class="text-sm text-gray-600">100% Client Retention (2025)</span>
         </div>
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-lxk-coral rounded-full"></div>
