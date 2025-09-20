@@ -3,6 +3,7 @@
   import { fade, fly, scale } from 'svelte/transition';
   import { projects } from '$lib/data/portfolio.js';
   import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
+  import VideoPlayer from '$lib/components/ui/VideoPlayer.svelte';
   import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
   import { getFeaturedTestimonials } from '$lib/data/testimonials.js';
   import { updatePageMeta } from '$lib/structuredData.js';
@@ -114,12 +115,15 @@
       <!-- Large visual element -->
       <div class="animate-on-scroll">
         <div
-          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center"
+          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center overflow-hidden relative"
         >
-          <div class="text-center">
-            <div class="text-8xl mb-6">🎨</div>
-            <h3 class="text-2xl font-semibold text-lxk-warm-gray">Our Creative Work</h3>
-          </div>
+          <VideoPlayer
+            src="/creative-work.mp4"
+            className="w-full h-full object-cover rounded-2xl"
+            alt="Creative work and portfolio showcase"
+            lazy={true}
+          />
+
         </div>
       </div>
 

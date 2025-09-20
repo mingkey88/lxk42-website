@@ -28,21 +28,21 @@
 <!-- Services Section -->
 <section id="services" class="section-padding">
   <div class="container-custom">
-    <div class="text-center mb-20 services-title">
+    <div class="text-center mb-12 services-title">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-lxk-warm-gray mb-6 leading-tight"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lxk-warm-gray mb-4 leading-tight"
       >
         How We Help You <span class="text-lxk-peach">Thrive</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 services-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 services-grid">
       <a
-        href="#/web-design"
+        href="/web-design"
         class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
       >
         <div
-          class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden"
+          class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden"
         >
           <!-- Minimalistic desk setup -->
           <div
@@ -65,17 +65,17 @@
             <div class="absolute bottom-0 left-4 w-16 h-3 bg-gray-400 rounded-lg shadow-sm"></div>
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-lxk-warm-gray">Web Design</h3>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-lxk-warm-gray">Web Design</h3>
         </div>
       </a>
 
       <a
-        href="#/web-app"
+        href="/web-app"
         class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
       >
         <div
-          class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+          class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
         >
           <!-- Realistic smartphone -->
           <div
@@ -104,17 +104,17 @@
             </div>
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-lxk-warm-gray">Web Apps</h3>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-lxk-warm-gray">Web Apps</h3>
         </div>
       </a>
 
       <a
-        href="#/graphic-design"
+        href="/graphic-design"
         class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
       >
         <div
-          class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+          class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
         >
           <!-- Designer's workspace -->
           <div
@@ -153,17 +153,17 @@
             </div>
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-lxk-warm-gray">Graphic Design</h3>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-lxk-warm-gray">Graphic Design</h3>
         </div>
       </a>
 
       <a
-        href="#/motion-graphics"
+        href="/motion-graphics"
         class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
       >
         <div
-          class="bg-gradient-to-br from-lxk-peach/10 to-lxk-mint/10 h-56 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+          class="bg-gradient-to-br from-lxk-peach/10 to-lxk-mint/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
         >
           <!-- Film/video equipment -->
           <div
@@ -213,8 +213,8 @@
             </div>
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-lxk-warm-gray">Motion Graphics</h3>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-lxk-warm-gray">Motion Graphics</h3>
         </div>
       </a>
     </div>

@@ -1,15 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  import teamImage from '../assets/team-collaboration.png';
-  import teamImageWebp from '../assets/team-collaboration.webp';
+  import VideoPlayer from './ui/VideoPlayer.svelte';
   import LoadingSkeleton from './ui/LoadingSkeleton.svelte';
-  let imageLoaded = false;
-  let imgEl;
 
   onMount(() => {
-    if (imgEl && imgEl.complete) {
-      imageLoaded = true;
-    }
 
     // Simple scroll animations using IntersectionObserver
     const observerOptions = {
@@ -64,16 +58,12 @@
           class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center overflow-hidden relative"
         >
           <!-- Coffee shop collaboration video -->
-          <video
+          <VideoPlayer
             src="/coffee-shop-collaboration.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-            class="w-full h-full object-cover rounded-2xl"
-          >
-            <p>Your browser does not support the video tag.</p>
-          </video>
+            className="w-full h-full object-cover rounded-2xl"
+            alt="Coffee shop collaboration between creative kakis"
+            lazy={true}
+          />
 
           <!-- Collaboration element overlay -->
           <div
@@ -242,21 +232,35 @@
       </div>
     </div>
 
-    <!-- Simplified CTA -->
+    <!-- Video CTA with Overlay -->
     <div class="text-center">
-      <div class="bg-gradient-to-r from-lxk-sage to-lxk-peach rounded-3xl p-16 text-white">
-        <h3 class="text-4xl font-bold mb-6">Ready to Be Kakis?</h3>
-        <a
-          href="#contact"
-          class="inline-flex items-center bg-white text-lxk-sage px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg group"
-        >
-          Start Our Journey Together
-          <div
-            class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform"
+      <div class="relative rounded-3xl overflow-hidden h-96">
+        <!-- Background Video -->
+        <VideoPlayer
+          src="/ready-to-start.mp4"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt="Ready to start collaboration video"
+          lazy={true}
+        />
+
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Content overlay -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-16">
+          <h3 class="text-4xl font-bold mb-6">Ready to Be Kakis?</h3>
+          <a
+            href="#contact"
+            class="inline-flex items-center bg-white text-lxk-sage px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg group shadow-lg"
           >
-            <span class="text-sm">→</span>
-          </div>
-        </a>
+            Start Our Journey Together
+            <div
+              class="ml-3 w-6 h-6 bg-lxk-sage/10 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform"
+            >
+              <span class="text-sm">→</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

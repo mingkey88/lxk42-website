@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import TestimonialCarousel from '$lib/components/ui/TestimonialCarousel.svelte';
+  import VideoPlayer from '$lib/components/ui/VideoPlayer.svelte';
   import ClientLogoStrip from '$lib/components/ui/ClientLogoStrip.svelte';
   import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
   import { testimonials, getTestimonialsByService } from '$lib/data/testimonials.js';
@@ -65,21 +66,12 @@
         <div
           class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden relative"
         >
-          <video
+          <VideoPlayer
             src="/client-stories.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-            class="absolute inset-0 w-full h-full object-cover"
-          >
-            <div class="absolute inset-0 flex items-center justify-center text-center">
-              <div>
-                <div class="text-8xl mb-6">💬</div>
-                <h3 class="text-2xl font-semibold text-lxk-warm-gray">Client Stories</h3>
-              </div>
-            </div>
-          </video>
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Client stories and testimonials"
+            lazy={true}
+          />
         </div>
       </div>
 

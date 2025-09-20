@@ -1,3 +1,7 @@
+<script>
+  import VideoPlayer from './ui/VideoPlayer.svelte';
+</script>
+
 <!-- Contact Section -->
 <section id="contact" class="section-padding bg-lxk-cream">
   <div class="container-custom">
@@ -19,10 +23,11 @@
             class="absolute -inset-3 bg-gradient-to-r from-lxk-sage/30 to-lxk-peach/30 rounded-3xl blur-lg"
           ></div>
           <div class="relative bg-lxk-sage/10 rounded-3xl p-6 border border-lxk-sage/20">
-            <img
-              src="/contact-team.png"
-              alt="Creative team ready to collaborate"
-              class="w-full h-80 object-cover rounded-2xl"
+            <VideoPlayer
+              src="/office-meeting.mp4"
+              className="w-full h-80 object-cover rounded-2xl"
+              alt="Office meeting and collaboration"
+              lazy={true}
             />
           </div>
         </div>
