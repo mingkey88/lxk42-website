@@ -53,6 +53,27 @@
     border-radius: 4px;
   }
 
+  /* Hero-specific animation utilities */
+  .hero-mounted {
+    --animation-ready: 1;
+  }
+
+  .animate-hero-title {
+    opacity: 1; /* Ensure visible for letter animations */
+  }
+
+  .animate-hero-subtitle {
+    /* Will be animated via keyframes */
+  }
+
+  .animate-hero-cta {
+    /* Will be animated via keyframes */
+  }
+
+  .animate-hero-stat {
+    /* Will be animated via keyframes */
+  }
+
   .btn-primary {
     @apply bg-lxk-sage hover:bg-lxk-soft-teal text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl;
     background: linear-gradient(135deg, #8fa68e 0%, #7ba098 100%);

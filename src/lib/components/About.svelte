@@ -250,7 +250,7 @@
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-16">
           <h3 class="text-4xl font-bold mb-6">Ready to Be Kakis?</h3>
           <a
-            href="#contact"
+            href="/contact"
             class="inline-flex items-center bg-white text-lxk-sage px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 text-lg group shadow-lg"
           >
             Start Our Journey Together

@@ -118,7 +118,7 @@
             ></div>
           </a>
           <a
-            href="/#contact"
+            href="/contact"
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Contact
@@ -205,7 +205,7 @@
           >Testimonials</a
         >
         <a
-          href="/#contact"
+          href="/contact"
           on:click={closeMobileMenu}
           class="mobile-nav-link block px-3 py-2 text-lxk-warm-gray hover:text-lxk-sage transition-all duration-200 transform hover:scale-105 hover:bg-lxk-mint/10 rounded-lg"
           >Contact</a

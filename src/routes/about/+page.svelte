@@ -130,7 +130,7 @@
 
     <!-- Team Philosophy Cards -->
     <div class="grid md:grid-cols-3 gap-8 mb-20">
-      <div class="painterly-card p-8 animate-on-scroll">
+      <div class="painterly-card p-8 animate-on-scroll hover:scale-105 transition-all duration-300">
         <div class="text-4xl mb-4">🌱</div>
         <h3 class="text-2xl font-bold text-lxk-sage mb-4">Growing Together</h3>
         <p class="text-gray-700 leading-relaxed">
@@ -139,7 +139,7 @@
         </p>
       </div>
 
-      <div class="painterly-card p-8 animate-on-scroll">
+      <div class="painterly-card p-8 animate-on-scroll hover:scale-105 transition-all duration-300">
         <div class="text-4xl mb-4">💝</div>
         <h3 class="text-2xl font-bold text-lxk-peach mb-4">Authentic Care</h3>
         <p class="text-gray-700 leading-relaxed">
@@ -148,7 +148,7 @@
         </p>
       </div>
 
-      <div class="painterly-card p-8 animate-on-scroll">
+      <div class="painterly-card p-8 animate-on-scroll hover:scale-105 transition-all duration-300">
         <div class="text-4xl mb-4">🇸🇬</div>
         <h3 class="text-2xl font-bold text-lxk-coral mb-4">Singapore Heart</h3>
         <p class="text-gray-700 leading-relaxed">
@@ -160,7 +160,7 @@
 
     <!-- Mission & Vision Statement -->
     <div class="grid md:grid-cols-2 gap-8 mb-16">
-      <div class="bg-white/60 backdrop-blur rounded-3xl p-8 text-center animate-on-scroll">
+      <div class="painterly-card p-8 text-center animate-on-scroll hover:scale-105 transition-all duration-300">
         <div class="text-4xl mb-4">🎯</div>
         <h3 class="text-2xl font-bold text-lxk-warm-gray mb-4">Our Mission</h3>
         <p class="text-lg text-gray-700 leading-relaxed">
@@ -169,7 +169,7 @@
         </p>
       </div>
 
-      <div class="bg-white/60 backdrop-blur rounded-3xl p-8 text-center animate-on-scroll">
+      <div class="painterly-card p-8 text-center animate-on-scroll hover:scale-105 transition-all duration-300">
         <div class="text-4xl mb-4">✨</div>
         <h3 class="text-2xl font-bold text-lxk-warm-gray mb-4">Our Vision</h3>
         <p class="text-lg text-gray-700 leading-relaxed">

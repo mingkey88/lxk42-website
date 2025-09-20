@@ -39,20 +39,19 @@
 </script>
 
 <!-- Testimonial Carousel -->
-<section class="section-padding bg-gradient-to-br from-lxk-cream to-white">
+<section class="py-16 bg-gradient-to-br from-lxk-cream to-white">
   <div class="container-custom">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-lxk-warm-gray mb-6">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-lxk-warm-gray mb-4">
         Real Stories, Real Results ✨
       </h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         Singapore businesses sharing their success with their creative kakis
       </p>
-      <!-- [IMAGE PLACEHOLDER: Photo collage of happy clients in Singapore settings - should show diversity, genuine smiles, success moments] -->
     </div>
 
     {#if testimonials.length > 0}
-      <div class="relative max-w-4xl mx-auto">
+      <div class="relative max-w-3xl mx-auto">
         <!-- Main Testimonial Card -->
         <div
           bind:this={carousel}
@@ -68,7 +67,7 @@
           >
             {#each testimonials as testimonial, index (testimonial.id)}
               <div class="w-full flex-shrink-0">
-                <div class="painterly-card p-8 md:p-12 mx-4 relative overflow-hidden">
+                <div class="painterly-card p-6 md:p-8 mx-4 relative overflow-hidden">
                   <!-- Decorative Quote -->
                   <div
                     class="absolute top-4 left-4 text-6xl text-lxk-sage/20 font-serif leading-none"
@@ -78,9 +77,9 @@
 
                   <div class="relative z-10">
                     <!-- Rating Stars -->
-                    <div class="flex justify-center mb-6">
+                    <div class="flex justify-center mb-4">
                       {#each Array(testimonial.rating || 5) as _, i (i)}
-                        <svg class="w-5 h-5 text-lxk-peach fill-current" viewBox="0 0 20 20">
+                        <svg class="w-4 h-4 text-lxk-peach fill-current" viewBox="0 0 20 20">
                           <path
                             d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"
                           />
@@ -90,7 +89,7 @@
 
                     <!-- Testimonial Content -->
                     <blockquote
-                      class="text-lg md:text-xl text-lxk-warm-gray leading-relaxed mb-8 text-center font-medium"
+                      class="text-base md:text-lg text-lxk-warm-gray leading-relaxed mb-6 text-center font-medium"
                     >
                       {testimonial.content}
                     </blockquote>
@@ -146,11 +145,11 @@
         <!-- Navigation Controls -->
         {#if testimonials.length > 1}
           <!-- Dot Indicators -->
-          <div class="flex justify-center gap-3 mt-8">
+          <div class="flex justify-center gap-2 mt-6">
             {#each testimonials as _, index (index)}
               <button
-                class="w-3 h-3 rounded-full transition-all duration-300 {currentIndex === index
-                  ? 'bg-lxk-sage w-8'
+                class="w-2 h-2 rounded-full transition-all duration-300 {currentIndex === index
+                  ? 'bg-lxk-sage w-6'
                   : 'bg-lxk-sage/30 hover:bg-lxk-sage/50'}"
                 on:click={() => goToTestimonial(index)}
                 aria-label="Go to testimonial {index + 1}"
@@ -201,20 +200,6 @@
         {/if}
       </div>
 
-      <!-- Autoplay Toggle -->
-      {#if testimonials.length > 1}
-        <div class="text-center mt-6">
-          <button
-            class="text-sm text-gray-500 hover:text-lxk-sage transition-colors duration-200"
-            on:click={() => {
-              isAutoplay = !isAutoplay;
-              isAutoplay ? startAutoplay() : clearInterval(autoplayInterval);
-            }}
-          >
-            {isAutoplay ? 'Pause' : 'Play'} autoplay
-          </button>
-        </div>
-      {/if}
     {/if}
   </div>
 </section>

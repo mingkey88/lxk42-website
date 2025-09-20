@@ -225,6 +225,42 @@ export const reviewSchema = (/** @type {Array<any>} */ reviews) => {
   };
 };
 
+// Contact page structured data
+export const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Light & Kaki Studio',
+  description: 'Get in touch with Light & Kaki Studio for web design, development, and creative services in Singapore.',
+  url: 'https://www.lxk42.sg/contact',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Light & Kaki Studio',
+    telephone: '+65-9827-8695',
+    email: 'mingjie@lxk42.sg',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'SG',
+      addressLocality: 'Singapore',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+65-9827-8695',
+        contactType: 'customer service',
+        availableLanguage: ['English'],
+        areaServed: 'SG',
+      },
+      {
+        '@type': 'ContactPoint',
+        email: 'mingjie@lxk42.sg',
+        contactType: 'customer service',
+        availableLanguage: ['English'],
+        areaServed: 'SG',
+      },
+    ],
+  },
+};
+
 // Helper function to inject structured data
 export const injectStructuredData = (
   /** @type {any} */ schema,

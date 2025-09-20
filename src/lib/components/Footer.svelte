@@ -30,7 +30,7 @@
           <a href="/about" class="block text-gray-300 hover:text-white transition-colors">About Us</a>
           <a href="/portfolio" class="block text-gray-300 hover:text-white transition-colors">Portfolio</a>
           <a href="/testimonials" class="block text-gray-300 hover:text-white transition-colors">Testimonials</a>
-          <a href="/#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+          <a href="/contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
         </nav>
       </div>
 
