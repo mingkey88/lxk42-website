@@ -63,12 +63,23 @@
       <!-- Large visual element -->
       <div class="animate-on-scroll">
         <div
-          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center"
+          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden relative"
         >
-          <div class="text-center">
-            <div class="text-8xl mb-6">💬</div>
-            <h3 class="text-2xl font-semibold text-lxk-warm-gray">Client Stories</h3>
-          </div>
+          <video
+            src="/client-stories.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="absolute inset-0 w-full h-full object-cover"
+          >
+            <div class="absolute inset-0 flex items-center justify-center text-center">
+              <div>
+                <div class="text-8xl mb-6">💬</div>
+                <h3 class="text-2xl font-semibold text-lxk-warm-gray">Client Stories</h3>
+              </div>
+            </div>
+          </video>
         </div>
       </div>
 
