@@ -51,7 +51,7 @@
     // SEO optimization
     updatePageMeta(
       'Motion Graphics & Animation Singapore | Light & Kaki Studio',
-      'Professional motion graphics and animation services in Singapore. Explainer videos, logo animations, and marketing content with Japanese-inspired aesthetics.'
+      'Professional motion graphics and animation services in Singapore. Explainer videos, logo animations, and marketing content with warm aesthetics.'
     );
     injectStructuredData(serviceSchemas['motion-graphics'], 'service-motion-graphics');
 
@@ -175,7 +175,7 @@
         <h3 class="text-2xl font-semibold text-lxk-sage mb-4">Our Approach</h3>
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
           <li>Storyboard sessions over kopi to map your narrative ☕</li>
-          <li>Hand-drawn style frames with Japanese aesthetic influence</li>
+          <li>Hand-drawn style frames with warm aesthetic influence</li>
           <li>Smooth, organic motion that feels natural and engaging</li>
           <li>Collaborative reviews with your animation kakis</li>
         </ul>

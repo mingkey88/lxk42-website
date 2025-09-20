@@ -49,7 +49,7 @@
     // SEO optimization
     updatePageMeta(
       'Web Design & Development Singapore | Light & Kaki Studio',
-      'Professional web design and development services in Singapore. Custom websites with Japanese-inspired design, modern technology, and authentic kaki collaboration.'
+      'Professional web design and development services in Singapore. Custom websites with warm design, modern technology, and authentic kaki collaboration.'
     );
     injectStructuredData(serviceSchemas['web-design'], 'service-web-design');
 
@@ -76,7 +76,7 @@
   <title>Web Design & Development Singapore | Light & Kaki Studio</title>
   <meta
     name="description"
-    content="Professional web design and development services in Singapore. Custom websites with Japanese-inspired design, modern technology, and authentic kaki collaboration."
+    content="Professional web design and development services in Singapore. Custom websites with warm design, modern technology, and authentic kaki collaboration."
   />
   <meta
     name="keywords"

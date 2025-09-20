@@ -8,7 +8,7 @@ export const testimonials = [
     rating: 5,
     projectType: 'Web Design & Development',
     content:
-      "Working with Light & Kaki Studio was like having creative kakis who truly understood our vision. They didn't just build us a website - they crafted a digital home that perfectly captures our sustainable mission. The Japanese-inspired design aesthetic they brought was something we never knew we needed, but now can't imagine living without.",
+      "Working with Light & Kaki Studio was like having creative kakis who truly understood our vision. They didn't just build us a website - they crafted a digital home that perfectly captures our sustainable mission. The warm design aesthetic they brought was something we never knew we needed, but now can't imagine living without.",
   },
   {
     id: 2,

@@ -57,7 +57,7 @@ export const websiteSchema = {
   alternateName: 'LXK42 Studio',
   url: 'https://www.lxk42.sg',
   description:
-    "Singapore creative digital studio offering web design, development, and graphic design services with Japanese-inspired design and authentic 'kaki' collaboration philosophy.",
+    "Singapore creative digital studio offering web design, development, and graphic design services with warm design and authentic 'kaki' collaboration philosophy.",
   inLanguage: 'en-SG',
   potentialAction: {
     '@type': 'SearchAction',
@@ -105,7 +105,7 @@ export const serviceSchemas = {
     '@type': 'Service',
     name: 'Web Design & Development',
     description:
-      'Custom website design and development with Japanese-inspired aesthetics, responsive design, and modern technology stack including Svelte, React, and TypeScript.',
+      'Custom website design and development with warm aesthetics, responsive design, and modern technology stack including Svelte, React, and TypeScript.',
     provider: {
       '@type': 'Organization',
       name: 'Light & Kaki Studio',
