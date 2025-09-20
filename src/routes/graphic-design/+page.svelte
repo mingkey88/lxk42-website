@@ -52,7 +52,7 @@
     // SEO optimization
     updatePageMeta(
       'Graphic Design Singapore | Light & Kaki Studio',
-      'Professional graphic design services in Singapore. Print design, digital graphics, and illustrations with Japanese-inspired aesthetics and local market expertise.'
+      'Professional graphic design services in Singapore. Print design, digital graphics, and illustrations with warm aesthetics and local market expertise.'
     );
     injectStructuredData(serviceSchemas['graphic-design'], 'service-graphic-design');
 
@@ -167,7 +167,7 @@
         <ul class="space-y-3 text-gray-700 list-disc pl-6">
           <li>Design briefs and inspiration sessions over kopi ☕</li>
           <li>Hand-sketched concepts before digital refinement</li>
-          <li>Japanese-inspired aesthetics with Singapore sensibility</li>
+          <li>Warm aesthetics with Singapore sensibility</li>
           <li>Collaborative iterations with your design kakis</li>
         </ul>
       </div>
@@ -215,7 +215,7 @@
             </div>
             <h4 class="font-semibold text-lxk-warm-gray mb-2">Design</h4>
             <p class="text-sm text-gray-600">
-              Digital refinement with Japanese painterly aesthetics
+              Digital refinement with warm painterly aesthetics
             </p>
           </div>
           <div class="text-center">

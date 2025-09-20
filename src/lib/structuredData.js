@@ -140,7 +140,7 @@ export const serviceSchemas = {
     '@type': 'Service',
     name: 'Graphic Design Services',
     description:
-      'Print and digital graphic design including marketing materials, social media graphics, and publication design with Japanese-inspired aesthetics.',
+      'Print and digital graphic design including marketing materials, social media graphics, and publication design with warm aesthetics.',
     provider: {
       '@type': 'Organization',
       name: 'Light & Kaki Studio',
