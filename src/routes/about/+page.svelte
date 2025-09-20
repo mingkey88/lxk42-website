@@ -40,12 +40,21 @@
       <!-- Large visual element -->
       <div class="animate-on-scroll">
         <div
-          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center"
+          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl overflow-hidden shadow-2xl"
         >
-          <div class="text-center">
-            <div class="text-8xl mb-6">🤝</div>
-            <h3 class="text-2xl font-semibold text-lxk-warm-gray">Your Creative Kakis</h3>
-          </div>
+          <video
+            class="w-full h-full object-cover"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="/creative-kakis.mp4" type="video/mp4" />
+            <div class="text-center p-12">
+              <div class="text-8xl mb-6">🤝</div>
+              <h3 class="text-2xl font-semibold text-lxk-warm-gray">Your Creative Kakis</h3>
+            </div>
+          </video>
         </div>
       </div>
 

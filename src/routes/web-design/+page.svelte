@@ -52,6 +52,23 @@
       'Professional web design and development services in Singapore. Custom websites with Japanese-inspired design, modern technology, and authentic kaki collaboration.'
     );
     injectStructuredData(serviceSchemas['web-design'], 'service-web-design');
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    animateElements.forEach(el => observer.observe(el));
   });
 </script>
 

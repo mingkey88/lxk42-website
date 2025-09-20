@@ -1,13 +1,27 @@
 <script>
   import { onMount } from 'svelte';
-  import { createScrollAnimation, createStaggeredAnimation } from '$lib/utils/scrollAnimations.ts';
 
   onMount(() => {
-    // Animate the section title
-    createScrollAnimation('.services-title', 'fadeUp');
+    // Simple scroll animations using IntersectionObserver
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
 
-    // Stagger animate the service cards
-    createStaggeredAnimation('.services-grid', '.service-card', 'fadeUp', { stagger: 0.15 });
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, observerOptions);
+
+    // Observe title and service cards
+    const animateElements = document.querySelectorAll('.services-title, .service-card');
+    animateElements.forEach((el, index) => {
+      el.style.animationDelay = `${index * 150}ms`;
+      observer.observe(el);
+    });
   });
 </script>
 

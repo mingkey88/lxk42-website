@@ -3,8 +3,6 @@
   import teamImage from '../assets/team-collaboration.png';
   import teamImageWebp from '../assets/team-collaboration.webp';
   import LoadingSkeleton from './ui/LoadingSkeleton.svelte';
-  import { createScrollAnimation, createStaggeredAnimation } from '$lib/utils/scrollAnimations.ts';
-
   let imageLoaded = false;
   let imgEl;
 
@@ -13,9 +11,22 @@
       imageLoaded = true;
     }
 
-    // GSAP scroll animations
-    createScrollAnimation('.about-visual', 'slideInLeft');
-    createScrollAnimation('.about-content', 'slideInRight');
+    // Simple scroll animations using IntersectionObserver
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.about-visual, .about-content');
+    animateElements.forEach(el => observer.observe(el));
   });
 </script>
 
@@ -52,91 +63,30 @@
         <div
           class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 flex items-center justify-center overflow-hidden relative"
         >
-          <!-- Realistic minimalistic workspace scene -->
-          <div class="relative w-80 h-64 transform rotate-2">
-            <!-- Desk surface -->
-            <div
-              class="absolute bottom-0 w-full h-48 bg-gradient-to-br from-amber-50 to-amber-100 rounded-t-2xl shadow-inner"
-            ></div>
-
-            <!-- Laptop (closed) -->
-            <div class="absolute bottom-12 left-8 w-24 h-16">
-              <div class="w-full h-1 bg-gray-300 rounded-full mb-1"></div>
-              <div class="w-full h-14 bg-gray-800 rounded-lg shadow-lg">
-                <div class="w-full h-12 bg-gray-900 rounded-lg m-1"></div>
-              </div>
-            </div>
-
-            <!-- Coffee cup -->
-            <div class="absolute bottom-16 right-16 w-6 h-8">
-              <div class="w-full h-6 bg-white rounded-b-full shadow-md border border-gray-200">
-                <div
-                  class="w-full h-4 bg-gradient-to-b from-amber-700 to-amber-900 rounded-b-full"
-                ></div>
-              </div>
-              <!-- Steam -->
-              <div class="absolute -top-2 left-2 w-2 opacity-30">
-                <div class="w-0.5 h-3 bg-gray-400 rounded-full animate-pulse"></div>
-                <div
-                  class="w-0.5 h-2 bg-gray-300 rounded-full animate-pulse ml-1"
-                  style="animation-delay: 0.3s;"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Notebook -->
-            <div
-              class="absolute bottom-20 left-20 w-16 h-12 bg-lxk-cream rounded shadow-sm border border-gray-200 transform -rotate-12"
-            >
-              <div class="p-1 space-y-0.5">
-                <div class="w-8 h-0.5 bg-lxk-sage rounded"></div>
-                <div class="w-6 h-0.5 bg-gray-400 rounded"></div>
-                <div class="w-10 h-0.5 bg-gray-300 rounded"></div>
-                <div class="w-4 h-0.5 bg-gray-300 rounded"></div>
-              </div>
-            </div>
-
-            <!-- Pencil -->
-            <div
-              class="absolute bottom-24 left-32 w-12 h-1 bg-yellow-300 rounded-full shadow-sm transform rotate-45"
-            >
-              <div class="absolute right-0 w-2 h-1 bg-pink-200 rounded-r-full"></div>
-              <div class="absolute left-0 w-1 h-1 bg-gray-600 rounded-l-full"></div>
-            </div>
-
-            <!-- Plant pot -->
-            <div class="absolute bottom-12 right-4 w-8 h-12">
-              <div
-                class="absolute bottom-0 w-8 h-6 bg-orange-400 rounded-b-lg border-2 border-amber-600"
-              ></div>
-              <div class="absolute bottom-4 left-1 w-6 h-8 bg-lxk-sage rounded-full opacity-80">
-                <div
-                  class="absolute top-1 left-2 w-2 h-4 bg-lxk-mint rounded-full opacity-60"
-                ></div>
-                <div
-                  class="absolute top-0 right-1 w-1 h-3 bg-emerald-400 rounded-full opacity-70"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Warm window light -->
-            <div
-              class="absolute top-0 right-0 w-32 h-20 bg-gradient-to-bl from-yellow-200/40 to-transparent rounded-bl-3xl"
-            ></div>
-          </div>
+          <!-- Coffee shop collaboration video -->
+          <video
+            src="/coffee-shop-collaboration.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="w-full h-full object-cover rounded-2xl"
+          >
+            <p>Your browser does not support the video tag.</p>
+          </video>
 
           <!-- Collaboration element overlay -->
           <div
-            class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-lg"
+            class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg"
           >
-            <div class="flex items-center space-x-3">
-              <div class="flex -space-x-2">
-                <div class="w-6 h-6 bg-lxk-sage rounded-full border-2 border-white shadow-sm"></div>
+            <div class="flex items-center space-x-2">
+              <div class="flex -space-x-1">
+                <div class="w-4 h-4 bg-lxk-sage rounded-full border-2 border-white shadow-sm"></div>
                 <div
-                  class="w-6 h-6 bg-lxk-peach rounded-full border-2 border-white shadow-sm"
+                  class="w-4 h-4 bg-lxk-peach rounded-full border-2 border-white shadow-sm"
                 ></div>
               </div>
-              <span class="text-sm font-medium text-lxk-warm-gray">Working Together</span>
+              <span class="text-xs font-medium text-lxk-warm-gray">Working Together</span>
             </div>
           </div>
         </div>

@@ -1,117 +1,26 @@
 <script>
   import { onMount } from 'svelte';
-  import { gsap } from 'gsap';
   import ChevronDown from './icons/ChevronDown.svelte';
   import MenuIcon from './icons/Menu.svelte';
 
   let mobileMenuOpen = false;
-  let navLinks = [];
   let mobileNavRef;
 
   function toggleMobileMenu() {
     mobileMenuOpen = !mobileMenuOpen;
-
-    if (mobileMenuOpen) {
-      // Animate mobile menu sliding down
-      gsap.fromTo(
-        mobileNavRef,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
-      );
-    }
   }
 
   function closeMobileMenu() {
-    // Animate mobile menu sliding up before closing
-    if (mobileMenuOpen) {
-      gsap.to(mobileNavRef, {
-        opacity: 0,
-        y: -10,
-        duration: 0.2,
-        ease: 'power2.in',
-        onComplete: () => {
-          mobileMenuOpen = false;
-        },
-      });
-    }
-  }
-
-  function handleNavHover(event, isEntering) {
-    const link = event.target;
-    const underline = link.querySelector('.nav-underline');
-
-    if (isEntering) {
-      // Scale up slightly and animate underline
-      gsap.to(link, {
-        scale: 1.05,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
-
-      // Animate underline from left to right
-      if (underline) {
-        gsap.to(underline, {
-          scaleX: 1,
-          duration: 0.4,
-          ease: 'power2.out',
-        });
-      }
-    } else {
-      // Scale back to normal and hide underline
-      gsap.to(link, {
-        scale: 1,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
-
-      // Hide underline
-      if (underline) {
-        gsap.to(underline, {
-          scaleX: 0,
-          duration: 0.3,
-          ease: 'power2.out',
-        });
-      }
-    }
-  }
-
-  function handleNavClick(event) {
-    const link = event.target;
-
-    // Quick scale animation for click feedback
-    gsap.to(link, {
-      scale: 0.95,
-      duration: 0.1,
-      ease: 'power2.out',
-      yoyo: true,
-      repeat: 1,
-    });
+    mobileMenuOpen = false;
   }
 
   onMount(() => {
-    // Ensure all underlines are hidden initially
-    gsap.set('.nav-underline', { scaleX: 0 });
-
-    // Animate nav links on page load
-    gsap.fromTo(
-      navLinks,
-      { opacity: 0, y: -10 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
-        delay: 0.2,
-      }
-    );
-
-    // Animate logo on page load
-    gsap.fromTo(
-      '.logo-animation',
-      { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
-    );
+    // Simple fade-in for nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((link, index) => {
+      link.style.animationDelay = `${index * 100}ms`;
+      link.classList.add('fade-in');
+    });
   });
 </script>
 
@@ -142,31 +51,23 @@
         <div class="ml-10 flex items-baseline space-x-8">
           <a
             href="/about"
-            bind:this={navLinks[0]}
-            on:mouseenter={e => handleNavHover(e, true)}
-            on:mouseleave={e => handleNavHover(e, false)}
-            on:click={handleNavClick}
-            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-colors transform origin-center relative"
+            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             About Us
             <div
-              class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left"
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
             ></div>
           </a>
           <div class="relative group">
             <button
-              bind:this={navLinks[1]}
-              on:mouseenter={e => handleNavHover(e, true)}
-              on:mouseleave={e => handleNavHover(e, false)}
-              on:click={handleNavClick}
-              class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-colors flex items-center transform origin-center relative"
+              class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 flex items-center transform hover:scale-105 relative"
               aria-expanded="false"
               aria-haspopup="true"
               aria-label="Services menu"
             >
               Services <ChevronDown className="ml-1 w-3 h-3" />
               <div
-                class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left"
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
               ></div>
             </button>
             <div
@@ -200,41 +101,29 @@
           </div>
           <a
             href="/portfolio"
-            bind:this={navLinks[2]}
-            on:mouseenter={e => handleNavHover(e, true)}
-            on:mouseleave={e => handleNavHover(e, false)}
-            on:click={handleNavClick}
-            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-colors transform origin-center relative"
+            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Portfolio
             <div
-              class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left"
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
             ></div>
           </a>
           <a
             href="/testimonials"
-            bind:this={navLinks[3]}
-            on:mouseenter={e => handleNavHover(e, true)}
-            on:mouseleave={e => handleNavHover(e, false)}
-            on:click={handleNavClick}
-            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-colors transform origin-center relative"
+            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Testimonials
             <div
-              class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left"
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
             ></div>
           </a>
           <a
             href="/#contact"
-            bind:this={navLinks[4]}
-            on:mouseenter={e => handleNavHover(e, true)}
-            on:mouseleave={e => handleNavHover(e, false)}
-            on:click={handleNavClick}
-            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-colors transform origin-center relative"
+            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Contact
             <div
-              class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left"
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
             ></div>
           </a>
         </div>
@@ -266,10 +155,9 @@
 
     <!-- Mobile Navigation -->
     <div
-      class="md:hidden {mobileMenuOpen ? '' : 'hidden'}"
+      class="md:hidden {mobileMenuOpen ? 'animate-slide-down' : 'hidden'}"
       role="navigation"
       aria-label="Mobile menu"
-      bind:this={mobileNavRef}
     >
       <div
         class="px-2 pt-2 pb-3 space-y-1 bg-lxk-cream/95 backdrop-blur-md border-t border-lxk-sage/10"

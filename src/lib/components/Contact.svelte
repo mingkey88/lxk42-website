@@ -19,19 +19,12 @@
             class="absolute -inset-3 bg-gradient-to-r from-lxk-sage/30 to-lxk-peach/30 rounded-3xl blur-lg"
           ></div>
           <div class="relative bg-lxk-sage/10 rounded-3xl p-6 border border-lxk-sage/20">
-            <div
-              class="w-full h-80 bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-2xl flex items-center justify-center"
-            >
-              <div class="text-center">
-                <div class="text-6xl text-lxk-sage mb-4">🤝</div>
-                <p class="text-lxk-sage font-semibold text-lg">Let's Connect</p>
-                <p class="text-gray-600 text-sm mt-2">Your creative kakis at work</p>
-              </div>
-            </div>
+            <img
+              src="/contact-team.png"
+              alt="Creative team ready to collaborate"
+              class="w-full h-80 object-cover rounded-2xl"
+            />
           </div>
-          <p class="mt-4 text-center text-sm text-lxk-coral font-medium italic">
-            Future: Studio or meeting photo
-          </p>
         </div>
       </div>
 
@@ -87,12 +80,12 @@
             </div>
           </div>
 
-          <div class="mt-6 pt-6 border-t border-gray-100">
+          <div class="mt-6 pt-6 border-t border-gray-100 text-center">
             <a
               href="mailto:mingjie@lxk42.sg"
               class="bg-lxk-sage text-white px-6 py-3 rounded-full font-medium hover:bg-lxk-soft-teal transition-colors inline-block text-sm"
             >
-              Start Our Journey 🚀
+              Start Our Journey
             </a>
           </div>
         </div>

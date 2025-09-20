@@ -55,6 +55,23 @@
       'Professional graphic design services in Singapore. Print design, digital graphics, and illustrations with Japanese-inspired aesthetics and local market expertise.'
     );
     injectStructuredData(serviceSchemas['graphic-design'], 'service-graphic-design');
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    animateElements.forEach(el => observer.observe(el));
   });
 </script>
 

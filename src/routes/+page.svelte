@@ -13,14 +13,6 @@
     localBusinessSchema,
     injectStructuredData,
   } from '$lib/structuredData.js';
-  import {
-    createScrollAnimation,
-    createStaggeredAnimation,
-    initializeKakiInteractions,
-    createResponsiveAnimation,
-    optimizeAnimationsForDevice,
-    startPerformanceMonitoring,
-  } from '$lib/utils/scrollAnimations.ts';
 
   onMount(() => {
     // Inject structured data for SEO
@@ -28,84 +20,27 @@
     injectStructuredData(websiteSchema, 'website');
     injectStructuredData(localBusinessSchema, 'local-business');
 
-    // Initialize performance monitoring
-    startPerformanceMonitoring({
-      threshold: 50,
-      onLowFPS: fps => {
-        console.warn(`Performance warning: ${fps}fps detected - optimizing animations`);
-        optimizeAnimationsForDevice();
-      },
-    });
+    // Simple scroll animations using IntersectionObserver
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
 
-    // Apply device-specific optimizations
-    optimizeAnimationsForDevice();
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
 
-    // Enhanced responsive scroll animations with device-aware presets
-    createResponsiveAnimation('.social-proof-section', {
-      mobile: {
-        from: { opacity: 0, y: 20 },
-        to: { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
-      },
-      tablet: {
-        from: { opacity: 0, y: 30 },
-        to: { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-      },
-      desktop: {
-        from: { opacity: 0, y: 40 },
-        to: { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' },
-      },
-    });
+          // Also handle animate-on-scroll elements within the section
+          const animateElements = entry.target.querySelectorAll('.animate-on-scroll');
+          animateElements.forEach(el => el.classList.add('is-visible'));
+        }
+      });
+    }, observerOptions);
 
-    createResponsiveAnimation('.about-section', {
-      mobile: {
-        from: { opacity: 0, scale: 0.95 },
-        to: { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.2)' },
-      },
-      desktop: {
-        from: { opacity: 0, y: 50, scale: 0.95 },
-        to: { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'back.out(1.4)' },
-      },
-    });
-
-    createResponsiveAnimation('.services-section', {
-      mobile: {
-        from: { opacity: 0, x: -20 },
-        to: { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
-      },
-      desktop: {
-        from: { opacity: 0, x: -40, rotateY: -5 },
-        to: { opacity: 1, x: 0, rotateY: 0, duration: 1, ease: 'power3.out' },
-      },
-    });
-
-    createResponsiveAnimation('.testimonials-section', {
-      mobile: {
-        from: { opacity: 0, y: 30 },
-        to: { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
-      },
-      desktop: {
-        from: { opacity: 0, y: 60, scale: 0.9 },
-        to: { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'elastic.out(1, 0.6)' },
-      },
-    });
-
-    createResponsiveAnimation('.contact-section', {
-      mobile: {
-        from: { opacity: 0, scale: 0.9 },
-        to: { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' },
-      },
-      desktop: {
-        from: { opacity: 0, y: 40, scale: 0.95 },
-        to: { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power3.out' },
-      },
-    });
-
-    // Initialize enhanced kaki-inspired micro-interactions with performance awareness
-    initializeKakiInteractions({
-      enableParticles: true,
-      enableBreathing: true,
-      performanceMode: 'auto',
-    });
+    // Observe all sections
+    const sections = document.querySelectorAll('.social-proof-section, .about-section, .services-section, .testimonials-section, .contact-section');
+    sections.forEach(el => observer.observe(el));
   });
 </script>
 
