@@ -82,8 +82,8 @@
       <div class="animate-on-scroll">
         <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden">
           <img
-            src="/hero-programmer.jpg"
-            alt="Programmer working at Light & Kaki Studio"
+            src="/hero-studio-image.png"
+            alt="Light & Kaki Studio workspace"
             class="w-full h-full object-cover"
             loading="eager"
             decoding="async"
