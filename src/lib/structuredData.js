@@ -236,7 +236,7 @@ export const contactPageSchema = {
     '@type': 'Organization',
     name: 'Light & Kaki Studio',
     telephone: '+65-9827-8695',
-    email: 'mingjie@lxk42.sg',
+    email: 'info@lxk42.sg',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'SG',
@@ -252,7 +252,7 @@ export const contactPageSchema = {
       },
       {
         '@type': 'ContactPoint',
-        email: 'mingjie@lxk42.sg',
+        email: 'info@lxk42.sg',
         contactType: 'customer service',
         availableLanguage: ['English'],
         areaServed: 'SG',

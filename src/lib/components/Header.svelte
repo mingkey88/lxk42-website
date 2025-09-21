@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
   import ChevronDown from './icons/ChevronDown.svelte';
   import MenuIcon from './icons/Menu.svelte';
 
@@ -12,6 +13,15 @@
 
   function closeMobileMenu() {
     mobileMenuOpen = false;
+  }
+
+  function isActive(href) {
+    return $page.url.pathname === href;
+  }
+
+  function isServiceActive() {
+    const servicePaths = ['/web-design', '/web-app', '/graphic-design', '/motion-graphics'];
+    return servicePaths.includes($page.url.pathname);
   }
 
   onMount(() => {
@@ -54,9 +64,11 @@
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             About Us
-            <div
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
-            ></div>
+            {#if isActive('/about')}
+              <div
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
+              ></div>
+            {/if}
           </a>
           <div class="relative group">
             <button
@@ -66,9 +78,11 @@
               aria-label="Services menu"
             >
               Services <ChevronDown className="ml-1 w-3 h-3" />
-              <div
-                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
-              ></div>
+              {#if isServiceActive()}
+                <div
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
+                ></div>
+              {/if}
             </button>
             <div
               class="absolute left-0 mt-2 w-64 bg-lxk-cream rounded-2xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 soft-shadow"
@@ -104,27 +118,33 @@
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Portfolio
-            <div
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
-            ></div>
+            {#if isActive('/portfolio')}
+              <div
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
+              ></div>
+            {/if}
           </a>
           <a
             href="/testimonials"
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Testimonials
-            <div
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
-            ></div>
+            {#if isActive('/testimonials')}
+              <div
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
+              ></div>
+            {/if}
           </a>
           <a
             href="/contact"
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
           >
             Contact
-            <div
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
-            ></div>
+            {#if isActive('/contact')}
+              <div
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
+              ></div>
+            {/if}
           </a>
         </div>
       </div>

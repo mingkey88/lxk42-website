@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import About from '$lib/components/About.svelte';
+  import VideoPlayer from '$lib/components/ui/VideoPlayer.svelte';
   import EnhancedCTA from '$lib/components/ui/EnhancedCTA.svelte';
   import { updatePageMeta, injectStructuredData, organizationSchema } from '$lib/structuredData.js';
 
@@ -40,21 +41,17 @@
       <!-- Large visual element -->
       <div class="animate-on-scroll">
         <div
-          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl overflow-hidden shadow-2xl"
+          class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden relative"
         >
-          <video
-            class="w-full h-full object-cover"
-            autoplay
-            loop
-            muted
-            playsinline
-          >
-            <source src="/creative-kakis.mp4" type="video/mp4" />
-            <div class="text-center p-12">
-              <div class="text-8xl mb-6">🤝</div>
-              <h3 class="text-2xl font-semibold text-lxk-warm-gray">Your Creative Kakis</h3>
-            </div>
-          </video>
+          <VideoPlayer
+            src="/creative-kakis.mp4"
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Creative kakis and studio culture"
+            lazy={false}
+            muted={true}
+            loop={true}
+            playsinline={true}
+          />
         </div>
       </div>
 

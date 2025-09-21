@@ -56,8 +56,8 @@
           </div>
           <div>
             <div class="text-sm text-gray-400">Email</div>
-            <a href="mailto:mingjie@lxk42.sg" class="text-white hover:text-lxk-peach transition-colors">
-              mingjie@lxk42.sg
+            <a href="mailto:info@lxk42.sg" class="text-white hover:text-lxk-peach transition-colors">
+              info@lxk42.sg
             </a>
           </div>
         </div>

@@ -401,7 +401,7 @@
           <h3 class="text-xl font-bold text-lxk-warm-gray mb-2">Email</h3>
           <p class="text-gray-600 mb-4">Detailed project briefs and proposals</p>
           <a
-            href="mailto:mingjie@lxk42.sg"
+            href="mailto:info@lxk42.sg"
             class="inline-block bg-lxk-sage text-white px-6 py-3 rounded-full font-medium hover:bg-lxk-soft-teal transition-colors"
           >
             Send Email

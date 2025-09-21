@@ -10,6 +10,7 @@
   export let muted = true;
   export let loop = true;
   export let playsinline = true;
+  export let autoplay = true;
 
   let videoElement;
   let isLoaded = false;
@@ -19,6 +20,15 @@
   onMount(() => {
     if (!lazy) {
       isLoaded = true;
+      isInView = true;
+      // For non-lazy videos, try to autoplay immediately
+      setTimeout(() => {
+        if (videoElement && autoplay && muted) {
+          videoElement.play()?.catch(() => {
+            console.log('Autoplay prevented');
+          });
+        }
+      }, 100);
       return;
     }
 
@@ -55,7 +65,7 @@
 
   function handleLoadedData() {
     // Auto-play when video is loaded and in view (for muted videos only)
-    if (isInView && muted && !controls) {
+    if (isInView && muted && autoplay && !controls) {
       videoElement?.play()?.catch(() => {
         // Fallback if autoplay fails
         console.log('Autoplay prevented');
@@ -72,6 +82,7 @@
   {loop}
   {playsinline}
   {controls}
+  autoplay={autoplay && muted}
   on:loadeddata={handleLoadedData}
   preload={lazy ? 'none' : 'metadata'}
   role="img"

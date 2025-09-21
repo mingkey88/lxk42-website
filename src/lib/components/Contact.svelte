@@ -47,10 +47,10 @@
               <div>
                 <p class="font-medium text-lxk-warm-gray text-sm">Email</p>
                 <a
-                  href="mailto:mingjie@lxk42.sg"
+                  href="mailto:info@lxk42.sg"
                   class="text-lxk-sage hover:text-lxk-soft-teal transition-colors text-sm"
                 >
-                  mingjie@lxk42.sg
+                  info@lxk42.sg
                 </a>
               </div>
             </div>
@@ -87,7 +87,7 @@
 
           <div class="mt-6 pt-6 border-t border-gray-100 text-center">
             <a
-              href="mailto:mingjie@lxk42.sg"
+              href="mailto:info@lxk42.sg"
               class="bg-lxk-sage text-white px-6 py-3 rounded-full font-medium hover:bg-lxk-soft-teal transition-colors inline-block text-sm"
             >
               Start Our Journey

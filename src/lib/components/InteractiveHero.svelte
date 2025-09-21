@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import VideoPlayer from './ui/VideoPlayer.svelte';
 
   let mounted = false;
   let heroRef;
@@ -72,38 +73,64 @@
   </div>
 
   <div class="container-custom relative z-10">
-    <div class="max-w-4xl">
-      <!-- Bold, impactful headline with letter animations -->
-      <h1
-        bind:this={titleRef}
-        use:animateTitle
-        class="hero-title text-7xl lg:text-9xl font-bold text-lxk-warm-gray leading-[0.9] mb-8 animate-hero-title"
-      >
-        Your Creative
-        <span class="text-lxk-peach hero-accent">Kakis</span>
-      </h1>
-
-      <!-- Single powerful value proposition with fade-up animation -->
-      <p
-        bind:this={subtitleRef}
-        class="hero-subtitle text-3xl text-gray-700 leading-relaxed mb-12 max-w-3xl font-light animate-hero-subtitle"
-      >
-        Singapore businesses grow faster with genuine creative partnerships.
-      </p>
-
-      <!-- Enhanced CTA with sophisticated animations -->
-      <a
-        href="/contact"
-        bind:this={ctaRef}
-        class="hero-cta inline-flex items-center bg-lxk-peach text-white px-12 py-6 rounded-full font-medium text-xl shadow-xl group animate-hero-cta"
-      >
-        <span class="cta-text">Start Growing Today</span>
-        <div class="cta-arrow ml-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-          <span class="text-sm arrow-icon">→</span>
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Video Section -->
+      <div class="animate-on-scroll">
+        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden relative">
+          <VideoPlayer
+            src="/hero-programmer.mp4"
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Programmer working at Light & Kaki Studio"
+            lazy={false}
+            muted={true}
+            loop={true}
+            playsinline={true}
+          />
         </div>
-        <!-- Ripple effect for interactions -->
-        <div class="cta-ripple"></div>
-      </a>
+      </div>
+
+      <!-- Right Content -->
+      <div class="max-w-4xl">
+        <!-- Studio Name Introduction -->
+        <div class="mb-6">
+          <p class="text-lxk-sage text-lg font-medium mb-2 animate-fade-in">Welcome to</p>
+          <h2 class="text-2xl lg:text-3xl font-bold text-lxk-warm-gray animate-slide-in">
+            Light & Kaki Studio
+          </h2>
+        </div>
+
+        <!-- Bold, impactful headline with letter animations -->
+        <h1
+          bind:this={titleRef}
+          use:animateTitle
+          class="hero-title text-6xl lg:text-8xl font-bold text-lxk-warm-gray leading-[0.9] mb-8 animate-hero-title"
+        >
+          Your Creative
+          <span class="text-lxk-peach hero-accent">Kakis</span>
+        </h1>
+
+        <!-- Single powerful value proposition with fade-up animation -->
+        <p
+          bind:this={subtitleRef}
+          class="hero-subtitle text-2xl lg:text-3xl text-gray-700 leading-relaxed mb-12 max-w-3xl font-light animate-hero-subtitle"
+        >
+          Local businesses work better with genuine partnership and communication.
+        </p>
+
+        <!-- Enhanced CTA with sophisticated animations -->
+        <a
+          href="/contact"
+          bind:this={ctaRef}
+          class="hero-cta inline-flex items-center bg-lxk-peach text-white px-12 py-6 rounded-full font-medium text-xl shadow-xl group animate-hero-cta"
+        >
+          <span class="cta-text">Start Growing Today</span>
+          <div class="cta-arrow ml-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+            <span class="text-sm arrow-icon">→</span>
+          </div>
+          <!-- Ripple effect for interactions -->
+          <div class="cta-ripple"></div>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -286,6 +313,27 @@
     animation-duration: 16s;
   }
 
+  /* ===== NEW STUDIO NAME ANIMATIONS ===== */
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
+  }
+
+  .animate-slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.8s ease-out 0.8s forwards;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulseGentle 4s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 3s ease-in-out infinite;
+  }
+
   /* ===== KEYFRAME ANIMATIONS ===== */
 
   @keyframes gradientShift {
@@ -397,6 +445,46 @@
     }
     90% {
       opacity: 0.3;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulseGentle {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes bounceGentle {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-5px) scale(1.05);
     }
   }
 

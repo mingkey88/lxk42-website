@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Light & Kaki Studio (LXK42) is a creative digital studio website built with SvelteKit. The project emphasizes Japanese-inspired minimalistic design with warm, natural color palettes and the Singapore "kaki" (friendship) philosophy. The site is configured for deployment on both Firebase Hosting and Vercel.
+Light & Kaki Studio (LXK42) is a creative digital studio website built with SvelteKit. The project emphasizes Japanese-inspired minimalistic design with warm, natural color palettes and the Singapore "kaki" (friendship) philosophy. The site is configured for deployment on Vercel.
 
 ## Development Commands
 
@@ -35,7 +35,7 @@ The build process automatically runs `scripts/generate-images.mjs` which:
 - **Framework**: SvelteKit with TypeScript
 - **Styling**: Tailwind CSS with custom brand colors
 - **Build Tool**: Vite with image optimization plugins
-- **Deployment**: Vercel adapter (primary), Firebase Hosting (secondary)
+- **Deployment**: Vercel adapter
 - **Image Processing**: Sharp for WebP generation
 - **Animations**: GSAP with ScrollTrigger for scroll-based animations
 
@@ -171,14 +171,8 @@ The site uses GSAP with ScrollTrigger for sophisticated scroll animations:
 2. ESLint validation
 3. TypeScript checking
 4. Vite production build
-5. Deployment to Vercel (primary) or Firebase (secondary)
+5. Deployment to Vercel
 
 ### CI/CD Pipeline
 
-GitHub Actions workflows handle:
-
-- Lint and type checking on all builds
-- Automated deployment to Firebase on master branch merges
-- Pull request preview deployments
-
-The project is configured for Vercel deployment with the `@sveltejs/adapter-vercel` adapter and includes Firebase Hosting as a backup deployment option.
+GitHub Actions can run lint and type checks. Preview deployments are handled by Vercel.
