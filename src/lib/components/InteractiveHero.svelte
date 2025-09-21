@@ -1,7 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import VideoPlayer from './ui/VideoPlayer.svelte';
-
   let mounted = false;
   let heroRef;
   let titleRef;
@@ -13,6 +11,12 @@
     // Small delay to ensure DOM is ready
     setTimeout(() => {
       mounted = true;
+
+      // Immediately reveal hero media that uses the scroll animation utility
+      if (heroRef) {
+        const heroAnimatedElements = heroRef.querySelectorAll('.animate-on-scroll');
+        heroAnimatedElements.forEach((el) => el.classList.add('is-visible'));
+      }
     }, 100);
 
     // Add intersection observer for animations
@@ -72,19 +76,17 @@
     <div class="floating-particle particle-4"></div>
   </div>
 
-  <div class="container-custom relative z-10">
+  <div class="container-custom relative z-10 pt-24 md:pt-28 lg:pt-32 pb-16">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left Video Section -->
+      <!-- Left Visual Section -->
       <div class="animate-on-scroll">
-        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden relative">
-          <VideoPlayer
-            src="/hero-programmer.mp4"
-            className="absolute inset-0 w-full h-full object-cover"
+        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden">
+          <img
+            src="/hero-programmer.jpg"
             alt="Programmer working at Light & Kaki Studio"
-            lazy={false}
-            muted={true}
-            loop={true}
-            playsinline={true}
+            class="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
           />
         </div>
       </div>
