@@ -1,13 +1,24 @@
 <script>
   import { onMount } from 'svelte';
+  import {
+    getOptimalAnimationSettings,
+    applyPerformanceOptimizations,
+    createOptimizedObserver
+  } from '$lib/utils/mobileOptimization';
+
   let mounted = false;
   let heroRef;
   let titleRef;
   let subtitleRef;
   let ctaRef;
+  let animationSettings;
 
   // Animation coordination and timing
   onMount(() => {
+    // Apply performance optimizations based on device capabilities
+    applyPerformanceOptimizations();
+    animationSettings = getOptimalAnimationSettings();
+
     // Small delay to ensure DOM is ready
     setTimeout(() => {
       mounted = true;
@@ -19,22 +30,28 @@
       }
     }, 100);
 
-    // Add intersection observer for animations
-    const observer = new IntersectionObserver(
+    // Add optimized intersection observer for animations
+    const observer = createOptimizedObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
           }
         });
-      },
-      { threshold: 0.1 }
+      }
     );
 
-    // Observe all animated elements
-    if (titleRef) observer.observe(titleRef);
-    if (subtitleRef) observer.observe(subtitleRef);
-    if (ctaRef) observer.observe(ctaRef);
+    // Observe all animated elements if complex animations are enabled
+    if (animationSettings.enableComplexAnimations) {
+      if (titleRef) observer.observe(titleRef);
+      if (subtitleRef) observer.observe(subtitleRef);
+      if (ctaRef) observer.observe(ctaRef);
+    } else {
+      // Immediately show all elements without animation on low-end devices
+      [titleRef, subtitleRef, ctaRef].forEach(ref => {
+        if (ref) ref.classList.add('animate-in');
+      });
+    }
 
     return () => observer.disconnect();
   });
@@ -76,11 +93,11 @@
     <div class="floating-particle particle-4"></div>
   </div>
 
-  <div class="container-custom relative z-10 pt-24 md:pt-28 lg:pt-32 pb-16">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <div class="container-custom relative z-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16">
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
       <!-- Left Visual Section -->
-      <div class="animate-on-scroll">
-        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-3xl h-96 overflow-hidden">
+      <div class="animate-on-scroll order-2 lg:order-1">
+        <div class="bg-gradient-to-br from-lxk-sage/20 to-lxk-peach/20 rounded-2xl sm:rounded-3xl h-64 sm:h-80 lg:h-96 overflow-hidden">
           <img
             src="/hero-studio-image.png"
             alt="Light & Kaki Studio workspace"
@@ -92,11 +109,11 @@
       </div>
 
       <!-- Right Content -->
-      <div class="max-w-4xl">
+      <div class="max-w-4xl order-1 lg:order-2">
         <!-- Studio Name Introduction -->
-        <div class="mb-6">
-          <p class="text-lxk-sage text-lg font-medium mb-2 animate-fade-in">Welcome to</p>
-          <h2 class="text-2xl lg:text-3xl font-bold text-lxk-warm-gray animate-slide-in">
+        <div class="mb-4 sm:mb-6">
+          <p class="text-lxk-sage text-base sm:text-lg font-medium mb-2 animate-fade-in">Welcome to</p>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-lxk-warm-gray animate-slide-in">
             Light & Kaki Studio
           </h2>
         </div>
@@ -105,16 +122,16 @@
         <h1
           bind:this={titleRef}
           use:animateTitle
-          class="hero-title text-6xl lg:text-8xl font-bold text-lxk-warm-gray leading-[0.9] mb-8 animate-hero-title"
+          class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-lxk-warm-gray leading-[0.9] mb-6 sm:mb-8 animate-hero-title"
         >
           Your Creative
-          <span class="text-lxk-peach hero-accent">Kakis</span>
+          <span class="text-lxk-peach hero-accent block sm:inline">Kakis</span>
         </h1>
 
         <!-- Single powerful value proposition with fade-up animation -->
         <p
           bind:this={subtitleRef}
-          class="hero-subtitle text-2xl lg:text-3xl text-gray-700 leading-relaxed mb-12 max-w-3xl font-light animate-hero-subtitle"
+          class="hero-subtitle text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 leading-relaxed mb-8 sm:mb-12 max-w-3xl font-light animate-hero-subtitle"
         >
           Local businesses work better with genuine partnership and communication.
         </p>
@@ -123,10 +140,10 @@
         <a
           href="/contact"
           bind:this={ctaRef}
-          class="hero-cta inline-flex items-center bg-lxk-peach text-white px-12 py-6 rounded-full font-medium text-xl shadow-xl group animate-hero-cta"
+          class="hero-cta inline-flex items-center bg-lxk-peach text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-medium text-lg sm:text-xl shadow-xl group animate-hero-cta min-h-[56px]"
         >
           <span class="cta-text">Start Growing Today</span>
-          <div class="cta-arrow ml-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+          <div class="cta-arrow ml-3 sm:ml-4 w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-full flex items-center justify-center">
             <span class="text-sm arrow-icon">→</span>
           </div>
           <!-- Ripple effect for interactions -->
@@ -328,6 +345,7 @@
     animation: slideInLeft 0.8s ease-out 0.8s forwards;
   }
 
+  /* These animations are used dynamically via JavaScript */
   .animate-pulse-gentle {
     animation: pulseGentle 4s ease-in-out infinite;
   }
@@ -519,6 +537,30 @@
     }
   }
 
+  /* ===== MOBILE PERFORMANCE OPTIMIZATIONS ===== */
+
+  :global(.mobile-optimized) .floating-particle {
+    display: none !important;
+  }
+
+  :global(.mobile-optimized) .animated-gradient {
+    animation: none !important;
+    background: linear-gradient(135deg, rgba(143, 166, 142, 0.1), rgba(245, 243, 240, 1), rgba(230, 168, 102, 0.1));
+  }
+
+  :global(.mobile-optimized) .overlay-breath {
+    animation: none !important;
+    opacity: 0.05;
+  }
+
+  :global(.slow-connection) .hero-title :global(.letter) {
+    animation-duration: 0.3s !important;
+  }
+
+  :global(.slow-connection) .hero-title :global(.word) {
+    animation-duration: 0.4s !important;
+  }
+
   /* ===== REDUCED MOTION SUPPORT ===== */
 
   @media (prefers-reduced-motion: reduce) {
@@ -543,6 +585,18 @@
     .hero-cta:hover {
       transform: none !important;
     }
+  }
+
+  :global(.reduced-motion) .hero-title :global(.word),
+  :global(.reduced-motion) .hero-title :global(.letter),
+  :global(.reduced-motion) .hero-subtitle,
+  :global(.reduced-motion) .hero-cta,
+  :global(.reduced-motion) .floating-particle,
+  :global(.reduced-motion) .animated-gradient,
+  :global(.reduced-motion) .overlay-breath {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   /* ===== HIGH CONTRAST SUPPORT ===== */

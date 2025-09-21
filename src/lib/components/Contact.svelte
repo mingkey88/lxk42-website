@@ -1,5 +1,5 @@
 <script>
-  import VideoPlayer from './ui/VideoPlayer.svelte';
+  import OptimizedVideo from './ui/OptimizedVideo.svelte';
 </script>
 
 <!-- Contact Section -->
@@ -15,27 +15,27 @@
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start max-w-6xl mx-auto">
       <!-- Picture Placeholder -->
-      <div class="animate-on-scroll lg:order-1 md:order-1">
+      <div class="animate-on-scroll order-1 md:order-1 lg:order-1">
         <div class="relative">
           <div
-            class="absolute -inset-3 bg-gradient-to-r from-lxk-sage/30 to-lxk-peach/30 rounded-3xl blur-lg"
+            class="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-lxk-sage/30 to-lxk-peach/30 rounded-2xl sm:rounded-3xl blur-lg"
           ></div>
-          <div class="relative bg-lxk-sage/10 rounded-3xl p-6 border border-lxk-sage/20">
-            <VideoPlayer
+          <div class="relative bg-lxk-sage/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-lxk-sage/20">
+            <OptimizedVideo
               src="/office-meeting.mp4"
-              className="w-full h-80 object-cover rounded-2xl"
+              className="w-full h-48 sm:h-64 lg:h-80 rounded-xl sm:rounded-2xl"
               alt="Office meeting and collaboration"
-              lazy={true}
+              priority="medium"
             />
           </div>
         </div>
       </div>
 
       <!-- Contact Info -->
-      <div class="animate-on-scroll lg:order-2 md:order-3">
-        <div class="bg-white rounded-3xl p-6 shadow-xl soft-shadow h-full">
+      <div class="animate-on-scroll order-2 md:order-3 lg:order-2">
+        <div class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl soft-shadow h-full">
           <h3 class="text-2xl font-bold text-lxk-warm-gray mb-6">Get In Touch</h3>
           <div class="space-y-5">
             <div class="flex items-center space-x-4">
@@ -97,9 +97,9 @@
       </div>
 
       <!-- Why Choose Us -->
-      <div class="animate-on-scroll lg:order-3 md:order-2 md:col-span-2 lg:col-span-1">
+      <div class="animate-on-scroll order-3 md:order-2 md:col-span-2 lg:col-span-1 lg:order-3">
         <div
-          class="bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-3xl p-6 text-white h-full"
+          class="bg-gradient-to-br from-lxk-sage to-lxk-soft-teal rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-white h-full"
         >
           <h3 class="text-xl font-bold mb-5">Why Choose Light & Kaki?</h3>
           <div class="space-y-4">

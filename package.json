@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite dev",
-    "prebuild": "node scripts/generate-images.mjs",
+    "prebuild": "node scripts/generate-images.mjs && node scripts/generate-posters.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +14,8 @@
     "lint:fix": "eslint . --ext .js,.svelte,.ts --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "optimize": "node scripts/generate-posters.mjs && node scripts/optimize-videos.mjs"
   },
   "keywords": [],
   "author": "",

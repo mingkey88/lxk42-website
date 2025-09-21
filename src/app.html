@@ -9,13 +9,48 @@
       content="Light & Kaki Studio - Your trusted digital kaki in Singapore for web design, development, and digital marketing services."
     />
 
-    <!-- Fonts -->
+    <!-- Optimized Fonts - Non-blocking with fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Font display optimization CSS -->
+    <style>
+      /* Font face with fallback and performance optimizations */
+      @font-face {
+        font-family: 'Inter Fallback';
+        src: local('Arial'), local('Helvetica'), local('sans-serif');
+        font-display: swap;
+        size-adjust: 90%;
+      }
+
+      /* Default to system fonts with optimized metrics */
+      body {
+        font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system,
+                     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+                     Arial, sans-serif;
+        font-display: swap;
+      }
+
+      /* Optimize font loading for mobile */
+      @media (max-width: 768px) {
+        body {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                       Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+      }
+    </style>
 
     %sveltekit.head%
   </head>

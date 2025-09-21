@@ -1,12 +1,18 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
+  import { createThrottledFunction } from '$lib/utils/mobileOptimization';
 
   export let testimonials = [];
 
   let currentIndex = 0;
   let autoplayInterval;
+  let autoplayTimeout;
   let isAutoplay = true;
   let carousel;
+  let isTouching = false;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchThreshold = 50;
 
   const nextTestimonial = () => {
     currentIndex = (currentIndex + 1) % testimonials.length;
@@ -22,20 +28,84 @@
   };
 
   const startAutoplay = () => {
-    if (isAutoplay && testimonials.length > 1) {
+    if (isAutoplay && testimonials.length > 1 && !isTouching) {
+      clearInterval(autoplayInterval);
       autoplayInterval = setInterval(nextTestimonial, 6000);
     }
   };
 
   const pauseAutoplay = () => {
     clearInterval(autoplayInterval);
-    setTimeout(startAutoplay, 10000); // Resume after 10 seconds
+    clearTimeout(autoplayTimeout);
+    autoplayTimeout = setTimeout(startAutoplay, 10000); // Resume after 10 seconds
+  };
+
+  // Touch event handlers
+  const handleTouchStart = createThrottledFunction((e) => {
+    isTouching = true;
+    touchStartX = e.touches[0].clientX;
+    pauseAutoplay();
+  }, 16);
+
+  const handleTouchMove = createThrottledFunction((e) => {
+    if (!isTouching) return;
+    e.preventDefault(); // Prevent scrolling while swiping
+  }, 16);
+
+  const handleTouchEnd = (e) => {
+    if (!isTouching) return;
+
+    isTouching = false;
+    touchEndX = e.changedTouches[0].clientX;
+
+    const touchDiff = touchStartX - touchEndX;
+
+    if (Math.abs(touchDiff) > touchThreshold) {
+      if (touchDiff > 0) {
+        nextTestimonial(); // Swipe left - next
+      } else {
+        prevTestimonial(); // Swipe right - previous
+      }
+    }
+
+    // Restart autoplay after a delay
+    setTimeout(startAutoplay, 2000);
+  };
+
+  // Keyboard navigation
+  const handleKeydown = (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevTestimonial();
+      pauseAutoplay();
+    } else if (e.key === 'ArrowRight') {
+      nextTestimonial();
+      pauseAutoplay();
+    } else if (e.key === ' ') {
+      e.preventDefault();
+      pauseAutoplay();
+    }
+  };
+
+  // Cleanup function to prevent memory leaks
+  const cleanup = () => {
+    clearInterval(autoplayInterval);
+    clearTimeout(autoplayTimeout);
+    autoplayInterval = null;
+    autoplayTimeout = null;
   };
 
   onMount(() => {
     startAutoplay();
-    return () => clearInterval(autoplayInterval);
+
+    // Add keyboard event listener
+    if (carousel) {
+      carousel.addEventListener('keydown', handleKeydown);
+    }
+
+    return cleanup;
   });
+
+  onDestroy(cleanup);
 </script>
 
 <!-- Testimonial Carousel -->
@@ -55,11 +125,16 @@
         <!-- Main Testimonial Card -->
         <div
           bind:this={carousel}
-          class="relative overflow-hidden"
+          class="relative overflow-hidden cursor-grab active:cursor-grabbing"
           role="region"
           aria-label="Customer testimonials"
+          tabindex="0"
           on:mouseenter={pauseAutoplay}
           on:mouseleave={startAutoplay}
+          on:touchstart={handleTouchStart}
+          on:touchmove={handleTouchMove}
+          on:touchend={handleTouchEnd}
+          on:keydown={handleKeydown}
         >
           <div
             class="flex transition-transform duration-700 ease-in-out"
@@ -67,7 +142,7 @@
           >
             {#each testimonials as testimonial, index (testimonial.id)}
               <div class="w-full flex-shrink-0">
-                <div class="painterly-card p-6 md:p-8 mx-4 relative overflow-hidden">
+                <div class="painterly-card p-4 sm:p-6 md:p-8 mx-2 sm:mx-4 relative overflow-hidden">
                   <!-- Decorative Quote -->
                   <div
                     class="absolute top-4 left-4 text-6xl text-lxk-sage/20 font-serif leading-none"
@@ -89,7 +164,7 @@
 
                     <!-- Testimonial Content -->
                     <blockquote
-                      class="text-base md:text-lg text-lxk-warm-gray leading-relaxed mb-6 text-center font-medium"
+                      class="text-sm sm:text-base md:text-lg text-lxk-warm-gray leading-relaxed mb-4 sm:mb-6 text-center font-medium"
                     >
                       {testimonial.content}
                     </blockquote>
@@ -159,7 +234,7 @@
 
           <!-- Arrow Navigation -->
           <button
-            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-lxk-sage hover:text-lxk-warm-gray group"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-lxk-sage hover:text-lxk-warm-gray group"
             on:click={prevTestimonial}
             aria-label="Previous testimonial"
           >
@@ -179,7 +254,7 @@
           </button>
 
           <button
-            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-lxk-sage hover:text-lxk-warm-gray group"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-lxk-sage hover:text-lxk-warm-gray group"
             on:click={nextTestimonial}
             aria-label="Next testimonial"
           >
