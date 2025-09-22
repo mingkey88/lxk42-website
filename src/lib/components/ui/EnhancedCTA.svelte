@@ -117,7 +117,7 @@
         <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
           <div class="flex items-center space-x-2">
             <div class="w-2 h-2 bg-lxk-sage rounded-full"></div>
-            <span class="text-sm text-gray-600">50+ Singapore businesses trust us</span>
+            <span class="text-sm text-gray-600">Singapore businesses trust us</span>
           </div>
           <div class="flex items-center space-x-2">
             <div class="w-2 h-2 bg-lxk-peach rounded-full"></div>

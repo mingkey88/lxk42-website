@@ -45,7 +45,7 @@
 <!-- Header/Navigation -->
 <header class="fixed top-0 w-full bg-lxk-cream/80 backdrop-blur-md shadow-sm z-50">
   <nav class="container-custom">
-    <div class="flex items-center justify-between h-16 md:h-20">
+    <div class="flex items-center justify-between h-16 sm:h-18 md:h-20">
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a
@@ -57,8 +57,8 @@
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
+      <div class="hidden md:flex items-center justify-center flex-1">
+        <div class="flex items-baseline space-x-8">
           <a
             href="/about"
             class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
@@ -135,37 +135,44 @@
               ></div>
             {/if}
           </a>
-          <a
-            href="/contact"
-            class="nav-link text-lxk-warm-gray hover:text-lxk-sage transition-all duration-300 transform hover:scale-105 relative group"
-          >
-            Contact
-            {#if isActive('/contact')}
-              <div
-                class="absolute bottom-0 left-0 w-full h-0.5 bg-lxk-peach transform origin-left transition-transform duration-300 scale-x-100"
-              ></div>
-            {/if}
-          </a>
         </div>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Special Contact Button -->
       <div class="hidden md:flex items-center">
-        <div class="text-right">
-          <p class="text-sm text-gray-600">Get In Touch</p>
-          <a
-            href="tel:+6598278695"
-            class="text-lxk-sage font-medium hover:text-lxk-soft-teal transition-colors"
-            >+65 9827 8695</a
-          >
-        </div>
+        <a
+          href="/contact"
+          class="bg-lxk-peach text-white px-6 py-2 rounded-full font-medium hover:bg-lxk-coral transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Contact Us
+        </a>
+      </div>
+
+
+      <!-- Mobile Contact Button (visible on md screens) -->
+      <div class="hidden md:flex lg:hidden">
+        <a
+          href="tel:+6598278695"
+          class="bg-lxk-sage text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-lxk-soft-teal transition-colors min-h-[44px] min-w-[44px] flex items-center"
+          aria-label="Call us"
+        >
+          📞
+        </a>
       </div>
 
       <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <div class="md:hidden flex items-center gap-2">
+        <!-- Emergency contact for mobile -->
+        <a
+          href="tel:+6598278695"
+          class="bg-lxk-sage/10 text-lxk-sage p-2 rounded-full hover:bg-lxk-sage hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          aria-label="Call us"
+        >
+          📞
+        </a>
         <button
           on:click={toggleMobileMenu}
-          class="text-lxk-warm-gray hover:text-lxk-sage transition-colors"
+          class="text-lxk-warm-gray hover:text-lxk-sage transition-colors p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           aria-label="Toggle mobile menu"
         >
           <MenuIcon className="w-6 h-6" />

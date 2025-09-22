@@ -211,7 +211,7 @@
 
           <!-- Trust and urgency -->
           <div class="mt-4 space-y-2">
-            <p class="text-xs text-gray-500">No spam • 450+ downloads • ⭐ 4.9/5 rating</p>
+            <p class="text-xs text-gray-500">No spam • Fresh insights • ⭐ High quality content</p>
 
             <!-- Alternative action -->
             <div class="pt-3 border-t border-gray-200">

@@ -58,19 +58,37 @@
 
   // Letter animation for title
   function animateTitle(node) {
-    const text = node.textContent || '';
-    const words = text.split(' ');
-    let html = '';
+    // Get the original HTML to preserve the span structure
+    const originalHTML = node.innerHTML;
 
-    words.forEach((word, wordIndex) => {
+    // Extract text parts while preserving the colored span
+    const beforeKakis = 'Your Creative';
+    const kakisWord = 'Kakis';
+
+    let html = '';
+    let wordIndex = 0;
+
+    // Animate "Your Creative" part
+    beforeKakis.split(' ').forEach((word, idx) => {
       html += '<span class="word" style="--word-delay: ' + wordIndex * 0.1 + 's;">';
       word.split('').forEach((letter, letterIndex) => {
         const delay = (wordIndex * 0.3) + (letterIndex * 0.05);
-        html += '<span class="letter" style="--letter-delay: ' + delay + 's;">' + (letter === ' ' ? '&nbsp;' : letter) + '</span>';
+        html += '<span class="letter" style="--letter-delay: ' + delay + 's;">' + letter + '</span>';
       });
       html += '</span>';
-      if (wordIndex < words.length - 1) html += ' ';
+      if (idx < beforeKakis.split(' ').length - 1) html += ' ';
+      wordIndex++;
     });
+
+    html += ' ';
+
+    // Add the colored "Kakis" span with animation
+    html += '<span class="!text-lxk-peach hero-accent block sm:inline word" style="--word-delay: ' + wordIndex * 0.1 + 's;">';
+    kakisWord.split('').forEach((letter, letterIndex) => {
+      const delay = (wordIndex * 0.3) + (letterIndex * 0.05);
+      html += '<span class="letter" style="--letter-delay: ' + delay + 's;">' + letter + '</span>';
+    });
+    html += '</span>';
 
     node.innerHTML = html;
   }
@@ -112,9 +130,9 @@
       <div class="max-w-4xl order-1 lg:order-2">
         <!-- Studio Name Introduction -->
         <div class="mb-4 sm:mb-6">
-          <p class="text-lxk-sage text-base sm:text-lg font-medium mb-2 animate-fade-in">Welcome to</p>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-lxk-warm-gray animate-slide-in">
-            Light & Kaki Studio
+          <p class="text-black text-base sm:text-lg font-medium mb-2 animate-fade-in">Welcome to</p>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold animate-slide-in">
+            <span class="text-lxk-sage">Light & Kaki</span> <span class="text-lxk-peach">Studio</span>
           </h2>
         </div>
 
@@ -125,7 +143,7 @@
           class="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-lxk-warm-gray leading-[0.9] mb-6 sm:mb-8 animate-hero-title"
         >
           Your Creative
-          <span class="text-lxk-peach hero-accent block sm:inline">Kakis</span>
+          <span class="!text-lxk-peach hero-accent block sm:inline">Kakis</span>
         </h1>
 
         <!-- Single powerful value proposition with fade-up animation -->

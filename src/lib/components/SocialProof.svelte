@@ -27,7 +27,7 @@
 
   function animateNumbers() {
     // Animate businesses count
-    animateCounter('businesses', 0, 50, 2000);
+    animateCounter('businesses', 0, 7, 2000);
     // Animate revenue increase
     animateCounter('revenue', 0, 180, 2500);
     // Animate satisfaction rate
@@ -78,7 +78,7 @@
         Real Results, Real Friendships
       </h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Since 2020, we've been the growth kakis for ambitious Singapore businesses. Here's the
+        Since 2025, we've been the growth kakis for ambitious Singapore businesses. Here's the
         impact we've made together.
       </p>
     </div>
@@ -250,7 +250,7 @@
       >
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-          <span class="text-sm text-gray-600">Google Partner Certified</span>
+          <span class="text-sm text-gray-600">Locally Owned & Operated</span>
         </div>
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-lxk-sage rounded-full"></div>
@@ -262,7 +262,7 @@
         </div>
         <div class="flex items-center space-x-2">
           <div class="w-3 h-3 bg-lxk-coral rounded-full"></div>
-          <span class="text-sm text-gray-600">Featured in TechInAsia</span>
+          <span class="text-sm text-gray-600">Fresh Perspective & Innovation</span>
         </div>
       </div>
     </div>

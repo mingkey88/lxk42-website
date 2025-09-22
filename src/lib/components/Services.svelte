@@ -36,10 +36,10 @@
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 services-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 services-grid">
       <a
         href="/web-design"
-        class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
+        class="service-card group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[120px] sm:min-h-[140px]"
       >
         <div
           class="bg-gradient-to-br from-lxk-sage/10 to-lxk-mint/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden"
@@ -65,14 +65,14 @@
             <div class="absolute bottom-0 left-4 w-16 h-3 bg-gray-400 rounded-lg shadow-sm"></div>
           </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-lxk-warm-gray">Web Design</h3>
+        <div class="p-3 sm:p-4">
+          <h3 class="text-base sm:text-lg font-bold text-lxk-warm-gray">Web Design</h3>
         </div>
       </a>
 
       <a
         href="/web-app"
-        class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
+        class="service-card group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[120px] sm:min-h-[140px]"
       >
         <div
           class="bg-gradient-to-br from-lxk-peach/10 to-lxk-coral/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
@@ -104,14 +104,14 @@
             </div>
           </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-lxk-warm-gray">Web Apps</h3>
+        <div class="p-3 sm:p-4">
+          <h3 class="text-base sm:text-lg font-bold text-lxk-warm-gray">Web Apps</h3>
         </div>
       </a>
 
       <a
         href="/graphic-design"
-        class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
+        class="service-card group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[120px] sm:min-h-[140px]"
       >
         <div
           class="bg-gradient-to-br from-lxk-sage/10 to-lxk-peach/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
@@ -153,14 +153,14 @@
             </div>
           </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-lxk-warm-gray">Graphic Design</h3>
+        <div class="p-3 sm:p-4">
+          <h3 class="text-base sm:text-lg font-bold text-lxk-warm-gray">Graphic Design</h3>
         </div>
       </a>
 
       <a
         href="/motion-graphics"
-        class="service-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[44px]"
+        class="service-card group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 block focus:outline-none focus:ring-2 focus:ring-lxk-sage min-h-[120px] sm:min-h-[140px]"
       >
         <div
           class="bg-gradient-to-br from-lxk-peach/10 to-lxk-mint/10 h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
@@ -213,8 +213,8 @@
             </div>
           </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-lg font-bold text-lxk-warm-gray">Motion Graphics</h3>
+        <div class="p-3 sm:p-4">
+          <h3 class="text-base sm:text-lg font-bold text-lxk-warm-gray">Motion Graphics</h3>
         </div>
       </a>
     </div>

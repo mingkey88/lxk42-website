@@ -55,7 +55,7 @@
           </button>
 
           {#if openIndex === index}
-            <div class="px-6 pb-6">
+            <div class="px-6 pb-6 pt-4">
               <div class="text-gray-600 leading-relaxed">
                 {faq.answer}
               </div>

@@ -141,8 +141,8 @@
           <div class="text-sm text-gray-600">Project Success</div>
         </div>
         <div class="text-center">
-          <div class="text-2xl font-bold text-lxk-peach mb-1">3 Years</div>
-          <div class="text-sm text-gray-600">Average Partnership</div>
+          <div class="text-2xl font-bold text-lxk-peach mb-1">2025</div>
+          <div class="text-sm text-gray-600">Founded</div>
         </div>
         <div class="text-center">
           <div class="text-2xl font-bold text-lxk-soft-teal mb-1">95%</div>

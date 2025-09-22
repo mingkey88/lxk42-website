@@ -43,28 +43,6 @@ export const testimonials = [
     content:
       'As a first-time founder, I was overwhelmed by the technical aspects of building our platform. LXK42 not only delivered an incredible web application but educated me throughout the process. Their patient, friend-like approach made what could have been a stressful experience into an enjoyable journey of learning and growth.',
   },
-  {
-    id: 5,
-    name: 'Mei Ling Wong',
-    role: 'Operations Manager',
-    company: 'Local Favorites F&B',
-    avatar: null,
-    rating: 5,
-    projectType: 'Motion Graphics & Animation',
-    content:
-      'The animated videos LXK42 created for our social media campaigns have been game-changers. They perfectly captured the soul of our hawker heritage while making it feel fresh and modern. The organic, painterly animation style they developed for us has become our signature - customers now recognize our content instantly.',
-  },
-  {
-    id: 6,
-    name: 'Ahmed Hassan',
-    role: 'Managing Partner',
-    company: 'Urban Planning Consultancy',
-    avatar: null,
-    rating: 5,
-    projectType: 'Graphic Design & Branding',
-    content:
-      'Light & Kaki Studio understood that our work in urban planning needed to feel both professional and approachable to communities. They created visual materials that speak to both government stakeholders and everyday Singaporeans. The way they integrated subtle local cultural elements while maintaining international appeal was masterful.',
-  },
 ];
 
 export const getTestimonialsByService = (/** @type {string} */ service) => {

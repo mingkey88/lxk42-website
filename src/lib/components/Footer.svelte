@@ -91,9 +91,10 @@
     <!-- Bottom Bar -->
     <div class="border-t border-gray-600 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-gray-400 text-sm">
-          © {currentYear} Light & Kaki Studio. All rights reserved.
-        </p>
+        <div class="text-gray-400 text-sm">
+          <p>© {currentYear} Light & Kaki Studio. All rights reserved.</p>
+          <p class="mt-1">UEN: 53509027K</p>
+        </div>
         <div class="flex items-center gap-6 text-sm">
           <a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
           <a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>

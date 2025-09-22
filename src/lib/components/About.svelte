@@ -91,9 +91,6 @@
           In Singapore, "kaki" means friend. We're the creative kakis who make business dreams
           reality.
         </p>
-        <a href="#/about-us" class="text-lxk-sage hover:text-lxk-soft-teal font-medium text-lg">
-          Meet the team →
-        </a>
       </div>
     </div>
 

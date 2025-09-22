@@ -57,46 +57,6 @@ export const clients = [
     industry: 'Healthcare',
     projectType: 'Web Design',
   },
-  {
-    id: 8,
-    name: 'FinTech Forward',
-    logo: null,
-    description: 'Democratizing financial services across Southeast Asia',
-    industry: 'Financial Services',
-    projectType: 'Web Application',
-  },
-  {
-    id: 9,
-    name: 'Creative Minds Academy',
-    logo: null,
-    description: 'Nurturing the next generation of creative professionals',
-    industry: 'Education',
-    projectType: 'Branding',
-  },
-  {
-    id: 10,
-    name: 'Sustainable Living Co',
-    logo: null,
-    description: 'Making sustainable living accessible and affordable',
-    industry: 'Sustainability',
-    projectType: 'Digital Marketing',
-  },
-  {
-    id: 11,
-    name: 'Tech Startup Hub',
-    logo: null,
-    description: 'Accelerating innovation in the Singapore startup ecosystem',
-    industry: 'Technology',
-    projectType: 'Web Development',
-  },
-  {
-    id: 12,
-    name: 'Cultural Heritage Foundation',
-    logo: null,
-    description: "Preserving and sharing Singapore's multicultural stories",
-    industry: 'Non-Profit',
-    projectType: 'Motion Graphics',
-  },
 ];
 
 // Get clients by industry

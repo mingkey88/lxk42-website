@@ -236,43 +236,43 @@
   </div>
 </section>
 
-<!-- Success Metrics -->
+<!-- Our Approach -->
 <section class="section-padding">
   <div class="container-custom">
     <div class="text-center mb-12 animate-on-scroll">
-      <h2 class="text-3xl md:text-4xl font-bold text-lxk-warm-gray mb-4">Results That Matter 📈</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-lxk-warm-gray mb-4">Our Kaki Approach 🤝</h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Beyond testimonials, here's how our kakis have grown and succeeded
+        What makes working with us different - our genuine approach to creative partnerships
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
       <div class="text-center painterly-card p-6 animate-on-scroll">
-        <div class="text-4xl mb-4">📊</div>
-        <div class="text-2xl font-bold text-lxk-sage mb-2">150%</div>
-        <div class="text-sm text-gray-600 mb-2">Average Traffic Increase</div>
-        <p class="text-xs text-gray-500">Within 6 months of project completion</p>
+        <div class="text-4xl mb-4">☕</div>
+        <div class="text-2xl font-bold text-lxk-sage mb-2">Coffee</div>
+        <div class="text-sm text-gray-600 mb-2">First Conversations</div>
+        <p class="text-xs text-gray-500">We start every project with genuine chats</p>
       </div>
 
       <div class="text-center painterly-card p-6 animate-on-scroll">
-        <div class="text-4xl mb-4">💰</div>
-        <div class="text-2xl font-bold text-lxk-coral mb-2">200%</div>
-        <div class="text-sm text-gray-600 mb-2">ROI Improvement</div>
-        <p class="text-xs text-gray-500">Through optimized conversion funnels</p>
+        <div class="text-4xl mb-4">💭</div>
+        <div class="text-2xl font-bold text-lxk-coral mb-2">Listen</div>
+        <div class="text-sm text-gray-600 mb-2">Deep Understanding</div>
+        <p class="text-xs text-gray-500">We hear your vision and challenges</p>
       </div>
 
       <div class="text-center painterly-card p-6 animate-on-scroll">
-        <div class="text-4xl mb-4">⚡</div>
-        <div class="text-2xl font-bold text-lxk-peach mb-2">75%</div>
-        <div class="text-sm text-gray-600 mb-2">Faster Load Times</div>
-        <p class="text-xs text-gray-500">Modern tech stack optimization</p>
+        <div class="text-4xl mb-4">🎨</div>
+        <div class="text-2xl font-bold text-lxk-peach mb-2">Create</div>
+        <div class="text-sm text-gray-600 mb-2">Collaborative Design</div>
+        <p class="text-xs text-gray-500">Building together, not for you</p>
       </div>
 
       <div class="text-center painterly-card p-6 animate-on-scroll">
-        <div class="text-4xl mb-4">🎯</div>
-        <div class="text-2xl font-bold text-lxk-soft-teal mb-2">95%</div>
-        <div class="text-sm text-gray-600 mb-2">Client Satisfaction</div>
-        <p class="text-xs text-gray-500">Measured through follow-up surveys</p>
+        <div class="text-4xl mb-4">🌱</div>
+        <div class="text-2xl font-bold text-lxk-soft-teal mb-2">Grow</div>
+        <div class="text-sm text-gray-600 mb-2">Long-term Support</div>
+        <p class="text-xs text-gray-500">Kakis stick together for the journey</p>
       </div>
     </div>
   </div>

@@ -263,7 +263,7 @@
   primaryDescription="Book a free consultation to discuss your vision, goals, and how we can bring them to life"
   primaryCTA="Book Free Website Consultation →"
   secondaryTitle="Want to Plan First?"
-  secondaryDescription="Download our comprehensive planning guide used by 200+ Singapore businesses"
+  secondaryDescription="Download our comprehensive planning guide for Singapore businesses"
   leadMagnetTitle="Website Planning Toolkit for Singapore Businesses"
   leadMagnetBenefits={[
     'Complete project scope template with budget estimates',

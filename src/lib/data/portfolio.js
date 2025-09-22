@@ -31,7 +31,7 @@ export const projects = [
     tags: ['web app', 'ecommerce', 'marketplace'],
     technologies: ['Vue.js', 'Nuxt', 'Stripe', 'Firebase'],
     image: null,
-    results: ['200+ artisans onboarded', 'Successful platform launch', '4.8/5 user rating'],
+    results: ['Growing artisan community', 'Successful platform launch', '4.8/5 user rating'],
     featured: false,
     size: 'medium',
   },
@@ -49,7 +49,7 @@ export const projects = [
     technologies: ['Svelte Kit', 'PostgreSQL', 'WebRTC', 'Docker'],
     image: null,
     results: [
-      '500+ students active daily',
+      'Active student community',
       'Enhanced learning experience',
       'Ministry of Education pilot program',
     ],
