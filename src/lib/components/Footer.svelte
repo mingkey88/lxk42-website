@@ -50,7 +50,7 @@
     <div class="border-t border-gray-600 py-8">
       <div class="grid md:grid-cols-3 gap-6 items-center">
         <!-- Email -->
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center text-center gap-3">
           <div class="w-10 h-10 bg-lxk-sage rounded-full flex items-center justify-center">
             <span class="text-white text-sm">📧</span>
           </div>
@@ -63,7 +63,7 @@
         </div>
 
         <!-- Phone -->
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center text-center gap-3">
           <div class="w-10 h-10 bg-lxk-peach rounded-full flex items-center justify-center">
             <span class="text-white text-sm">📞</span>
           </div>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- Location -->
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center text-center gap-3">
           <div class="w-10 h-10 bg-lxk-coral rounded-full flex items-center justify-center">
             <span class="text-white text-sm">🇸🇬</span>
           </div>

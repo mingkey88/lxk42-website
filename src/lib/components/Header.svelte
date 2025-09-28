@@ -1,36 +1,49 @@
-<script>
-  import { onMount } from 'svelte';
+<script lang="ts">
+  import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import ChevronDown from './icons/ChevronDown.svelte';
   import MenuIcon from './icons/Menu.svelte';
 
-  let mobileMenuOpen = false;
-  let mobileNavRef;
+  let mobileMenuOpen: boolean = false;
+  let navLinks: NodeListOf<Element> | null = null;
 
-  function toggleMobileMenu() {
+  function toggleMobileMenu(): void {
     mobileMenuOpen = !mobileMenuOpen;
   }
 
-  function closeMobileMenu() {
+  function closeMobileMenu(): void {
     mobileMenuOpen = false;
   }
 
-  function isActive(href) {
+  function isActive(href: string): boolean {
     return $page.url.pathname === href;
   }
 
-  function isServiceActive() {
-    const servicePaths = ['/web-design', '/web-app', '/graphic-design', '/motion-graphics'];
+  function isServiceActive(): boolean {
+    const servicePaths: string[] = ['/web-design', '/web-app', '/graphic-design', '/motion-graphics'];
     return servicePaths.includes($page.url.pathname);
   }
 
   onMount(() => {
-    // Simple fade-in for nav links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach((link, index) => {
-      link.style.animationDelay = `${index * 100}ms`;
-      link.classList.add('fade-in');
+    // Simple fade-in for nav links with proper cleanup reference
+    navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((link: Element, index: number) => {
+      const htmlLink = link as HTMLElement;
+      htmlLink.style.animationDelay = `${index * 100}ms`;
+      htmlLink.classList.add('fade-in');
     });
+  });
+
+  onDestroy(() => {
+    // Cleanup: remove animation classes and reset styles
+    if (navLinks) {
+      navLinks.forEach((link: Element) => {
+        const htmlLink = link as HTMLElement;
+        htmlLink.classList.remove('fade-in');
+        htmlLink.style.animationDelay = '';
+      });
+      navLinks = null;
+    }
   });
 </script>
 

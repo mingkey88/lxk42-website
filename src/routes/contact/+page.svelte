@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import VideoPlayer from '$lib/components/ui/VideoPlayer.svelte';
   import { updatePageMeta, injectStructuredData, contactPageSchema } from '$lib/structuredData.js';
+  import { sanitizeFormData, validateRequiredFields, validateFormFields } from '$lib/utils/inputSanitization.js';
 
   let formData = {
     name: '',
@@ -15,8 +16,9 @@
     source: ''
   };
 
-  let isSubmitting = false;
-  let submitStatus = null; // 'success', 'error', null
+  let isSubmitting: boolean = false;
+  let submitStatus: 'success' | 'error' | 'validation' | null = null;
+  let validationErrors: string[] = [];
 
   const serviceOptions = [
     { value: '', label: 'Select a service...' },
@@ -58,12 +60,34 @@
     { value: 'other', label: 'Other' }
   ];
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     isSubmitting = true;
     submitStatus = null;
+    validationErrors = [];
 
     try {
+      // Sanitize all form data
+      const sanitizedData = sanitizeFormData(formData);
+
+      // Validate required fields
+      const requiredFields = ['name', 'email', 'service', 'message'];
+      const requiredErrors = validateRequiredFields(sanitizedData, requiredFields);
+
+      // Validate field formats
+      const formatErrors = validateFormFields(sanitizedData);
+
+      // Combine all validation errors
+      validationErrors = [...requiredErrors, ...formatErrors];
+
+      if (validationErrors.length > 0) {
+        submitStatus = 'validation';
+        return;
+      }
+
+      // Update form data with sanitized values
+      formData = { ...sanitizedData };
+
       // Here you would integrate with your backend/form service
       // For now, we'll simulate the submission
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -320,6 +344,19 @@
 
           <!-- Submit Button and Status -->
           <div class="text-center">
+            {#if submitStatus === 'validation'}
+              <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <div class="text-yellow-800">
+                  <p class="font-medium mb-2">⚠️ Please fix the following issues:</p>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                    {#each validationErrors as error}
+                      <li>{error}</li>
+                    {/each}
+                  </ul>
+                </div>
+              </div>
+            {/if}
+
             {#if submitStatus === 'success'}
               <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                 <div class="flex items-center justify-center gap-2 text-green-800">
