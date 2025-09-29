@@ -21,6 +21,17 @@ Light & Kaki Studio (LXK42) is a creative digital studio website built with Svel
 - `npm run format:check` - Check code formatting
 - `npm run optimize` - Generate poster images and optimize video assets
 
+### SuperClaude Commands
+
+- `npm run superclaude` - Launch SuperClaude CLI
+- `npm run superclaude:commit` - Generate AI-powered commit messages
+- `npm run superclaude:commit:interactive` - Interactive commit message generation
+- `npm run superclaude:changelog` - Generate changelog from commits
+- `npm run superclaude:readme` - Generate/update README
+- `npm run superclaude:review` - AI code review
+- `npm run superclaude:brainstorm` - AI brainstorming sessions
+- `npm run superclaude:docs` - Generate documentation
+
 ### Pre-build Process
 
 The build process automatically runs optimization scripts:
@@ -142,6 +153,7 @@ The site uses GSAP with ScrollTrigger for sophisticated scroll animations:
   - `createParallax()` - Parallax scroll effects
   - `createTextReveal()` - Text reveal animations
 - **Implementation**: Components import from `scrollAnimations.ts` and call animation functions in `onMount()`
+- **Cleanup**: Always clean up GSAP animations in component `onDestroy` to prevent memory leaks
 
 ### Mobile Performance Optimization
 
@@ -215,6 +227,7 @@ Before committing code, ensure these commands pass:
 ### CI/CD Pipeline
 
 GitHub Actions workflow (`.github/workflows/ci.yml`) runs on PRs and master branch pushes:
+- Dependencies installed with `npm ci` (respects package-lock.json exactly)
 - Lint checks (`npm run lint`)
 - Svelte checks (`npm run check`)
 - TypeScript checks (`npm run typecheck`)
@@ -222,9 +235,13 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) runs on PRs and master bran
 
 Preview deployments are handled by Vercel.
 
-## Recent Updates (September 2025)
+### Additional Documentation
 
-### Major Mobile Performance Optimization (September 21, 2025)
+- `GEMINI.md` - Additional project overview and architecture notes
+
+## Key Features & Recent Improvements
+
+### Major Mobile Performance Optimization
 - **Video Optimization**: Implemented OptimizedVideo component with smart lazy loading
 - **Performance Utilities**: Added device capability detection and mobile-specific optimizations
 - **Memory Leak Fixes**: Fixed carousel memory management and added proper cleanup

@@ -88,17 +88,34 @@
       // Update form data with sanitized values
       formData = { ...sanitizedData };
 
-      // Here you would integrate with your backend/form service
-      // For now, we'll simulate the submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Submit to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '57556b5d-acc8-4dd0-92a2-f0dd894fbb12',
+          subject: `New Contact Form Submission from ${sanitizedData.name}`,
+          from_name: 'LXK42 Website Contact Form',
+          ...sanitizedData
+        })
+      });
 
-      submitStatus = 'success';
+      const result = await response.json();
 
-      // Reset form after successful submission
-      formData = {
-        name: '', email: '', company: '', phone: '', service: '',
-        budget: '', timeline: '', message: '', source: ''
-      };
+      if (result.success) {
+        submitStatus = 'success';
+
+        // Reset form after successful submission
+        formData = {
+          name: '', email: '', company: '', phone: '', service: '',
+          budget: '', timeline: '', message: '', source: ''
+        };
+      } else {
+        throw new Error(result.message || 'Form submission failed');
+      }
 
     } catch (error) {
       console.error('Form submission error:', error);
